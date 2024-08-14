@@ -25,7 +25,7 @@
 -   [Using Forms](./05_forms/index.md)
 -   [An Hour of JavaScript](./06_js/index.md)
 -   [JavaScript in the Browser](./07_browser/index.md)
--   [Using HTMX](./07_htmx/index.md)
+-   [Using HTMX](./08_htmx/index.md)
 
 ## Technologies
 

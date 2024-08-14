@@ -1,0 +1,2 @@
+[tool.ruff.lint.extend-per-file-ignores]
+"**/test_*.py" = ["F401", "F811"] # ignore complaints about unused imports for fixtures

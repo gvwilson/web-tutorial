@@ -3,5 +3,6 @@ fastapi[standard]
 httpx
 polars
 prettytable
+pytest
 ruff
 snailz

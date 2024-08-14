@@ -15,11 +15,11 @@ def make_server(data):
         return app.data.write_json()
 
     @app.get("/col/{name}")
-    def root(name: str):
+    def column(name: str):
         return list(app.data[name])
 
     @app.get("/row/{staff_id}")
-    def root(staff_id: int):
+    def row(staff_id: int):
         return app.data.filter(pl.col("staff_id") == staff_id).row(0, named=True)
 
     return app
