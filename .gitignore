@@ -1,0 +1,11 @@
+*.egg-info
+*~
+.DS_Store
+.\#*
+.coverage
+.pytest_cache
+.ruff_cache
+.venv
+__pycache__
+data/*
+params
