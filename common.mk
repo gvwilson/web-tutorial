@@ -4,8 +4,7 @@
 commands:
 	@grep -h -E '^##' ${MAKEFILE_LIST} \
 	| sed -e 's/## //g' \
-	| column -t -s ':' \
-	| sort
+	| column -t -s ':'
 
 ## clean: clean up
 clean:

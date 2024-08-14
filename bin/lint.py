@@ -13,23 +13,23 @@ SUFFIXES = {".html", ".js", ".md", ".py"}
 
 def main():
     """Main driver."""
-    options = parse_args()
-    files = find_files(options)
+    opt = parse_args()
+    files = find_files(opt)
     linters = [
         lint_file_references,
         lint_link_definitions,
         lint_markdown_links,
     ]
-    success = all(f(options, files) for f in linters)
+    success = all(f(opt, files) for f in linters)
     if success:
         print("All self-checks passed.")
 
 
-def find_files(options):
+def find_files(opt):
     """Collect all interesting files."""
     return {
         filepath: filepath.read_text()
-        for filepath in Path(options.root).glob("**/*.*")
+        for filepath in Path(opt.root).glob("**/*.*")
         if interesting_file(filepath)
     }
 
@@ -44,7 +44,7 @@ def interesting_file(filepath):
     )
 
 
-def lint_file_references(options, files):
+def lint_file_references(opt, files):
     """Check inter-file references."""
     result = True
     for filepath, content in files.items():
@@ -58,7 +58,7 @@ def lint_file_references(options, files):
     return result
 
 
-def lint_link_definitions(options, files):
+def lint_link_definitions(opt, files):
     """Check that Markdown files define the links they use."""
     problems = False
     for filepath, content in files.items():
@@ -70,7 +70,7 @@ def lint_link_definitions(options, files):
     return not problems
 
 
-def lint_markdown_links(options, files):
+def lint_markdown_links(opt, files):
     """Check consistency of Markdown links."""
     found = {}
     for filepath, content in files.items():

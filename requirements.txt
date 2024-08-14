@@ -1,5 +1,6 @@
 faker
-fastapi
+fastapi[standard]
+httpx
 polars
 prettytable
 ruff

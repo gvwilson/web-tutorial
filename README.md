@@ -30,6 +30,7 @@
 
 -   Tabular data: [Polars][polars]
 -   Web server: [FastAPI][fastapi]
+-   HTTP: [httpx][httpx]
 -   Testing: [pytest][pytest]
 -   HTML templating: [Jinja2][jinja]
 -   Database: [SQLite][sqlite]
@@ -38,6 +39,7 @@
 [dash]: https://dash.plotly.com/
 [fastapi]: https://fastapi.tiangolo.com/
 [htmx]: https://htmx.org/
+[httpx]: https://www.python-httpx.org/
 [jinja]: https://jinja.palletsprojects.com/
 [pandas]: https://pandas.pydata.org/
 [plotly-express]: https://plotly.com/python/plotly-express/
