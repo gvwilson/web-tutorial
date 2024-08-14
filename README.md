@@ -19,11 +19,12 @@
 
 -   [Introduction](./00_intro/index.md)
 -   [Serving JSON](./01_json/index.md)
--   [Testing the Server](./02_test/index.md)
--   [Serving HTML](./03_html/index.md)
--   [Using a Database](./04_db/index.md)
+-   [Using a Database](./02_db/index.md)
+-   [Testing the Server](./03_test/index.md)
+-   [Serving HTML](./04_html/index.md)
 -   [Using Forms](./05_forms/index.md)
 -   [An Hour of JavaScript](./06_js/index.md)
+-   [JavaScript in the Browser](./07_browser/index.md)
 -   [Using HTMX](./07_htmx/index.md)
 
 ## Technologies
