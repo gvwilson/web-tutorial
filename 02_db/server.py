@@ -27,5 +27,7 @@ def make_server():
         except model.ModelException as exc:
             raise HTTPException(status_code=404, detail=f"Error serving row {staff_id}: {exc}")
 
+    return app
+
 
 app = make_server()

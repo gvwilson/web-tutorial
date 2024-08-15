@@ -23,7 +23,7 @@ def connect():
     if not path:
         raise ModelException(f"Environment variable {ENV_VAR} not set")
     connection = sqlite3.connect(path, detect_types=sqlite3.PARSE_DECLTYPES)
-    connection.row_factory = _dict_factory
+    connection.row_factory = dict_factory
     return connection
 
 
@@ -71,7 +71,7 @@ def row(staff_id):
         raise ModelException(str(exc))
 
 
-def _dict_factory(cursor, row):
+def dict_factory(cursor, row):
     """Convert row to dictionary."""
     fields = [column[0] for column in cursor.description]
     return {key: value for key, value in zip(fields, row)}

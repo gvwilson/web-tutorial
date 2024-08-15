@@ -16,5 +16,6 @@
     -   Opens us up to SQL injection attack
 
 [fastapi]: https://fastapi.tiangolo.com/
+[pony]: https://ponyorm.org/
 [sqlite]: https://www.sqlite.org/
-
+[sqlmodel]: https://sqlmodel.tiangolo.com/

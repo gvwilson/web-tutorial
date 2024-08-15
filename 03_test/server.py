@@ -1,22 +1,19 @@
-"""Configure multiple routes."""
+"""Serve data from data model layer."""
 
 from fastapi import FastAPI, HTTPException
-import polars as pl
 
-import util
-
+import model
 
 HEARTBEAT = {"message": "alive"}
 
 
-def make_server(data):
+def make_server():
     """Build application and configure routes."""
     app = FastAPI()
-    app.data = data
 
     @app.get("/")
     def root():
-        return app.data.write_json()
+        return model.all_staff()
 
     @app.get("/heartbeat")
     def heartbeat():
@@ -24,18 +21,19 @@ def make_server(data):
 
     @app.get("/col/{name}")
     def column(name: str):
-        if name not in app.data.columns:
-            raise HTTPException(status_code=404, detail=f"Column {name} not found")
-        return list(app.data[name])
+        try:
+            return model.column(name)
+        except model.ModelException as exc:
+            raise HTTPException(status_code=404, detail=f"Error serving column {name}: {exc}")
 
     @app.get("/row/{staff_id}")
     def row(staff_id: int):
-        if not (0 <= staff_id < len(app.data)):
-            raise HTTPException(status_code=404, detail=f"Row {staff_id} not found")
-        return app.data.filter(pl.col("staff_id") == staff_id).row(0, named=True)
+        try:
+            return model.row(staff_id)
+        except model.ModelException as exc:
+            raise HTTPException(status_code=404, detail=f"Error serving row {staff_id}: {exc}")
 
     return app
 
 
-data = util.load_data()
-app = make_server(data)
+app = make_server()

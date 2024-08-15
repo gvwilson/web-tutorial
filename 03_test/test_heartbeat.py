@@ -1,11 +1,12 @@
 """Test the JSON server."""
 
-from fixtures import client, data
+from fastapi.testclient import TestClient
 
-from server import HEARTBEAT
+from server import HEARTBEAT, app
 
 
-def test_can_get_root(client):
+def test_can_get_heartbeat():
+    client = TestClient(app)
     response = client.get("/heartbeat")
     assert response.status_code == 200
     assert response.json() == HEARTBEAT
