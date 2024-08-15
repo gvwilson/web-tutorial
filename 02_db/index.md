@@ -1,5 +1,7 @@
 # Using a Database
 
+## Direct SQL
+
 -   Use [SQLite][sqlite] database in `./data/lab.db` instead of CSV file
 -   Install `_dict_factory` to get results as list of dictionaries instead of list of tuples
 -   And use a flag to convert types like dates and times (used later)
@@ -15,7 +17,12 @@
     -   Can't parameterize query on column name
     -   Opens us up to SQL injection attack
 
+## Query Builder
+
+-   FIXME: rewrite with [PyPika][pypika]
+
 [fastapi]: https://fastapi.tiangolo.com/
 [pony]: https://ponyorm.org/
+[pypika]: https://pypika.readthedocs.io/
 [sqlite]: https://www.sqlite.org/
 [sqlmodel]: https://sqlmodel.tiangolo.com/

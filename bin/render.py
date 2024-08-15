@@ -8,9 +8,12 @@ from pathlib import Path
 import util
 
 
+MARKDOWN_EXTENSIONS = ["attr_list", "def_list", "fenced_code", "md_in_html", "tables"]
+
 RENAMES = {
     "README.md": "index.md",
 }
+
 TEMPLATE = """\
 <html>
   <head>
@@ -82,7 +85,7 @@ def parse_args():
 
 def render_markdown(output_dir, source_path, content):
     """Convert Markdown to HTML."""
-    html = markdown(content)
+    html = markdown(content, extensions=MARKDOWN_EXTENSIONS)
     html = TEMPLATE.format(content=html)
 
     doc = BeautifulSoup(html, "html.parser")

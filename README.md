@@ -36,14 +36,17 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 
 ## Technologies
 
--   Tabular data: [Polars][polars]
--   Web server: [FastAPI][fastapi]
--   HTTP: [httpx][httpx]
--   Testing: [pytest][pytest]
--   HTML templating: [Jinja2][jinja]
--   Database: [SQLite][sqlite]
--   Interaction: [htmx][htmx]
--   Styling: [Picnic CSS][picnic]
+| Package              | Purpose         |
+| -------------------- | --------------- |
+| [FastAPI][fastapi]   | web server      |
+| [htmx][htmx]         | interaction     |
+| [httpx][httpx]       | http            |
+| [Jinja2][jinja]      | html templating |
+| [Picnic CSS][picnic] | styling         |
+| [Polars][polars]     | tabular data    |
+| [PyPika][pypika]     | query builder   |
+| [pytest][pytest]     | testing         |
+| [SQLite][sqlite]     | database        |
 
 [dash]: https://dash.plotly.com/
 [fastapi]: https://fastapi.tiangolo.com/
@@ -54,6 +57,7 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 [picnic]: https://picnicss.com/
 [plotly-express]: https://plotly.com/python/plotly-express/
 [polars]: https://pola.rs/
+[pypika]: https://pypika.readthedocs.io/
 [pytest]: https://docs.pytest.org/
 [repo]: https://github.com/gvwilson/wp4ds
 [sqlite]: https://www.sqlite.org/

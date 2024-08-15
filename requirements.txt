@@ -5,6 +5,7 @@ httpx
 markdown
 polars
 prettytable
+pypika
 pytest
 ruff
 snailz
