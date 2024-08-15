@@ -2,7 +2,7 @@
 
 from fastapi import FastAPI, HTTPException
 
-import model
+import models
 import views
 
 from exceptions import AppException
@@ -29,7 +29,7 @@ def make_server():
     @app.get("/")
     def root(fmt: str = FMT_JSON):
         try:
-            return handle_format(model.all_staff(), fmt, views.all_staff)
+            return handle_format(models.all_staff(), fmt, views.all_staff)
         except AppException as exc:
             raise HTTPException(status_code=404, detail=f"Error serving all staff: {exc}")
 
@@ -43,14 +43,14 @@ def make_server():
     @app.get("/col/{name}")
     def column(name: str, fmt: str = FMT_JSON):
         try:
-            return handle_format(model.column(name), fmt, views.column)
+            return handle_format(models.column(name), fmt, views.column)
         except AppException as exc:
             raise HTTPException(status_code=404, detail=f"Error serving column {name}: {exc}")
 
     @app.get("/row/{staff_id}")
     def row(staff_id: int, fmt: str = FMT_JSON):
         try:
-            return handle_format(model.row(staff_id), fmt, views.row)
+            return handle_format(models.row(staff_id), fmt, views.row)
         except AppException as exc:
             raise HTTPException(status_code=404, detail=f"Error serving row {staff_id}: {exc}")
 

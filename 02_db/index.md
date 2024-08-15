@@ -3,7 +3,7 @@
 -   Use [SQLite][sqlite] database in `./data/lab.db` instead of CSV file
 -   Install `_dict_factory` to get results as list of dictionaries instead of list of tuples
 -   And use a flag to convert types like dates and times (used later)
--   [`model.py`](./model.py) implements model part of model-view-controller (MVC)
+-   [`models.py`](./models.py) implements model part of model-view-controller (MVC)
     -   One function for each question we might ask of our data
 -   Use SQL directly instead of an object-relational mapper like [SQLAlchemy], [SQLModel][sqlmodel], or [Pony][pony]
     -   ORMs are hard to debug and don't actually provide that much insulation from schema changes

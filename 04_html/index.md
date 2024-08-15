@@ -10,7 +10,7 @@
 -   Load templates from filesystem in [`views.py`](./views.py)
 -   Pass in data as named argument
 -   Use the sample template for single-row and multi-row views
--   No changes to [`model.py`](./model.py)
+-   No changes to [`models.py`](./models.py)
 
 [fastapi]: https://fastapi.tiangolo.com/
 [htpy]: https://htpy.dev/

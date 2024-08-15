@@ -3,7 +3,7 @@
 import sqlite3
 from unittest.mock import patch
 
-import model
+import models
 
 SCHEMA = """
 CREATE TABLE staff (
@@ -26,14 +26,14 @@ STAFF = [
 
 def make_db():
     connection = sqlite3.connect(":memory:", detect_types=sqlite3.PARSE_DECLTYPES)
-    connection.row_factory = model.dict_factory
+    connection.row_factory = models.dict_factory
     connection.executescript(SCHEMA)
     connection.executemany(INSERT, STAFF)
     return connection
 
 
 def test_can_get_all_staff():
-    with patch("model.connect", make_db):
-        result = model.all_staff()
+    with patch("models.connect", make_db):
+        result = models.all_staff()
         assert len(result) == len(STAFF)
         assert {r["staff_id"] for r in result} == {s[0] for s in STAFF}
