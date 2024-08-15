@@ -13,3 +13,7 @@ datasets:
 lint:
 	@ruff check .
 	@python bin/lint.py
+
+## build: convert to HTML
+build:
+	@python bin/render.py

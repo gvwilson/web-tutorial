@@ -1,0 +1,28 @@
+<html>
+<head>
+<link href="../static/site.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<h1>Serving HTML</h1>
+<ul>
+<li>Introduce the view part of MVC and use <a href="https://jinja.palletsprojects.com/">Jinja</a> templates<ul>
+<li>Alternative <a href="https://htpy.dev/">htpy</a> is more amenable to debugging but harder to read</li>
+</ul>
+</li>
+<li>Create <a href="./exceptions.py"><code>exceptions.py</code></a> to hold exceptions<ul>
+<li>Common parent for all application exceptions to make catching easier</li>
+</ul>
+</li>
+<li>Introduction <code>fmt=whatever</code> query parameter<ul>
+<li>Considered a bad practice by some: API endpoint should return a single data format</li>
+<li>Doing it this way prevents us using <a href="https://fastapi.tiangolo.com/">FastAPI</a>'s built-in support for template rendering</li>
+</ul>
+</li>
+<li>Load templates from filesystem in <a href="./views.py"><code>views.py</code></a></li>
+<li>Pass in data as named argument</li>
+<li>Use the sample template for single-row and multi-row views</li>
+<li>No changes to <a href="./models.py"><code>models.py</code></a></li>
+</ul>
+</body>
+<html>
+</html></html>

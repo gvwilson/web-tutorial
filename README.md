@@ -1,5 +1,12 @@
 # Web Programming for Data Scientists
 
+This tutorial is a short introduction to web programming using modern tools and practices
+for data scientists who are comfortable using Python
+but have never built interactive websites before.
+All of the material is available under [open licenses](./LICENSE.md),
+and contributions through our [GitHub repository][repo] are welcome.
+All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT.md).
+
 ## Learner Persona
 
 -   Sabina, 28, has a master's degree in animal physiology
@@ -46,4 +53,5 @@
 [plotly-express]: https://plotly.com/python/plotly-express/
 [polars]: https://pola.rs/
 [pytest]: https://docs.pytest.org/
+[repo]: https://github.com/gvwilson/wp4ds
 [sqlite]: https://www.sqlite.org/

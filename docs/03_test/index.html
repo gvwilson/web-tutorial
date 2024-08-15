@@ -1,0 +1,20 @@
+<html>
+<head>
+<link href="../static/site.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<h1>Testing the Server</h1>
+<ul>
+<li>Add a heartbeat to <a href="./server.py"><code>server.py</code></a></li>
+<li>Wrap the <a href="https://fastapi.tiangolo.com/">FastAPI</a> application with a test client that provides an interface like <a href="https://www.python-httpx.org/">httpx</a></li>
+<li>Run <code>DB=data/lab.db pytest test_heartbeat.py</code> to run tests in <a href="./test_heartbeat.py"><code>test_heartbeat.py</code></a></li>
+<li>Rewrite using <a href="https://docs.pytest.org/">pytest</a> fixtures in <a href="./test_fixtures.py"><code>test_fixtures.py</code></a><ul>
+<li>Don't duplicate the expected value, since it might change</li>
+</ul>
+</li>
+<li>Patch database connection function in <a href="./test_db.py"><code>test_db.py</code></a> instead of creating a fixture</li>
+<li>Use the two approaches together in <a href="./test_combined.py"><code>test_combined.py</code></a></li>
+</ul>
+</body>
+<html>
+</html></html>

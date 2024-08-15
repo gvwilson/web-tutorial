@@ -1,0 +1,32 @@
+<html>
+<head>
+<link href="../static/site.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<h1>Serving JSON</h1>
+<ul>
+<li><a href="./server_hello.py"><code>server_hello.py</code></a>: return JSON<ul>
+<li>Go to http://127.0.0.1:8000 to view</li>
+<li>Or use <a href="./fetch.py"><code>fetch.py</code></a> to fetch and display data</li>
+</ul>
+</li>
+<li><a href="./server_func.py"><code>server_func.py</code></a> creates the application and configures routes in a function<ul>
+<li>Get path to staff CSV from <code>DATA</code> environment variable</li>
+<li>Read with <a href="https://pola.rs/">Polars</a></li>
+<li>Attach data to <code>app</code> object</li>
+</ul>
+</li>
+<li><a href="./server_routes.py"><code>server_routes.py</code></a> configures several routes<ul>
+<li>Use query parameters in routes to select individual row or column</li>
+<li>Use Python type hints to do type conversion</li>
+</ul>
+</li>
+<li><a href="./server_err.py"><code>server_err.py</code></a> handles errors<ul>
+<li>Check row and column and raise <code>HTTPException</code> if not there</li>
+<li>Rely on <a href="https://fastapi.tiangolo.com/">FastAPI</a> to handle nonexistent routes</li>
+</ul>
+</li>
+</ul>
+</body>
+<html>
+</html></html>

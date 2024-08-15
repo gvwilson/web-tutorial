@@ -1,0 +1,33 @@
+<html>
+<head>
+<link href="../static/site.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<h1>Using a Database</h1>
+<ul>
+<li>Use <a href="https://www.sqlite.org/">SQLite</a> database in <code>./data/lab.db</code> instead of CSV file</li>
+<li>Install <code>_dict_factory</code> to get results as list of dictionaries instead of list of tuples</li>
+<li>And use a flag to convert types like dates and times (used later)</li>
+<li><a href="./models.py"><code>models.py</code></a> implements model part of model-view-controller (MVC)<ul>
+<li>One function for each question we might ask of our data</li>
+</ul>
+</li>
+<li>Use SQL directly instead of an object-relational mapper like [SQLAlchemy], <a href="https://sqlmodel.tiangolo.com/">SQLModel</a>, or <a href="https://ponyorm.org/">Pony</a><ul>
+<li>ORMs are hard to debug and don't actually provide that much insulation from schema changes</li>
+</ul>
+</li>
+<li>Re-create connection each time model is accessed<ul>
+<li>Creating it once and attaching to the <a href="https://fastapi.tiangolo.com/">FastAPI</a> app fails because of threading</li>
+</ul>
+</li>
+<li>Catch SQLite exceptions and raise our own so that our server only has to catch one thing</li>
+<li>Add some more error handling</li>
+<li>Security problem: we're inserting a user-defined name into a query<ul>
+<li>Can't parameterize query on column name</li>
+<li>Opens us up to SQL injection attack</li>
+</ul>
+</li>
+</ul>
+</body>
+<html>
+</html></html>

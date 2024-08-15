@@ -1,6 +1,8 @@
+beautifulsoup4
 faker
 fastapi[standard]
 httpx
+markdown
 polars
 prettytable
 pytest
