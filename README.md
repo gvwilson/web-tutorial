@@ -43,6 +43,7 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 -   HTML templating: [Jinja2][jinja]
 -   Database: [SQLite][sqlite]
 -   Interaction: [htmx][htmx]
+-   Styling: [Picnic CSS][picnic]
 
 [dash]: https://dash.plotly.com/
 [fastapi]: https://fastapi.tiangolo.com/
@@ -50,6 +51,7 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 [httpx]: https://www.python-httpx.org/
 [jinja]: https://jinja.palletsprojects.com/
 [pandas]: https://pandas.pydata.org/
+[picnic]: https://picnicss.com/
 [plotly-express]: https://plotly.com/python/plotly-express/
 [polars]: https://pola.rs/
 [pytest]: https://docs.pytest.org/

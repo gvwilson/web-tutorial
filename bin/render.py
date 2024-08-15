@@ -8,9 +8,13 @@ from pathlib import Path
 import util
 
 
+RENAMES = {
+    "README.md": "index.md",
+}
 TEMPLATE = """\
 <html>
   <head>
+    <link rel="stylesheet" href="@root/static/picnic.css" type="text/css">
     <link rel="stylesheet" href="@root/static/site.css" type="text/css">
   </head>
   <body>
@@ -33,7 +37,7 @@ def main():
 
 def copy_file(output_dir, source_path, content):
     """Copy a file verbatim."""
-    output_path = Path(output_dir, source_path)
+    output_path = make_output_path(output_dir, source_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     if output_path.suffix in util.SUFFIXES:
         output_path.write_text(content)
@@ -60,6 +64,14 @@ def do_root(doc, source_path):
     return doc
 
 
+def make_output_path(output_dir, source_path):
+    """Build output path."""
+    if source_path.name in RENAMES:
+        source_path = Path(source_path.parent, RENAMES[source_path.name])
+    source_path = Path(str(source_path).replace(".md", ".html"))
+    return Path(output_dir, source_path)
+
+
 def parse_args():
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser()
@@ -77,7 +89,7 @@ def render_markdown(output_dir, source_path, content):
     for func in (do_links, do_root):
         doc = func(doc, source_path)
 
-    output_path = Path(str(Path(output_dir, source_path)).replace(".md", ".html"))
+    output_path = make_output_path(output_dir, source_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(str(doc))
 
