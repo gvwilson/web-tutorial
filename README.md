@@ -38,6 +38,7 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 
 | Package              | Purpose         |
 | -------------------- | --------------- |
+| [deno][deno]         | JavaScript      |
 | [FastAPI][fastapi]   | web server      |
 | [htmx][htmx]         | interaction     |
 | [httpx][httpx]       | http            |
@@ -49,6 +50,7 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 | [SQLite][sqlite]     | database        |
 
 [dash]: https://dash.plotly.com/
+[deno]: https://deno.com/
 [fastapi]: https://fastapi.tiangolo.com/
 [htmx]: https://htmx.org/
 [httpx]: https://www.python-httpx.org/

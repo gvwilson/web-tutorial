@@ -7,9 +7,9 @@ import models
 
 SCHEMA = """
 CREATE TABLE staff (
-	staff_id BIGINT, 
-	personal TEXT, 
-	family TEXT
+    staff_id BIGINT, 
+    personal TEXT, 
+    family TEXT
 );
 """
 
