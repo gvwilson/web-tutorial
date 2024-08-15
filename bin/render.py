@@ -11,6 +11,8 @@ import util
 MARKDOWN_EXTENSIONS = ["attr_list", "def_list", "fenced_code", "md_in_html", "tables"]
 
 RENAMES = {
+    "CODE_OF_CONDUCT.md": "code_of_conduct.md",
+    "LICENSE.md": "license.md",
     "README.md": "index.md",
 }
 
@@ -23,6 +25,9 @@ TEMPLATE = """\
   <body>
   {content}
   </body>
+  <footer>
+    Copyright © 2024 the authors
+  </footer>
 <html>
 """
 
@@ -48,15 +53,15 @@ def copy_file(output_dir, source_path, content):
         output_path.write_bytes(content)
 
 
-def do_links(doc, source_path):
+def do_markdown_links(doc, source_path):
     """Fix .md links in HTML."""
     for node in doc.find_all("a"):
         if ("href" in node.attrs) and node["href"].endswith(".md"):
-            node["href"] = node["href"].replace(".md", ".html")
+            node["href"] = node["href"].replace(".md", ".html").lower()
     return doc
 
 
-def do_root(doc, source_path):
+def do_root_path_prefix(doc, source_path):
     """Fix @root links in HTML."""
     depth = len(source_path.parents) - 1
     prefix = "./" if (depth == 0) else "../" * depth
@@ -89,7 +94,7 @@ def render_markdown(output_dir, source_path, content):
     html = TEMPLATE.format(content=html)
 
     doc = BeautifulSoup(html, "html.parser")
-    for func in (do_links, do_root):
+    for func in (do_markdown_links, do_root_path_prefix):
         doc = func(doc, source_path)
 
     output_path = make_output_path(output_dir, source_path)

@@ -2,3 +2,9 @@ body {
     margin-left: 0.5rem;
     max-width: 72rem;
 }
+
+footer {
+    border-top: 1px solid;
+    padding-top: 5px;
+    text-align: center;
+}
