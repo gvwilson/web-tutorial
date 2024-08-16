@@ -24,15 +24,15 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 
 ## Syllabus
 
--   [Introduction](./00_intro/index.md)
--   [Serving JSON](./01_json/index.md)
--   [Using a Database](./02_db/index.md)
--   [Testing the Server](./03_test/index.md)
--   [Serving HTML](./04_html/index.md)
--   [Using Forms](./05_forms/index.md)
--   [An Hour of JavaScript](./06_js/index.md)
--   [JavaScript in the Browser](./07_browser/index.md)
--   [Using HTMX](./08_htmx/index.md)
+1.  [Introduction](./01_intro/index.md)
+1.  [Serving JSON](./02_json/index.md)
+1.  [Using a Database](./03_db/index.md)
+1.  [Testing the Server](./04_test/index.md)
+1.  [Serving HTML](./05_html/index.md)
+1.  [Using Forms](./06_forms/index.md)
+1.  [An Hour of JavaScript](./07_js/index.md)
+1.  [JavaScript in the Browser](./08_browser/index.md)
+1.  [Using HTMX](./09_htmx/index.md)
 
 ## Technologies
 
