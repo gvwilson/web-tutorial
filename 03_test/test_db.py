@@ -4,6 +4,7 @@ import sqlite3
 from unittest.mock import patch
 
 import models
+import util
 
 SCHEMA = """
 CREATE TABLE staff (
@@ -26,7 +27,7 @@ STAFF = [
 
 def make_db():
     connection = sqlite3.connect(":memory:", detect_types=sqlite3.PARSE_DECLTYPES)
-    connection.row_factory = models.dict_factory
+    connection.row_factory = util.dict_factory
     connection.executescript(SCHEMA)
     connection.executemany(INSERT, STAFF)
     return connection

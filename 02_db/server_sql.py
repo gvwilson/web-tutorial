@@ -2,7 +2,7 @@
 
 from fastapi import FastAPI, HTTPException
 
-import models
+import models_sql as models
 
 
 def make_server():
