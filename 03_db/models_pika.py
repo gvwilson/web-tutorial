@@ -71,9 +71,3 @@ def row(staff_id):
         return result[0]
     except sqlite3.DatabaseError as exc:
         raise ModelException(str(exc))
-
-
-def _dict_factory(cursor, row):
-    """Convert row to dictionary."""
-    fields = [column[0] for column in cursor.description]
-    return {key: value for key, value in zip(fields, row)}
