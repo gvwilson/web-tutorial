@@ -16,18 +16,6 @@ def all_staff(data):
     return _use_template(data, "rows.html")
 
 
-def heartbeat(data):
-    return HTMLResponse(f"<p>{data['message']}</p>")
-
-
-def column(data):
-    return _use_template(data, "col.html")
-
-
-def row(data):
-    return _use_template([data], "rows.html")
-
-
 def _use_template(data, template_name):
     try:
         template = Env.get_template(template_name)

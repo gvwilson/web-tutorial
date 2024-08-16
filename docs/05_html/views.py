@@ -4,7 +4,7 @@ from fastapi.responses import HTMLResponse
 from jinja2 import Environment, FileSystemLoader
 from jinja2.exceptions import TemplateError
 
-from exceptions import ViewException
+from util import ViewException
 
 
 Env = Environment(
@@ -13,7 +13,7 @@ Env = Environment(
 
 
 def all_staff(data):
-    return use_template(data, "rows.html")
+    return _use_template(data, "rows.html")
 
 
 def heartbeat(data):
@@ -21,14 +21,14 @@ def heartbeat(data):
 
 
 def column(data):
-    return use_template(data, "col.html")
+    return _use_template(data, "col.html")
 
 
 def row(data):
-    return use_template([data], "rows.html")
+    return _use_template([data], "rows.html")
 
 
-def use_template(data, template_name):
+def _use_template(data, template_name):
     try:
         template = Env.get_template(template_name)
         return HTMLResponse(template.render(data=data))

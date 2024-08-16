@@ -1,5 +1,4 @@
-"""Things that can go wrong."""
-
+"""Utilities."""
 
 class AppException(Exception):
     """Root of exception hierarchy."""
@@ -17,3 +16,9 @@ class ModelException(AppException):
 
 class ViewException(AppException):
     pass
+
+
+def dict_factory(cursor, row):
+    """Convert row to dictionary."""
+    fields = [column[0] for column in cursor.description]
+    return {key: value for key, value in zip(fields, row)}

@@ -7,5 +7,6 @@ polars
 prettytable
 pypika
 pytest
+python-multipart
 ruff
 snailz

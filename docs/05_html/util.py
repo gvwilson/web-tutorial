@@ -1,5 +1,23 @@
 """Utilities."""
 
+class AppException(Exception):
+    """Root of exception hierarchy."""
+
+    def __init__(self, msg):
+        self._msg = msg
+
+    def __str__(self):
+        return self._msg
+
+
+class ModelException(AppException):
+    pass
+
+
+class ViewException(AppException):
+    pass
+
+
 def dict_factory(cursor, row):
     """Convert row to dictionary."""
     fields = [column[0] for column in cursor.description]

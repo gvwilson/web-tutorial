@@ -5,7 +5,7 @@ from fastapi import FastAPI, HTTPException
 import models
 import views
 
-from exceptions import AppException
+from util import AppException
 
 
 HEARTBEAT = {"message": "alive"}

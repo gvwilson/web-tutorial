@@ -37,10 +37,10 @@ TEMPLATE = """\
 def main():
     """Main driver."""
     opt = parse_args()
-    files = util.find_files(opt, set([opt.out]))
+    files = util.find_files(opt, set(["bin", opt.out]))
     for filepath, content in files.items():
         if filepath.suffix == ".md":
-            render_markdown(opt.out, filepath, content)
+            render_markdown(opt.out, opt.css, filepath, content)
         else:
             copy_file(opt.out, filepath, content)
 
@@ -91,7 +91,7 @@ def parse_args():
     return parser.parse_args()
 
 
-def render_markdown(output_dir, source_path, content):
+def render_markdown(output_dir, css_file, source_path, content):
     """Convert Markdown to HTML."""
     html = markdown(content, extensions=MARKDOWN_EXTENSIONS)
     css_link = CSS_LINK.format(css_file=css_file) if css_file else ""

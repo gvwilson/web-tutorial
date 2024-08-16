@@ -4,7 +4,7 @@ import os
 from pypika import Query, Table
 import sqlite3
 
-import util
+from util import ModelException, dict_factory
 
 
 ENV_VAR = "DB"
@@ -26,7 +26,7 @@ def connect():
     if not path:
         raise ModelException(f"Environment variable {ENV_VAR} not set")
     connection = sqlite3.connect(path, detect_types=sqlite3.PARSE_DECLTYPES)
-    connection.row_factory = util.dict_factory
+    connection.row_factory = dict_factory
     return connection
 
 
@@ -52,6 +52,8 @@ def column(name):
         return [r[name] for r in cursor.fetchall()]
     except sqlite3.DatabaseError as exc:
         raise ModelException(str(exc))
+    except KeyError as exc:
+        raise ModelException(str(exc))
 
 
 def row(staff_id):
@@ -71,9 +73,3 @@ def row(staff_id):
         return result[0]
     except sqlite3.DatabaseError as exc:
         raise ModelException(str(exc))
-
-
-def _dict_factory(cursor, row):
-    """Convert row to dictionary."""
-    fields = [column[0] for column in cursor.description]
-    return {key: value for key, value in zip(fields, row)}
