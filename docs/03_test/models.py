@@ -1,7 +1,10 @@
 """Get data from database."""
 
 import os
+from pypika import Query, Table
 import sqlite3
+
+import util
 
 
 ENV_VAR = "DB"
@@ -23,18 +26,17 @@ def connect():
     if not path:
         raise ModelException(f"Environment variable {ENV_VAR} not set")
     connection = sqlite3.connect(path, detect_types=sqlite3.PARSE_DECLTYPES)
-    connection.row_factory = dict_factory
+    connection.row_factory = util.dict_factory
     return connection
 
 
 def all_staff():
     """Get all staff."""
-    query = """
-    select * from staff
-    """
+    staff = Table("staff")
+    query = Query.from_(staff).select("staff_id", "personal", "family")
     try:
         connection = connect()
-        cursor = connection.execute(query)
+        cursor = connection.execute(str(query))
         return cursor.fetchall()
     except sqlite3.DatabaseError as exc:
         raise ModelException(str(exc))
@@ -42,12 +44,11 @@ def all_staff():
 
 def column(name):
     """Get a single column of staff."""
-    query = f"""
-    select {name} from staff
-    """
+    staff = Table("staff")
+    query = Query.from_(staff).select(name)
     try:
         connection = connect()
-        cursor = connection.execute(query)
+        cursor = connection.execute(str(query))
         return [r[name] for r in cursor.fetchall()]
     except sqlite3.DatabaseError as exc:
         raise ModelException(str(exc))
@@ -55,12 +56,13 @@ def column(name):
 
 def row(staff_id):
     """Get a single row of staff."""
-    query = """
-    select * from staff where staff_id=?
-    """
+    staff = Table("staff")
+    query = Query.from_(staff) \
+                 .select("staff_id", "personal", "family") \
+                 .where(staff.staff_id == staff_id)
     try:
         connection = connect()
-        cursor = connection.execute(query, (staff_id,))
+        cursor = connection.execute(str(query))
         result = cursor.fetchall()
         if len(result) == 0:
             raise ModelException(f"no rows match {staff_id}")
@@ -71,7 +73,7 @@ def row(staff_id):
         raise ModelException(str(exc))
 
 
-def dict_factory(cursor, row):
+def _dict_factory(cursor, row):
     """Convert row to dictionary."""
     fields = [column[0] for column in cursor.description]
     return {key: value for key, value in zip(fields, row)}
