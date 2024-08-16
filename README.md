@@ -34,6 +34,10 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 1.  [JavaScript in the Browser](./08_browser/index.md)
 1.  [Using HTMX](./09_htmx/index.md)
 
+### Appendices
+
+1.  [HTTP](./x1_http/index.md)
+
 ## Technologies
 
 | Package              | Purpose         |
