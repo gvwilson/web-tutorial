@@ -51,22 +51,26 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 
 ## Technologies
 
-| Package              | Purpose         |
-| -------------------- | --------------- |
-| [deno][deno]         | JavaScript      |
-| [FastAPI][fastapi]   | web server      |
-| [htmx][htmx]         | interaction     |
-| [httpx][httpx]       | http            |
-| [Jinja2][jinja]      | html templating |
-| [Picnic CSS][picnic] | styling         |
-| [Polars][polars]     | tabular data    |
-| [PyPika][pypika]     | query builder   |
-| [pytest][pytest]     | testing         |
-| [SQLite][sqlite]     | database        |
+| Package                          | Purpose           |
+| -------------------------------- | ----------------- |
+| [Beautiful Soup][bs4]            | HTML manipulation |
+| [deno][deno]                     | JavaScript        |
+| [FastAPI][fastapi]               | web server        |
+| [html5validator][html5validator] | validation        |
+| [htmx][htmx]                     | interaction       |
+| [httpx][httpx]                   | http              |
+| [Jinja2][jinja]                  | html templating   |
+| [Picnic CSS][picnic]             | styling           |
+| [Polars][polars]                 | tabular data      |
+| [PyPika][pypika]                 | query builder     |
+| [pytest][pytest]                 | testing           |
+| [SQLite][sqlite]                 | database          |
 
+[bs4]: https://beautiful-soup-4.readthedocs.io/
 [dash]: https://dash.plotly.com/
 [deno]: https://deno.com/
 [fastapi]: https://fastapi.tiangolo.com/
+[html5validator]: https://pypi.org/project/html5validator/
 [htmx]: https://htmx.org/
 [httpx]: https://www.python-httpx.org/
 [jinja]: https://jinja.palletsprojects.com/

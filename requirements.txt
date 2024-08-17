@@ -2,6 +2,7 @@ beautifulsoup4
 esprima
 faker
 fastapi[standard]
+html5validator
 httpx
 markdown
 polars
