@@ -1,4 +1,5 @@
 beautifulsoup4
+esprima
 faker
 fastapi[standard]
 httpx
