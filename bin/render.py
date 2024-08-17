@@ -12,6 +12,7 @@ MARKDOWN_EXTENSIONS = ["attr_list", "def_list", "fenced_code", "md_in_html", "ta
 
 RENAMES = {
     "CODE_OF_CONDUCT.md": "code_of_conduct.md",
+    "CONTRIBUTING.md": "contributing.md",
     "LICENSE.md": "license.md",
     "README.md": "index.md",
 }
