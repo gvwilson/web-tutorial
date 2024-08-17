@@ -11,6 +11,17 @@
 <li>Copy the database before running</li>
 </ul>
 </li>
+<li><a href="./inserting.py"><code>inserting.py</code></a>: experiment with insertion<ul>
+<li>Select largest staff ID, add one, insert: race condition</li>
+<li>Better to build a subquery</li>
+</ul>
+</li>
+<li>Add <code>add_staff</code> function to <a href="./models.py"><code>models.py</code></a><ul>
+<li>Must have <code>commit</code> in <code>models.add_staff</code></li>
+<li>Redirect to "/" instead of using <code>return root()</code></li>
+<li>Really should check values…</li>
+</ul>
+</li>
 </ul>
 </body>
 <footer>

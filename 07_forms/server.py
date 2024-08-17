@@ -1,6 +1,8 @@
 """Serve data from data model layer."""
 
 from fastapi import FastAPI, Form, HTTPException
+from fastapi.responses import RedirectResponse
+import starlette.status as status
 
 import models
 import views
@@ -34,8 +36,8 @@ def make_server():
 
     @app.post("/add")
     def add(personal: str = Form(), family: str = Form()):
-        print(f"personal {personal} family {family}")
-        return root()
+        models.add_staff(personal, family)
+        return RedirectResponse(url="/", status_code=status.HTTP_303_SEE_OTHER)
 
     return app
 
