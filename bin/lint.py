@@ -7,6 +7,8 @@ import re
 import util
 
 
+GLOSS_KEY_DEF = re.compile(r"^.+\s+\{\s*\#(.+?)\s*\}", re.MULTILINE)
+GLOSS_KEY_REF = re.compile(r"\[.+?\]\(g:(.+?)\)", re.MULTILINE)
 MD_CODEBLOCK_FILE = re.compile(r"^```\s*\{\s*\.(.+?)\s+\#(.+?)\s*\}\s*$(.+?)^```\s*$", re.DOTALL + re.MULTILINE)
 MD_FILE_LINK = re.compile(r"\[(.+?)\]\((.+?)\)", re.MULTILINE)
 MD_LINK_DEF = re.compile(r"^\[(.+?)\]:\s+(.+?)\s*$", re.MULTILINE)
@@ -16,10 +18,12 @@ MD_LINK_REF = re.compile(r"\[(.+?)\]\[(.+?)\]", re.MULTILINE)
 def main():
     """Main driver."""
     opt = parse_args()
-    files = util.find_files(opt)
+    root_skips = set(["bin", opt.out])
+    files = util.find_files(opt, root_skips)
     linters = [
         lint_codeblock_files,
         lint_file_references,
+        lint_glossary_references,
         lint_link_definitions,
         lint_markdown_links,
     ]
@@ -47,10 +51,29 @@ def lint_file_references(opt, files):
     for filepath, content in files.items():
         if filepath.suffix == ".md":
             for link in MD_FILE_LINK.finditer(content):
+                if _is_special_link(link.group(2)):
+                    continue
                 target = resolve_path(filepath.parent, link.group(2))
                 if _is_missing(target, files):
                     print(f"Missing file: {filepath} => {target}")
                     ok = False
+    return ok
+
+
+def lint_glossary_references(opt, files):
+    """Check glossary references."""
+    ok = True
+
+    candidates = [k for k in files if "glossary" in str(k)]
+    assert len(candidates) == 1, "No glossary or multiple matches"
+    gloss_file_key = candidates[0]
+    available = set(GLOSS_KEY_DEF.findall(files[gloss_file_key]))
+
+    for filepath, content in files.items():
+        missing = [k.group(1) for k in GLOSS_KEY_REF.finditer(content) if k.group(1) not in available]
+        if missing:
+            print(f"Missing glossary keys in {filepath}: {', '.join(sorted(missing))}")
+            ok = False
     return ok
 
 
@@ -89,6 +112,7 @@ def lint_markdown_links(opt, files):
 def parse_args():
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser()
+    parser.add_argument("--out", type=str, default="docs", help="output directory")
     parser.add_argument("--root", type=str, default=".", help="root directory")
     return parser.parse_args()
 
@@ -113,7 +137,13 @@ def resolve_path(source, dest):
 
 
 def _is_missing(actual, available):
+    """Is a file missing?"""
     return (not actual.exists()) or ((actual.suffix in util.SUFFIXES) and (actual not in available))
+
+
+def _is_special_link(link):
+    """Is this link handled specially?"""
+    return link.startswith("g:")
 
 
 if __name__ == "__main__":

@@ -66,23 +66,28 @@ def copy_symlink(output_dir, source_path):
         output_path.symlink_to(source_path.readlink())
 
 
+def do_glossary_links(doc, source_path):
+    """Turn 'g:key' links into glossary references."""
+    for node in doc.select("a[href]"):
+        if node["href"].startswith("g:"):
+            node["href"] = f"@root/glossary/index.html#{node['href'][2:]}"
+
+
 def do_markdown_links(doc, source_path):
     """Fix .md links in HTML."""
-    for node in doc.find_all("a"):
-        if ("href" in node.attrs) and node["href"].endswith(".md"):
+    for node in doc.select("a[href]"):
+        if node["href"].endswith(".md"):
             node["href"] = node["href"].replace(".md", ".html").lower()
-    return doc
 
 
 def do_root_path_prefix(doc, source_path):
     """Fix @root links in HTML."""
     depth = len(source_path.parents) - 1
     prefix = "./" if (depth == 0) else "../" * depth
-    for kind in ("a", "link"):
-        for node in doc.find_all(kind):
-            if ("href" in node.attrs) and ("@root/" in node["href"]):
+    for kind in ("a[href]", "link[href]"):
+        for node in doc.select(kind):
+            if "@root/" in node["href"]:
                 node["href"] = node["href"].replace("@root/", prefix)
-    return doc
 
 
 def make_output_path(output_dir, source_path):
@@ -108,9 +113,10 @@ def render_markdown(output_dir, css_file, source_path, content):
     css_link = CSS_LINK.format(css_file=css_file) if css_file else ""
     html = TEMPLATE.format(content=html, css_link=css_link)
 
+    transformers = (do_glossary_links, do_markdown_links, do_root_path_prefix)
     doc = BeautifulSoup(html, "html.parser")
-    for func in (do_markdown_links, do_root_path_prefix):
-        doc = func(doc, source_path)
+    for func in transformers:
+        func(doc, source_path)
 
     output_path = make_output_path(output_dir, source_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)

@@ -3,6 +3,7 @@
     --border-thin: solid 1px gray;
     --color-code: whitesmoke;
     --expand: 120%;
+    --height-half-line: 0.75ex;
     --width-li-adjust: 1rem;
     --width-ol-adjust: 0.5rem;
     --width-ul-adjust: 0.2rem;
@@ -20,6 +21,13 @@ body {
 
 code {
     background-color: var(--color-code);
+}
+
+dd {
+    margin-bottom: var(--height-half-line);
+}
+dd:last-of-type {
+    margin-bottom: 0px;
 }
 
 footer {

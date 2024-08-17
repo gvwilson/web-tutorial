@@ -45,6 +45,10 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 1.  [CSS Styling](./98_css/index.html)
 1.  [Certificates](./99_cert/index.md)
 
+##  Appendices
+
+-   [Glossary](./glossary/index.md)
+
 ## Technologies
 
 | Package              | Purpose         |

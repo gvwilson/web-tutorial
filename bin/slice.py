@@ -4,7 +4,6 @@ import argparse
 import ast
 import esprima
 from pathlib import Path
-import sys
 
 
 class MatchVisitor(esprima.NodeVisitor):

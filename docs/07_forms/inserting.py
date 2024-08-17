@@ -44,7 +44,7 @@ def combined(connection, staff, personal, family):
     subquery = Query.from_(staff).select(fn.Max(staff.staff_id) + 1)
     query = Query.into(staff).insert(subquery, personal, family)
     print(query)
-    cursor = connection.execute(str(query))
+    connection.execute(str(query))
 
 
 def show(connection, staff):
