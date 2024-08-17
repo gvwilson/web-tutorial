@@ -62,13 +62,15 @@ def lint_file_references(opt, files):
 
 def lint_glossary_references(opt, files):
     """Check glossary references."""
-    ok = True
 
+    # Find keys in glossary file.
     candidates = [k for k in files if "glossary" in str(k)]
     assert len(candidates) == 1, "No glossary or multiple matches"
     gloss_file_key = candidates[0]
     available = set(GLOSS_KEY_DEF.findall(files[gloss_file_key]))
 
+    # Check all files.
+    ok = True
     for filepath, content in files.items():
         missing = [k.group(1) for k in GLOSS_KEY_REF.finditer(content) if k.group(1) not in available]
         if missing:
