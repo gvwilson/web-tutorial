@@ -36,6 +36,10 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 1.  [Using HTMX](./10_htmx/index.md)
 1.  [Permissions](./11_perm/index.md)
 
+## Potential Topics
+
+1.  [Certificates](./99_cert/index.md)
+
 ## Technologies
 
 | Package              | Purpose         |
