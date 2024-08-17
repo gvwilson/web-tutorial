@@ -29,7 +29,7 @@ def add_staff(personal, family):
     query = Query.into(staff).insert(subquery, personal, family)
     try:
         connection = connect()
-        cursor = connection.execute(str(query))
+        connection.execute(str(query))
         connection.commit()
     except sqlite3.DatabaseError as exc:
         raise ModelException(str(exc))

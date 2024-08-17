@@ -1,15 +1,16 @@
 # HTTP
 
 -   Typical web application has clients and servers
-    -   Client initiates communication by sending a message and waiting for a response
-    -   Server waits for requests and then replies to them
--   Communicate using Internet Protocol (IP), and specifically Transmission Control Protocol (TCP/IP)
+    -   [Client](g:client) initiates communication by sending a message and waiting for a response
+    -   [Server](g:server) waits for requests and then replies to them
+-   Communicate using [Internet Protocol](g:ip) (IP), and specifically [Transmission Control Protocol](g:tcp) (TCP/IP)
     -   Makes communication between computers look like reading and writing files
--   A socket is one end of a point-to-point channel
+-   A [socket](g:socket) is one end of a point-to-point channel
     -   Consists of an IP address (identifies machine) and a port on that machine
-    -   IP addresses are four 8-bit numbers(e.g., `93.184.216.34`)
-    -   Domain Name System (DNS) matches these to symbolic names like `example.com`
-    -   Port is a number in the range 0-65535
+    -   [IP address](g:ip-address) is four 8-bit numbers(e.g., `93.184.216.34`)
+    -   [Domain Name System](g:dns) (DNS) matches these to symbolic names like `example.com`
+    -   [Port](g:port) is a number in the range 0-65535
+    -   Only one process can use a port at a time
 
 ## Using Sockets
 
@@ -22,9 +23,9 @@
 
 ## HTTP Request and Response
 
--   HyperText Transfer Protocol (HTTP) is deliberately simple
-    -   Send request with path, headers, and body
-    -   Get response with status, headers, and content
+-   [HyperText Transfer Protocol](g:http) (HTTP) is deliberately simple
+    -   Send [request](g:http-request) with path, headers, and body
+    -   Get [response](g:http-response) with status, headers, and content
 -   Minimal request is just `GET /index.html HTTP/1.1`
     -   Method
     -   Path
