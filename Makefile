@@ -14,6 +14,7 @@ CSS=
 
 ## datasets: re-create snailz parameters and datasets
 datasets:
+	@mkdir -p data/grids
 	snailz params --outdir params
 	snailz everything --paramsdir params --datadir data
 
