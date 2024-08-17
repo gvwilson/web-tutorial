@@ -1,0 +1,58 @@
+<html>
+<head>
+<link href="../static/site.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<h1>HTTP</h1>
+<ul>
+<li>Typical web application has clients and servers<ul>
+<li>Client initiates communication by sending a message and waiting for a response</li>
+<li>Server waits for requests and then replies to them</li>
+</ul>
+</li>
+<li>Communicate using Internet Protocol (IP), and specifically Transmission Control Protocol (TCP/IP)<ul>
+<li>Makes communication between computers look like reading and writing files</li>
+</ul>
+</li>
+<li>A socket is one end of a point-to-point channel<ul>
+<li>Consists of an IP address (identifies machine) and a port on that machine</li>
+<li>IP addresses are four 8-bit numbers(e.g., <code>93.184.216.34</code>)</li>
+<li>Domain Name System (DNS) matches these to symbolic names like <code>example.com</code></li>
+<li>Port is a number in the range 0-65535</li>
+</ul>
+</li>
+</ul>
+<h2>Using Sockets</h2>
+<ul>
+<li><code>socketserver</code> module provides:<ul>
+<li><code>TCPServer</code> class to manage incoming connections</li>
+<li><code>BaseRequestHandler</code> class that does everything except process the incoming data</li>
+</ul>
+</li>
+<li><code>TCPServer</code> creates a new handler each time it gets a connection and calls that object's <code>handle</code> method</li>
+<li><code>simple_server.py</code> reads up to 1024 bytes of data and returns a message</li>
+<li>Use <a href="https://en.wikipedia.org/wiki/Netcat">netcat</a> to open a connection and send some text with <a href="./send_with_nc.sh"><code>send_with_nc.sh</code></a></li>
+</ul>
+<h2>HTTP Request and Response</h2>
+<ul>
+<li>HyperText Transfer Protocol (HTTP) is deliberately simple<ul>
+<li>Send request with path, headers, and body</li>
+<li>Get response with status, headers, and content</li>
+</ul>
+</li>
+<li>Minimal request is just <code>GET /index.html HTTP/1.1</code><ul>
+<li>Method</li>
+<li>Path</li>
+<li>Protocol version</li>
+</ul>
+</li>
+<li><code>http_request_headers.txt</code> shows more realistic request</li>
+<li><code>http_response.txt</code> shows possible response</li>
+<li><code>http_server.py</code> responds to <code>GET</code> with same page every time</li>
+</ul>
+</body>
+<footer>
+    Copyright © 2024 the authors
+  </footer>
+<html>
+</html></html>

@@ -4,6 +4,14 @@ include common.mk
 
 all: commands
 
+# CSS=-css chota.css
+# CSS=-css neat.css
+# CSS=-css picnic.css
+# CSS=-css pico.css
+# CSS=-css simple.css
+# CSS=-css tacit.css
+CSS=
+
 ## datasets: re-create snailz parameters and datasets
 datasets:
 	snailz params --outdir params
@@ -14,6 +22,6 @@ lint:
 	@ruff check .
 	@python bin/lint.py
 
-## build: convert to HTML
-build:
-	@python bin/render.py
+## render: convert to HTML
+render:
+	@python bin/render.py ${CSS}

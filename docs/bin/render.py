@@ -16,10 +16,16 @@ RENAMES = {
     "README.md": "index.md",
 }
 
+CSS_LINK = '<link rel="stylesheet" href="@root/static/{css_file}" type="text/css">'
+
 TEMPLATE = """\
 <html>
   <head>
+<<<<<<< HEAD
     <link rel="stylesheet" href="@root/static/picnic.css" type="text/css">
+=======
+    {css_link}
+>>>>>>> b726933 (feat: using hand-written CSS)
     <link rel="stylesheet" href="@root/static/site.css" type="text/css">
   </head>
   <body>
@@ -83,6 +89,10 @@ def make_output_path(output_dir, source_path):
 def parse_args():
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser()
+<<<<<<< HEAD
+=======
+    parser.add_argument("--css", type=str, help="CSS file")
+>>>>>>> b726933 (feat: using hand-written CSS)
     parser.add_argument("--out", type=str, default="docs", help="output directory")
     parser.add_argument("--root", type=str, default=".", help="root directory")
     return parser.parse_args()
@@ -91,7 +101,12 @@ def parse_args():
 def render_markdown(output_dir, source_path, content):
     """Convert Markdown to HTML."""
     html = markdown(content, extensions=MARKDOWN_EXTENSIONS)
+<<<<<<< HEAD
     html = TEMPLATE.format(content=html)
+=======
+    css_link = CSS_LINK.format(css_file=css_file) if css_file else ""
+    html = TEMPLATE.format(content=html, css_link=css_link)
+>>>>>>> b726933 (feat: using hand-written CSS)
 
     doc = BeautifulSoup(html, "html.parser")
     for func in (do_markdown_links, do_root_path_prefix):

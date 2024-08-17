@@ -1,10 +1,70 @@
+/* Define style variables */
+:root {
+    --border-thin: solid 1px gray;
+    --color-code: whitesmoke;
+    --expand: 120%;
+    --width-li-adjust: 1rem;
+    --width-ol-adjust: 0.5rem;
+    --width-ul-adjust: 0.2rem;
+    --width-padding: 5px;
+    --width-page: 72rem;
+    --width-page-margin: 1rem;
+}
+
 body {
-    margin-left: 0.5rem;
-    max-width: 72rem;
+    font-size: var(--expand);
+    line-height: var(--expand);
+    margin: var(--width-page-margin);
+    max-width: var(--width-page);
+}
+
+code {
+    background-color: var(--color-code);
 }
 
 footer {
-    border-top: 1px solid;
-    padding-top: 5px;
+    border-top: var(--border-thin);
+    padding-top: var(--width-padding);
     text-align: center;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+ol {
+    margin-left: var(--width-ol-adjust);
+    padding-left: var(--width-ol-adjust);
+}
+
+ol li {
+    margin-left: var(--width-li-adjust);
+}
+
+pre {
+    border: var(--border-thin);
+    padding: var(--width-padding);
+    background-color: var(--color-code);
+}
+
+table {
+    border-collapse: collapse;
+    caption-side: bottom;
+}
+
+th, td {
+    padding: var(--width-padding);
+    vertical-align: top;
+    border: var(--border-thin);
+    font-size: var(--expand);
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: var(--width-ul-adjust);
+    padding-left: var(--width-ul-adjust);
+}
+
+ul li {
+    margin-left: var(--width-li-adjust);
 }
