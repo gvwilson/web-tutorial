@@ -25,3 +25,4 @@ lint:
 ## render: convert to HTML
 render:
 	@python bin/render.py ${CSS}
+	@touch docs/.nojekyll

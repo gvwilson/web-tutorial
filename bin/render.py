@@ -37,12 +37,15 @@ TEMPLATE = """\
 def main():
     """Main driver."""
     opt = parse_args()
-    files = util.find_files(opt, set(["bin", opt.out]))
+    root_skips = set(["bin", opt.out])
+    files = util.find_files(opt, root_skips)
     for filepath, content in files.items():
         if filepath.suffix == ".md":
             render_markdown(opt.out, opt.css, filepath, content)
         else:
             copy_file(opt.out, filepath, content)
+    for filepath in util.find_symlinks(opt, root_skips):
+        copy_symlink(opt.out, filepath)
 
 
 def copy_file(output_dir, source_path, content):
@@ -53,6 +56,14 @@ def copy_file(output_dir, source_path, content):
         output_path.write_text(content)
     else:
         output_path.write_bytes(content)
+
+
+def copy_symlink(output_dir, source_path):
+    """Copy a symbolic link."""
+    output_path = make_output_path(output_dir, source_path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    if not output_path.exists():
+        output_path.symlink_to(source_path.readlink())
 
 
 def do_markdown_links(doc, source_path):
