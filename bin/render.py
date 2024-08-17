@@ -19,18 +19,22 @@ RENAMES = {
 CSS_LINK = '<link rel="stylesheet" href="@root/static/{css_file}" type="text/css">'
 
 TEMPLATE = """\
+<!DOCTYPE html>
 <html>
   <head>
+    <title></title>
     {css_link}
     <link rel="stylesheet" href="@root/static/site.css" type="text/css">
   </head>
   <body>
-  {content}
+    <main>
+{content}
+    </main>
+    <footer>
+      Copyright © 2024 the authors
+    </footer>
   </body>
-  <footer>
-    Copyright © 2024 the authors
-  </footer>
-<html>
+</html>
 """
 
 
@@ -80,6 +84,11 @@ def do_markdown_links(doc, source_path):
             node["href"] = node["href"].replace(".md", ".html").lower()
 
 
+def do_title(doc, source_path):
+    """Make sure title element is filled in."""
+    doc.title.string = doc.h1.get_text()
+
+
 def do_root_path_prefix(doc, source_path):
     """Fix @root links in HTML."""
     depth = len(source_path.parents) - 1
@@ -113,7 +122,7 @@ def render_markdown(output_dir, css_file, source_path, content):
     css_link = CSS_LINK.format(css_file=css_file) if css_file else ""
     html = TEMPLATE.format(content=html, css_link=css_link)
 
-    transformers = (do_glossary_links, do_markdown_links, do_root_path_prefix)
+    transformers = (do_glossary_links, do_markdown_links, do_title, do_root_path_prefix)
     doc = BeautifulSoup(html, "html.parser")
     for func in transformers:
         func(doc, source_path)

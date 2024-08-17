@@ -21,6 +21,9 @@ datasets:
 lint:
 	@ruff check --exclude docs .
 	@python bin/lint.py
+	@html5validator --root docs --blacklist templates \
+	--ignore \
+	'Attribute "x-'
 
 ## render: convert to HTML
 render:

@@ -32,7 +32,8 @@ dd:last-of-type {
 
 footer {
     border-top: var(--border-thin);
-    padding-top: var(--width-padding);
+    margin-top: var(--height-half-line);
+    padding-top: var(--height-half-line);
     text-align: center;
 }
 
@@ -72,7 +73,7 @@ th, td {
     padding: var(--width-padding);
     vertical-align: top;
     border: var(--border-thin);
-    font-size: var(--expand);
+    min-width: 14rem;
 }
 
 ul {
