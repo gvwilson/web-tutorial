@@ -35,6 +35,10 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 1.  [JavaScript in the Browser](./09_browser/index.md)
 1.  [Using HTMX](./10_htmx/index.md)
 1.  [Permissions](./11_perm/index.md)
+1.  [Database Migration](./12_migrate/index.md)
+1.  [Authentication](./13_auth/index.md)
+1.  [Testing Again](./14_test/index.md)
+1.  [Accessibility](./15_access/index.md)
 
 ## Potential Topics
 
