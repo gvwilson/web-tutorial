@@ -10,16 +10,6 @@ from util import ModelException, dict_factory
 ENV_VAR = "DB"
 
 
-class ModelException(Exception):
-    """Problems with queries."""
-
-    def __init__(self, msg):
-        self._msg = msg
-
-    def __str__(self):
-        return self._msg
-
-
 def connect():
     """Connect to database."""
     path = os.getenv(ENV_VAR)

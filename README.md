@@ -34,6 +34,7 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 1.  [An Hour of JavaScript](./08_js/index.md)
 1.  [JavaScript in the Browser](./09_browser/index.md)
 1.  [Using HTMX](./10_htmx/index.md)
+1.  [Permissions](./11_perm/index.md)
 
 ## Technologies
 

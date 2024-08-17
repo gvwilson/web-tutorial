@@ -2,7 +2,7 @@
 
 -   Introduce the view part of MVC and use [Jinja][jinja] templates
     -   Alternative [htpy][htpy] is more amenable to debugging but harder to read
--   Create [`exceptions.py`](./exceptions.py) to hold exceptions
+-   Add exceptions to [`util.py`](./util.py)
     -   Common parent for all application exceptions to make catching easier
 -   Introduction `fmt=whatever` query parameter
     -   Considered a bad practice by some: API endpoint should return a single data format

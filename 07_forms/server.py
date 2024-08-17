@@ -34,7 +34,7 @@ def make_server():
 
     @app.post("/add")
     def add(personal: str = Form(), family: str = Form()):
-        print(f"personal {personal} family {family}"
+        print(f"personal {personal} family {family}")
         return root()
 
     return app
