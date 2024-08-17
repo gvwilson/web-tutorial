@@ -1,3 +1,5 @@
+"""Certificate server."""
+
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import ssl
@@ -10,7 +12,10 @@ KEY_FILE = "server.key"
 
 
 class RequestHandler(BaseHTTPRequestHandler):
+    """Request handler."""
+
     def do_GET(self):
+        """Handle GET requests."""
         self.send_response(int(HTTPStatus.OK))
         self.send_header("Content-Type", "text/html; charset=utf-8")
         self.send_header("Content-Length", str(len(MESSAGE)))

@@ -1,10 +1,10 @@
 """Convert Markdown to HTML."""
 
-
 import argparse
 from bs4 import BeautifulSoup
 from markdown import markdown
 from pathlib import Path
+
 import util
 
 

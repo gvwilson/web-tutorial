@@ -7,16 +7,21 @@ from pathlib import Path
 
 
 class MatchVisitor(esprima.NodeVisitor):
+    """Visit Esprima nodes to find identifiers."""
+
     def __init__(self, expr):
+        """Store expression to match."""
         super().__init__()
         self._expr = expr
         self._found = None
 
     def visit_VariableDeclarator(self, obj):
+        """Variable declaration."""
         if obj.id.name == self._expr:
             self._found = obj
 
     def visit_FunctionDeclaration(self, obj):
+        """Function declaration."""
         if obj.id.name == self._expr:
             self._found = obj
 
@@ -24,13 +29,7 @@ class MatchVisitor(esprima.NodeVisitor):
 def main():
     """Main driver for testing."""
     options = parse_args()
-    language = Path(options.src).suffix.lstrip(".")
-    handler = {
-        "js": js_slice,
-        "py": py_slice
-    }.get(language, None)
-    assert handler is not None, f"unknown file type {options.src}"
-    text = handler(options.src, options.expr)
+    text = slice_file(options.src, options.expr)
     assert text is not None, f"cannot match {options.expr} in {options.src}"
     print(text)
 
@@ -41,8 +40,10 @@ def js_slice(src, expr):
     doc = esprima.parseScript(text, options={"loc": True})
     matcher = MatchVisitor(expr)
     matcher.visit(doc)
-    found = matcher._found
-    return None if found is None else slice_lines(text, found.loc.start.line, found.loc.end.line)
+    node = matcher._found
+    if node is None:
+        return None
+    return slice_lines(text, node.loc.start.line, node.loc.end.line)
 
 
 def py_slice(src, expr):
@@ -50,7 +51,9 @@ def py_slice(src, expr):
     text = Path(src).read_text()
     doc = ast.parse(text)
     node = py_match(doc, expr)
-    return None if node is None else slice_lines(text, node.lineno, node.end_lineno)
+    if node is None:
+        return None
+    return slice_lines(text, node.lineno, node.end_lineno)
 
 
 def py_match(node, expr):
@@ -74,7 +77,19 @@ def parse_args():
     return parser.parse_args()
 
 
+def slice_file(filepath, expr):
+    """Extract slide from file."""
+    language = Path(filepath).suffix.lstrip(".")
+    handler = {
+        "js": js_slice,
+        "py": py_slice
+    }.get(language, None)
+    assert handler is not None, f"unknown file type {filepath}"
+    return handler(filepath, expr)
+
+
 def slice_lines(text, start, end):
+    """Slice text from 1-based start to 1-based end line."""
     lines = text.split("\n")
     return "\n".join(lines[start - 1:end])
 
