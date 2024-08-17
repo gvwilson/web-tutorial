@@ -1,0 +1,76 @@
+<html>
+<head>
+<link href="../static/site.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<h1>Permissions</h1>
+<ul>
+<li>Everyone can read everything</li>
+<li>If we're going to add create, update, and delete, we should add <em>permissions</em><ul>
+<li>The ability to perform an operation on a thing</li>
+</ul>
+</li>
+<li>Standard approach:<ul>
+<li>An <em>actor</em> (person or similar) has zero or more <em>roles</em></li>
+<li>Each <em>role</em> is a collection of pairs of <em>subject</em> and <em>permission</em></li>
+<li>E.g., <em>Reader</em> role has <em>read</em> permission for all tables</li>
+</ul>
+</li>
+<li>Represent permissions with two tables in the database (obviously)<ul>
+<li>Worry about authentication (proof of identity) later</li>
+</ul>
+</li>
+<li>But how to know which queries are going to do what to which tables?<ul>
+<li>Store metadata in the on-disk query files (e.g., as embedded comments)</li>
+<li>Move our queries into our Python code (object with query and metadata)</li>
+<li>First approach requires us to write a parser, so it's probably a bad idea</li>
+<li>We can always export the SQL queries from our Python code for testing</li>
+<li>So some quick refactoring…</li>
+</ul>
+</li>
+<li>Add two new tables<ul>
+<li><code>role</code> is a many-to-many join table</li>
+<li><code>permission</code> defines what roles mean (with wildcard for "all tables")</li>
+<li>Load into memory at start of program and turn into lookup table</li>
+<li>Expect roles and permissions to change infrequently, so can reload in our server once we have one</li>
+</ul>
+</li>
+<li>Implement as checking function that throws an exception<ul>
+<li>Saves us from writing <code>if not… raise</code> over and over</li>
+</ul>
+</li>
+<li><code>db_fixture.py</code>: adds the tables<ul>
+<li>Gives the three users mnemonic names because we're going to use these in tests</li>
+<li>Could write tests using numeric staff IDs but magic numbers like that have bitten us before</li>
+</ul>
+</li>
+<li><code>permission.py</code>: defines <code>require</code><ul>
+<li>Also define <code>get_role</code> and <code>get_staff</code> to support testing</li>
+<li>Because a false positive is worse than no signal</li>
+</ul>
+</li>
+<li><code>test_permission.py</code>: three kinds of tests<ol>
+<li>Do things that shouldn't work at all actually not work? (E.g., no such user)</li>
+<li>Is the error message correctly formatted?</li>
+<li>Do people have the right capabilities?</li>
+</ol>
+</li>
+<li>Parameterize (or "parametrize") tests to avoid repetition<ul>
+<li>Split into two groups (have and have not)</li>
+<li>Or doubly-parameterize</li>
+</ul>
+</li>
+<li>Notice that there isn't a widely-known Python library for handling permissions</li>
+<li>And that what we have built will only work if we add the check to our code<ul>
+<li>Databases like <a href="https://www.postgresql.org/">PostgreSQL</a> implement fine-grained permissions on tables and even rows</li>
+<li>But someone still has to set it up</li>
+<li>And if someone has access to the underlying <code>.db</code> file, the permissions in our Python are moot</li>
+</ul>
+</li>
+</ul>
+</body>
+<footer>
+    Copyright © 2024 the authors
+  </footer>
+<html>
+</html></html>

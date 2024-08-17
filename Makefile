@@ -19,7 +19,7 @@ datasets:
 
 ## lint: check code and project
 lint:
-	@ruff check .
+	@ruff check --exclude docs .
 	@python bin/lint.py
 
 ## render: convert to HTML
