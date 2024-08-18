@@ -1,3 +1,5 @@
+"""Implement permissions."""
+
 GET_ROLE = '''
 select role_name
 from role

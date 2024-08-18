@@ -1,4 +1,7 @@
+"""Tests for permissions."""
+
 import pytest
+
 from db_fixture import AL_PHA, BE_TA, GAM_MA, small_db
 from permission import PermissionException, get_role, get_staff, require
 
