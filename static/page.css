@@ -1,7 +1,9 @@
-/* Define style variables */
+/* Style variables */
 :root {
     --border-thin: solid 1px gray;
+    --color-background: white;
     --color-code: whitesmoke;
+    --color-text: black;
     --expand: 120%;
     --height-half-line: 0.75ex;
     --width-li-adjust: 1rem;
@@ -12,17 +14,23 @@
     --width-page-margin: 1rem;
 }
 
+/* Page body */
 body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: sans-serif;
     font-size: var(--expand);
     line-height: var(--expand);
     margin: var(--width-page-margin);
     max-width: var(--width-page);
 }
 
+/* Code snippets */
 code {
     background-color: var(--color-code);
 }
 
+/* Definitions in definition lists */
 dd {
     margin-bottom: var(--height-half-line);
 }
@@ -30,6 +38,7 @@ dd:last-of-type {
     margin-bottom: 0px;
 }
 
+/* Footer */
 footer {
     border-top: var(--border-thin);
     margin-top: var(--height-half-line);
@@ -37,38 +46,37 @@ footer {
     text-align: center;
 }
 
+/* Level-1 heading */
 h1 {
     text-align: center;
 }
 
-h2, h3, h4 {
+/* Other headings */
+h2, h3, h4, h5, h6 {
     font-style: italic;
 }
 
-html {
-    font-family: sans-serif;
-}
-
+/* Ordered lists */
 ol {
     margin-left: var(--width-ol-adjust);
     padding-left: var(--width-ol-adjust);
 }
-
 ol li {
     margin-left: var(--width-li-adjust);
 }
 
+/* Code blocks */
 pre {
     border: var(--border-thin);
     padding: var(--width-padding);
     background-color: var(--color-code);
 }
 
+/* Tables */
 table {
     border-collapse: collapse;
     caption-side: bottom;
 }
-
 th, td {
     padding: var(--width-padding);
     vertical-align: top;
@@ -76,12 +84,25 @@ th, td {
     min-width: 14rem;
 }
 
+/* Unordered lists */
 ul {
     list-style-type: disc;
     margin-left: var(--width-ul-adjust);
     padding-left: var(--width-ul-adjust);
 }
-
 ul li {
     margin-left: var(--width-li-adjust);
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+	--color-code: darkslategray;
+        --color-background: black;
+        --color-text: white;
+    }
+
+    a {
+        filter:invert() hue-rotate(180deg);
+    }
 }
