@@ -5,7 +5,7 @@
 `async` (keyword in JavaScript)
 :   See [JavaScript `async` keyword](g:js-async)
 
-attribute { #attribute }
+<span id="attribute">attribute</span>
 :   FIXME
 
 `await` (keyword in JavaScript)
@@ -13,98 +13,98 @@ attribute { #attribute }
 
 ## C
 
-Cascading Style Sheets (CSS) { #css }
+<span id="css">Cascading Style Sheets (CSS)</span>
 :   FIXME
 
-client { #client }
+<span id="client">client</span>
 :   FIXME
 
-CSS class { #css-class }
+<span id="css-class">CSS class</span>
 :   FIXME
 
-CSS selector { #css-selector }
+<span id="css-selector">CSS selector</span>
 :   FIXME
 
-CSS variable { #css-variable }
+<span id="css-variable">CSS variable</span>
 :   FIXME
 
 ## D
 
-Document Object Model (DOM) { #dom }
+<span id="dom">Document Object Model (DOM)</span>
 :   FIXME
 
-Domain Name System (DNS) { #dns }
+<span id="dns">Domain Name System (DNS)</span>
 :   FIXME
 
 ## E
 
-element (in HTML) { #element }
+<span id="element">element (in HTML)</span>
 :   FIXME
 
-escape sequence { #escape-sequence }
+<span id="escape-sequence">escape sequence</span>
 :   FIXME
 
-event handler { #event-handler }
+<span id="event-handler">event handler</span>
 :   FIXME
 
-external style sheet { #external-style-sheet }
+<span id="external-style-sheet">external style sheet</span>
 :   FIXME
 
 ## H
 
-HyperText Markup Language (HTML)  { #html }
+<span id="html">HyperText Markup Language (HTML) </span>
 :   FIXME
 
-HyperText Transfer Protocol (HTTP)  { #http }
+<span id="http">HyperText Transfer Protocol (HTTP) </span>
 :   FIXME
 
-HTTP request  { #http-request }
+<span id="http-request">HTTP request </span>
 :   FIXME
 
-HTTP response  { #http-response }
+<span id="http-response">HTTP response </span>
 :   FIXME
 
 ## I
 
-Internet Protocol  { #ip }
+<span id="ip">Internet Protocol </span>
 :   FIXME
 
-IP address  { #ip-address }
+<span id="ip-address">IP address </span>
 :   FIXME
 
 ## J
 
-JavaScript `async` keyword { #js-async }
+<span id="js-async">JavaScript `async` keyword</span>
 :   FIXME
 
-JavaScript `await` keyword { #js-await }
+<span id="js-await">JavaScript `await` keyword</span>
 :   FIXME
 
 ## P
 
-port { #port }
+<span id="port">port</span>
 :   FIXME
 
 ## R
 
-red-green-blue (RGB) color { #rgb }
+<span id="rgb">red-green-blue (RGB) color</span>
 :   FIXME
 
-root element { #root-element }
+<span id="root-element">root element</span>
 :   FIXME
 
 ## S
 
-server { #server }
+<span id="server">server</span>
 :   FIXME
 
-socket { #socket }
+<span id="socket">socket</span>
 :   FIXME
 
 ## T
 
-tag { #tag }
+<span id="tag">tag</span>
 :   FIXME
 
-Transmission Control Protocol { #tcp }
+<span id="tcp">Transmission Control Protocol</span>
 :   FIXME
