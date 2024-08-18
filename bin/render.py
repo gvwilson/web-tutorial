@@ -48,10 +48,7 @@ def copy_file(output_dir, source_path, content):
     """Copy a file verbatim."""
     output_path = make_output_path(output_dir, source_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    if output_path.suffix in util.SUFFIXES:
-        output_path.write_text(content)
-    else:
-        output_path.write_bytes(content)
+    util.write_file(output_path, content)
 
 
 def copy_symlink(output_dir, source_path):

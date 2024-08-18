@@ -225,7 +225,7 @@
         {
             "sample_id": 62,
             "kind": "JESS",
-            "start": "2023-11-09",
+            "start": "2023-11-08",
             "end": null
         },
         {
@@ -2053,7 +2053,7 @@
         {
             "plate_id": 202,
             "sample_id": 77,
-            "date": "2023-11-06",
+            "date": "2023-11-05",
             "filename": "fdf85f1a.csv"
         },
         {
