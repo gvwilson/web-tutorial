@@ -14,6 +14,7 @@ MARKDOWN_EXTENSIONS = ["attr_list", "def_list", "fenced_code", "md_in_html", "ta
 RENAMES = {
     "CODE_OF_CONDUCT.md": "code_of_conduct.md",
     "CONTRIBUTING.md": "contributing.md",
+    "GLOSSARY.md": "glossary.md",
     "LICENSE.md": "license.md",
     "README.md": "index.md",
 }
@@ -65,7 +66,7 @@ def do_glossary_links(doc, source_path):
     """Turn 'g:key' links into glossary references."""
     for node in doc.select("a[href]"):
         if node["href"].startswith("g:"):
-            node["href"] = f"@root/glossary/index.html#{node['href'][2:]}"
+            node["href"] = f"@root/glossary.html#{node['href'][2:]}"
 
 
 def do_markdown_links(doc, source_path):
