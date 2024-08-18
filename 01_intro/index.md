@@ -33,6 +33,10 @@ This project uses [Make][make] to run tasks because every other option proved to
 -   Each assay plate has a *design* showing the material applied and *readings* showing the measured response.
 -   Plates may be *invalidated* after the fact if a staff member believes it is contaminated.
 
+## Acknowledgments
+
+-   Grateful to co-authors of [Gans2020](b:Gans2020)
+
 [cc_by_nc]: https://creativecommons.org/licenses/by-nc/4.0/
 [make]: https://www.gnu.org/software/make/
 [mit]: https://opensource.org/license/MIT
