@@ -3,8 +3,10 @@ esprima
 faker
 fastapi[standard]
 html5validator
+jinja2
 httpx
 markdown
+mccole
 polars
 prettytable
 pypika

@@ -20,14 +20,14 @@ datasets:
 ## lint: check code and project
 lint:
 	@ruff check --exclude docs .
-	@python bin/lint.py
+	@mccole lint
 	@html5validator --root docs --blacklist templates \
 	--ignore \
 	'Attribute "x-'
 
 ## render: convert to HTML
 render:
-	@python bin/render.py ${CSS}
+	mccole render ${CSS}
 	@touch docs/.nojekyll
 
 ## serve: serve generated HTML
