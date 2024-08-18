@@ -1,0 +1,87 @@
+/* Define style variables */
+:root {
+    --border-thin: solid 1px gray;
+    --color-code: whitesmoke;
+    --expand: 120%;
+    --height-half-line: 0.75ex;
+    --width-li-adjust: 1rem;
+    --width-ol-adjust: 0.5rem;
+    --width-ul-adjust: 0.2rem;
+    --width-padding: 5px;
+    --width-page: 72rem;
+    --width-page-margin: 1rem;
+}
+
+body {
+    font-size: var(--expand);
+    line-height: var(--expand);
+    margin: var(--width-page-margin);
+    max-width: var(--width-page);
+}
+
+code {
+    background-color: var(--color-code);
+}
+
+dd {
+    margin-bottom: var(--height-half-line);
+}
+dd:last-of-type {
+    margin-bottom: 0px;
+}
+
+footer {
+    border-top: var(--border-thin);
+    margin-top: var(--height-half-line);
+    padding-top: var(--height-half-line);
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2, h3, h4 {
+    font-style: italic;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+ol {
+    margin-left: var(--width-ol-adjust);
+    padding-left: var(--width-ol-adjust);
+}
+
+ol li {
+    margin-left: var(--width-li-adjust);
+}
+
+pre {
+    border: var(--border-thin);
+    padding: var(--width-padding);
+    background-color: var(--color-code);
+}
+
+table {
+    border-collapse: collapse;
+    caption-side: bottom;
+}
+
+th, td {
+    padding: var(--width-padding);
+    vertical-align: top;
+    border: var(--border-thin);
+    min-width: 14rem;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: var(--width-ul-adjust);
+    padding-left: var(--width-ul-adjust);
+}
+
+ul li {
+    margin-left: var(--width-li-adjust);
+}
