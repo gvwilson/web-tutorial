@@ -12,6 +12,7 @@ import util
 MARKDOWN_EXTENSIONS = ["attr_list", "def_list", "fenced_code", "md_in_html", "tables"]
 
 RENAMES = {
+    "BIBLIOGRAPHY.md": "bibliography.md",
     "CODE_OF_CONDUCT.md": "code_of_conduct.md",
     "CONTRIBUTING.md": "contributing.md",
     "GLOSSARY.md": "glossary.md",
@@ -57,6 +58,13 @@ def copy_symlink(output_dir, source_path):
     output_path.parent.mkdir(parents=True, exist_ok=True)
     if not output_path.exists():
         output_path.symlink_to(source_path.readlink())
+
+
+def do_bibliography_links(doc, source_path):
+    """Turn 'b:key' links into bibliography references."""
+    for node in doc.select("a[href]"):
+        if node["href"].startswith("b:"):
+            node["href"] = f"@root/bibliography.html#{node['href'][2:]}"
 
 
 def do_glossary_links(doc, source_path):
@@ -117,7 +125,13 @@ def render_markdown(env, output_dir, css_file, source_path, content):
     html = markdown(content, extensions=MARKDOWN_EXTENSIONS)
     html = template.render(content=html, css_file=css_file)
 
-    transformers = (do_glossary_links, do_markdown_links, do_title, do_root_path_prefix)
+    transformers = (
+        do_bibliography_links,
+        do_glossary_links,
+        do_markdown_links,
+        do_title,
+        do_root_path_prefix, # must be last
+    )
     doc = BeautifulSoup(html, "html.parser")
     for func in transformers:
         func(doc, source_path)

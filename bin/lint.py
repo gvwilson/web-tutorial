@@ -7,8 +7,9 @@ import re
 import util
 
 
-GLOSS_KEY_DEF = re.compile(r"^.+\s+\{\s*\#(.+?)\s*\}", re.MULTILINE)
-GLOSS_KEY_REF = re.compile(r"\[.+?\]\(g:(.+?)\)", re.MULTILINE)
+BIB_REF = re.compile(r"\[.+?\]\(b:(.+?)\)", re.MULTILINE)
+GLOSS_REF = re.compile(r"\[.+?\]\(g:(.+?)\)", re.MULTILINE)
+KEY_DEF = re.compile(r"^.+\s+\{\s*\#(.+?)\s*\}", re.MULTILINE)
 MD_CODEBLOCK_FILE = re.compile(r"^```\s*\{\s*\.(.+?)\s+\#(.+?)\s*\}\s*$(.+?)^```\s*$", re.DOTALL + re.MULTILINE)
 MD_FILE_LINK = re.compile(r"\[(.+?)\]\((.+?)\)", re.MULTILINE)
 MD_LINK_DEF = re.compile(r"^\[(.+?)\]:\s+(.+?)\s*$", re.MULTILINE)
@@ -21,6 +22,7 @@ def main():
     root_skips = set(["bin", opt.out])
     files = util.find_files(opt, root_skips)
     linters = [
+        lint_bibliography_references,
         lint_codeblock_files,
         lint_file_references,
         lint_glossary_references,
@@ -29,6 +31,31 @@ def main():
     ]
     if all(f(opt, files) for f in linters):
         print("All self-checks passed.")
+
+
+def check_references(files, term, regexp, available):
+    """Check all files for cross-references."""
+    ok = True
+    for filepath, content in files.items():
+        if filepath.suffix == ".md":
+            missing = {
+                k.group(1)
+                for k in regexp.finditer(content)
+                if k.group(1) not in available
+            }
+            if missing:
+                print(f"Missing {term} keys in {filepath}: {', '.join(sorted(missing))}")
+                ok = False
+    return ok
+
+
+def lint_bibliography_references(opt, files):
+    """Check bibliography references."""
+    available = find_key_defs(files, "bibliography")
+    if available is None:
+        print("No bibliography found (or multiple matches)")
+        return False
+    return check_references(files, "bibliography", BIB_REF, available)
 
 
 def lint_codeblock_files(opt, files):
@@ -51,10 +78,10 @@ def lint_file_references(opt, files):
     for filepath, content in files.items():
         if filepath.suffix == ".md":
             for link in MD_FILE_LINK.finditer(content):
-                if _is_special_link(link.group(2)):
+                if is_special_link(link.group(2)):
                     continue
                 target = resolve_path(filepath.parent, link.group(2))
-                if _is_missing(target, files):
+                if is_missing(target, files):
                     print(f"Missing file: {filepath} => {target}")
                     ok = False
     return ok
@@ -62,28 +89,11 @@ def lint_file_references(opt, files):
 
 def lint_glossary_references(opt, files):
     """Check glossary references."""
-
-    # Find keys in glossary file.
-    candidates = [k for k in files if "glossary" in str(k).lower()]
-    if len(candidates) != 1:
+    available = find_key_defs(files, "glossary")
+    if available is None:
         print("No glossary found (or multiple matches)")
         return False
-    gloss_file_key = candidates[0]
-    available = set(GLOSS_KEY_DEF.findall(files[gloss_file_key]))
-
-    # Check all files.
-    ok = True
-    for filepath, content in files.items():
-        if filepath.suffix == ".md":
-            missing = {
-                k.group(1)
-                for k in GLOSS_KEY_REF.finditer(content)
-                if k.group(1) not in available
-            }
-            if missing:
-                print(f"Missing glossary keys in {filepath}: {', '.join(sorted(missing))}")
-                ok = False
-    return ok
+    return check_references(files, "glossary", GLOSS_REF, available)
 
 
 def lint_link_definitions(opt, files):
@@ -145,14 +155,23 @@ def resolve_path(source, dest):
     return result
 
 
-def _is_missing(actual, available):
+def find_key_defs(files, term):
+    """Find key definitions in definition list file."""
+    candidates = [k for k in files if term in str(k).lower()]
+    if len(candidates) != 1:
+        return None
+    file_key = candidates[0]
+    return set(KEY_DEF.findall(files[file_key]))
+
+
+def is_missing(actual, available):
     """Is a file missing?"""
     return (not actual.exists()) or ((actual.suffix in util.SUFFIXES) and (actual not in available))
 
 
-def _is_special_link(link):
+def is_special_link(link):
     """Is this link handled specially?"""
-    return link.startswith("g:")
+    return link.startswith("b:") or link.startswith("g:")
 
 
 if __name__ == "__main__":
