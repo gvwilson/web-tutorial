@@ -12,7 +12,7 @@ def make_server(data):
 
     @app.get("/")
     def root():
-        return app.data.write_json()
+        return app.data.to_dicts()
 
     @app.get("/col/{name}")
     def column(name: str):
