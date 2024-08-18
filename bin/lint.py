@@ -74,10 +74,15 @@ def lint_glossary_references(opt, files):
     # Check all files.
     ok = True
     for filepath, content in files.items():
-        missing = [k.group(1) for k in GLOSS_KEY_REF.finditer(content) if k.group(1) not in available]
-        if missing:
-            print(f"Missing glossary keys in {filepath}: {', '.join(sorted(missing))}")
-            ok = False
+        if filepath.suffix == ".md":
+            missing = {
+                k.group(1)
+                for k in GLOSS_KEY_REF.finditer(content)
+                if k.group(1) not in available
+            }
+            if missing:
+                print(f"Missing glossary keys in {filepath}: {', '.join(sorted(missing))}")
+                ok = False
     return ok
 
 
