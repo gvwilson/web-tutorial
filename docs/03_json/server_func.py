@@ -12,7 +12,8 @@ def make_server(data):
 
     @app.get("/")
     def root():
-        return app.data.write_json()
+        # Convert the Polars DataFrame to a list of dictionaries
+        return app.data.to_dicts()
 
     return app
 

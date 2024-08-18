@@ -42,7 +42,7 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 
 ## Potential Topics
 
--   [CSS Styling](./98_css/index.html)
+-   [HTML and CSS](./98_htmlcss/index.md)
 -   [Certificates](./99_cert/index.md)
 
 ##  Appendices
