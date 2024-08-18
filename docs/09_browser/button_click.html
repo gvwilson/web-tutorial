@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Show Headings on Load</title>
+    <title>Emphasize When Button Clicked</title>
     <script>
-      function show () {
+      function emphasize () {
 	  const headings = document.getElementsByTagName("h2");
-	  console.log(`headings length ${headings.length}`);
 	  for (const node of headings) {
-	      console.log(`heading is ${node.innerHTML}`);
+	      node.innerHTML = `<em>¡${node.innerHTML}!</em>`
 	  }
       }
     </script>
   </head>
-  <body onload="show()">
-    <h1>Show Headings on Load</h1>
+  <body>
+    <h1>Emphasize When Button Clicked</h1>
+    <p><button type="button" onclick="emphasize()">add emphasis</button></p>
     <h2>First</h2>
     <p>some text</p>
     <h2>Second</h2>
