@@ -7,7 +7,7 @@
 -   And use a flag to convert types like dates and times (used later)
 -   [`models_sql.py`](./models_sql.py) implements model part of model-view-controller (MVC)
     -   One function for each question we might ask of our data
-    -   Use SQL directly instead of an object-relational mapper like [SQLAlchemy], [SQLModel][sqlmodel], or [Pony][pony]
+    -   Use SQL directly instead of an object-relational mapper like [SQLAlchemy][SQLAlchemy], [SQLModel][sqlmodel], or [Pony][pony]
     -   ORMs are hard to debug and don't actually provide that much insulation from schema changes
 -   Re-create connection each time model is accessed
     -   Creating it once and attaching to the [FastAPI][fastapi] app fails because of threading
@@ -27,5 +27,6 @@
 [fastapi]: https://fastapi.tiangolo.com/
 [pony]: https://ponyorm.org/
 [pypika]: https://pypika.readthedocs.io/
+[SQLAlchemy]: https://www.sqlalchemy.org/
 [sqlite]: https://www.sqlite.org/
 [sqlmodel]: https://sqlmodel.tiangolo.com/
