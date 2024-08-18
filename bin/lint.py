@@ -64,8 +64,10 @@ def lint_glossary_references(opt, files):
     """Check glossary references."""
 
     # Find keys in glossary file.
-    candidates = [k for k in files if "glossary" in str(k)]
-    assert len(candidates) == 1, "No glossary or multiple matches"
+    candidates = [k for k in files if "glossary" in str(k).lower()]
+    if len(candidates) != 1:
+        print("No glossary found (or multiple matches)")
+        return False
     gloss_file_key = candidates[0]
     available = set(GLOSS_KEY_DEF.findall(files[gloss_file_key]))
 
