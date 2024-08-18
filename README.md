@@ -47,7 +47,7 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 
 ##  Appendices
 
--   [Glossary](./glossary/index.md)
+-   [Glossary](./GLOSSARY.md)
 
 ## Technologies
 
