@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Show Headings on Load</title>
+    <title>Add Emphasis to Headings</title>
     <script>
-      function show () {
+      function emphasize () {
 	  const headings = document.getElementsByTagName("h2");
-	  console.log(`headings length ${headings.length}`);
 	  for (const node of headings) {
-	      console.log(`heading is ${node.innerHTML}`);
+	      node.innerHTML = `<em>¡${node.innerHTML}!</em>`;
 	  }
       }
     </script>
   </head>
-  <body onload="show()">
-    <h1>Show Headings on Load</h1>
+  <body onload="emphasize()">
+    <h1>Add Emphasis to Headings</h1>
     <h2>First</h2>
     <p>some text</p>
     <h2>Second</h2>
