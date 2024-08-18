@@ -1,3 +1,22 @@
 # JavaScript in the Browser
 
-FIXME
+-   JavaScript was created to make web pages interactive
+    -   Load into page (several ways)
+    -   Trigger execution (also several ways)
+    -   Manipulate [Document Object Model](#g:com) (DOM)
+-   [`log_on_load.html`](./log_on_load.html)
+    -   Put code directly in `<script>` tag in head of page
+    -   Executed as the page loads
+    -   View output in console tab in browser's developer tools
+    -   But this is not reliable
+        -   Code may run while browser is still converting HTML to DOM (or loading other assets)
+-   [`log_defer.html`](./log_defer.html) adds `defer` attribute
+    -   Wait until page is fully loaded before running code
+-   [`show_headings.html`](./show_headings.html) finds things in the DOM
+    -   `document` refers to the content of the page
+    -   `getElementsByTagName` finds nodes match a [CSS selector](#g:css-selector)
+-   But it doesn't show anything
+    -   Code may run etc.
+-   [`show_headings_onload.html`](./show_headings_onload.html) is a better approach
+    -   Define a function
+    -   Use the `onload` attribute of `body` to run it when the body has fully loaded
