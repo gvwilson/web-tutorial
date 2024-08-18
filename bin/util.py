@@ -3,7 +3,7 @@
 from pathlib import Path
 
 
-SUFFIXES = {".css", ".csv", ".html", ".js", ".json", ".md", ".py"}
+SUFFIXES = {".css", ".csv", ".html", ".js", ".json", ".md", ".py", ".sh"}
 
 
 def find_files(opt, root_skips=[]):
