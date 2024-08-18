@@ -16,8 +16,9 @@
     -   `source .venv/bin/activate` to activate that virtual environment
     -   `uv pip install -r requirements.txt` to install requirements
 -   To regenerate the sample data, run `make datasets` to:
-    -   install the default parameters for `snailz` in `./params`
+    -   install the default parameters for `snailz` in `./params`, and
     -   regenerate the sample data in `./data`
+-   Run `make render` to regenerate the HTML in `./docs` from the Markdown files
 -   Run `make lint` at any time to check the state of the project
 
 This project uses [Make][make] to run tasks because every other option proved to be more complicated.
@@ -36,6 +37,7 @@ This project uses [Make][make] to run tasks because every other option proved to
 ## Acknowledgments
 
 -   Grateful to co-authors of [Gans2020](b:Gans2020)
+-   And to everyone who gave feedback on [Wilson2022](b:Wilson2022) and [Wilson2024](b:Wilson2024)
 
 [cc_by_nc]: https://creativecommons.org/licenses/by-nc/4.0/
 [make]: https://www.gnu.org/software/make/
