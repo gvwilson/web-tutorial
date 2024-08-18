@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    {% if css_file %}<link rel="stylesheet" href="@root/static/{{css_file}}" type="text/css">{% endif %}
+    <link rel="stylesheet" href="@root/static/site.css" type="text/css">
+  </head>
+  <body>
+    <main>
+{{content}}
+    </main>
+    <footer>
+      Copyright © 2024 <a href="@root/contributing.html">the authors</a>
+    </footer>
+  </body>
+</html>

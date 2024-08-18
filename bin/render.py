@@ -2,6 +2,7 @@
 
 import argparse
 from bs4 import BeautifulSoup
+from jinja2 import Environment, FileSystemLoader
 from markdown import markdown
 from pathlib import Path
 
@@ -17,40 +18,29 @@ RENAMES = {
     "README.md": "index.md",
 }
 
-CSS_LINK = '<link rel="stylesheet" href="@root/static/{css_file}" type="text/css">'
-
-TEMPLATE = """\
-<!DOCTYPE html>
-<html>
-  <head>
-    <title></title>
-    {css_link}
-    <link rel="stylesheet" href="@root/static/site.css" type="text/css">
-  </head>
-  <body>
-    <main>
-{content}
-    </main>
-    <footer>
-      Copyright © 2024 the authors
-    </footer>
-  </body>
-</html>
-"""
+ROOT_SKIPS = {"bin", "templates"}
 
 
 def main():
     """Main driver."""
     opt = parse_args()
-    root_skips = set(["bin", opt.out])
+    root_skips = ROOT_SKIPS | {opt.out}
     files = util.find_files(opt, root_skips)
+    env = Environment(loader=FileSystemLoader(opt.templates))
     for filepath, content in files.items():
         if filepath.suffix == ".md":
-            render_markdown(opt.out, opt.css, filepath, content)
+            render_markdown(env, opt.out, opt.css, filepath, content)
         else:
             copy_file(opt.out, filepath, content)
     for filepath in util.find_symlinks(opt, root_skips):
         copy_symlink(opt.out, filepath)
+
+
+def choose_template(env, source_path):
+    """Select a template."""
+    if source_path.name == "slides.md":
+        return env.get_template("slides.html")
+    return env.get_template("page.html")
 
 
 def copy_file(output_dir, source_path, content):
@@ -114,14 +104,15 @@ def parse_args():
     parser.add_argument("--css", type=str, help="CSS file")
     parser.add_argument("--out", type=str, default="docs", help="output directory")
     parser.add_argument("--root", type=str, default=".", help="root directory")
+    parser.add_argument("--templates", type=str, default="templates", help="templates directory")
     return parser.parse_args()
 
 
-def render_markdown(output_dir, css_file, source_path, content):
+def render_markdown(env, output_dir, css_file, source_path, content):
     """Convert Markdown to HTML."""
+    template = choose_template(env, source_path)
     html = markdown(content, extensions=MARKDOWN_EXTENSIONS)
-    css_link = CSS_LINK.format(css_file=css_file) if css_file else ""
-    html = TEMPLATE.format(content=html, css_link=css_link)
+    html = template.render(content=html, css_file=css_file)
 
     transformers = (do_glossary_links, do_markdown_links, do_title, do_root_path_prefix)
     doc = BeautifulSoup(html, "html.parser")

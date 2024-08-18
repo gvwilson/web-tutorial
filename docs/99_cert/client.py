@@ -1,3 +1,5 @@
+"""Certificate client."""
+
 import requests
 
 CA_FILE = "CA.pem"
