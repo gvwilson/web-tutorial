@@ -18,7 +18,7 @@
     -   `TCPServer` class to manage incoming connections
     -   `BaseRequestHandler` class that does everything except process the incoming data
 -   `TCPServer` creates a new handler each time it gets a connection and calls that object's `handle` method
--   `simple_server.py` reads up to 1024 bytes of data and returns a message
+-   [`simple_server.py`](./simple_server.py) reads up to 1024 bytes of data and returns a message
 -   Use [netcat][netcat] to open a connection and send some text with [`send_with_nc.sh`](./send_with_nc.sh)
 
 ## HTTP Request and Response
@@ -30,8 +30,8 @@
     -   Method
     -   Path
     -   Protocol version
--   `http_request_headers.txt` shows more realistic request
--   `http_response.txt` shows possible response
--   `http_server.py` responds to `GET` with same page every time
+-   [`http_request_headers.txt`](./http_request_headers.txt) shows more realistic request
+-   [`http_response.txt`](./http_response.txt) shows possible response
+-   [`http_server.py`](./http_server.py) responds to `GET` with same page every time.
 
 [netcat]: https://en.wikipedia.org/wiki/Netcat
