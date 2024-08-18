@@ -2,17 +2,17 @@
 <html>
   <head>
     <title>CSS Styling</title>
-    <link id="css" href="./static/site.css" rel="stylesheet" type="text/css"/>
+    <link id="css" href="./static/page.css" rel="stylesheet" type="text/css"/>
     <script src="./static/alpine.js" defer></script>
   </head>
   <body>
     <h1>CSS Styling</h1>
 
     <p
-      x-data="{css: './static/site.css'}"
+      x-data="{css: './static/page.css'}"
       x-init="$watch('css', value=>document.getElementById('css').setAttribute('href', value))">
       CSS:
-      <input type="radio" id="site" value="./static/site.css" x-model="css"> <label for="chota">site</label>
+      <input type="radio" id="page" value="./static/page.css" x-model="css"> <label for="page">page</label>
       <input type="radio" id="chota" value="./static/chota.css" x-model="css"> <label for="chota">Chota</label>
       <input type="radio" id="neat" value="./static/neat.css" x-model="css"> <label for="neat">Neat</label>
       <input type="radio" id="picnic" value="./static/picnic.css" x-model="css"> <label for="picnic">Picnic</label>

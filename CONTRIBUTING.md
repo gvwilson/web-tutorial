@@ -21,7 +21,9 @@ Why is this material free to read?
 
 ## Contributors
 
-[*Greg Wilson*][wilson-greg] is a programmer, author, and educator based in Toronto
+[*Greg Wilson*][wilson-greg] is a programmer, author, and educator based in Toronto.
+He was the co-founder and first Executive Director of Software Carpentry
+and received ACM SIGSOFT's Influential Educator Award in 2020.
 
 [email]: mailto:gvwilson@third-bit.com
 [repo]: https://github.com/gvwilson/wp4ds

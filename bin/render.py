@@ -84,10 +84,15 @@ def do_root_path_prefix(doc, source_path):
     """Fix @root links in HTML."""
     depth = len(source_path.parents) - 1
     prefix = "./" if (depth == 0) else "../" * depth
-    for kind in ("a[href]", "link[href]"):
-        for node in doc.select(kind):
-            if "@root/" in node["href"]:
-                node["href"] = node["href"].replace("@root/", prefix)
+    targets = (
+        ("a[href]", "href"),
+        ("link[href]", "href"),
+        ("script[src]", "src"),
+    )
+    for selector, attr in targets:
+        for node in doc.select(selector):
+            if "@root/" in node[attr]:
+                node[attr] = node[attr].replace("@root/", prefix)
 
 
 def make_output_path(output_dir, source_path):
