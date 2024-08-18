@@ -1,0 +1,14 @@
+beautifulsoup4
+esprima
+faker
+fastapi[standard]
+html5validator
+httpx
+markdown
+polars
+prettytable
+pypika
+pytest
+python-multipart
+ruff
+snailz
