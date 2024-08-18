@@ -59,8 +59,7 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 | [html5validator][html5validator] | validation        |
 | [htmx][htmx]                     | interaction       |
 | [httpx][httpx]                   | http              |
-| [Jinja2][jinja]                  | html templating   |
-| [Picnic CSS][picnic]             | styling           |
+| [Jinja2][jinja]                  | HTML templating   |
 | [Polars][polars]                 | tabular data      |
 | [PyPika][pypika]                 | query builder     |
 | [pytest][pytest]                 | testing           |
@@ -75,7 +74,6 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 [httpx]: https://www.python-httpx.org/
 [jinja]: https://jinja.palletsprojects.com/
 [pandas]: https://pandas.pydata.org/
-[picnic]: https://picnicss.com/
 [plotly-express]: https://plotly.com/python/plotly-express/
 [polars]: https://pola.rs/
 [pypika]: https://pypika.readthedocs.io/
