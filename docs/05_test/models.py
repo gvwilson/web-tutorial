@@ -8,6 +8,7 @@ import util
 
 
 ENV_VAR = "DB"
+STAFF_COLUMNS = ["staff_id", "personal", "family"]
 
 
 class ModelException(Exception):
@@ -33,7 +34,7 @@ def connect():
 def all_staff():
     """Get all staff."""
     staff = Table("staff")
-    query = Query.from_(staff).select("staff_id", "personal", "family")
+    query = Query.from_(staff).select(*STAFF_COLUMNS)
     try:
         connection = connect()
         cursor = connection.execute(str(query))
@@ -44,6 +45,9 @@ def all_staff():
 
 def column(name):
     """Get a single column of staff."""
+    if name not in STAFF_COLUMNS:
+        raise ModelException(f"Column '{name}' does not exist")
+
     staff = Table("staff")
     query = Query.from_(staff).select(name)
     try:
@@ -58,7 +62,7 @@ def row(staff_id):
     """Get a single row of staff."""
     staff = Table("staff")
     query = Query.from_(staff) \
-                 .select("staff_id", "personal", "family") \
+                 .select(*STAFF_COLUMNS) \
                  .where(staff.staff_id == staff_id)
     try:
         connection = connect()
@@ -71,3 +75,4 @@ def row(staff_id):
         return result[0]
     except sqlite3.DatabaseError as exc:
         raise ModelException(str(exc))
+
