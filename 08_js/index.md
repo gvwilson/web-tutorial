@@ -27,8 +27,9 @@ for (const val of values) {
 
 -   `const` defines a constant
 -   The array contents aren't constant: the reference is
--   `for…in` loops over the contents of an array
--   Use `for…of` to loop over indices
+-   `for…in` iterates over the indices of an array (not recommended for arrays, can also include inherited properties)
+-   Use `for…of` to iterate directly over the values of an array.
+-   To loop over both the indices and values of an array, use `forEach` or `entries()` with `for...of`
 -   Parentheses are required
 -   `typeof` is an operator not a function, and returns a string
 -   `if` / `else if` / `else` work as expected
