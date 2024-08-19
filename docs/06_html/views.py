@@ -13,7 +13,7 @@ Env = Environment(
 
 
 def all_staff(data):
-    return _use_template(data, "rows.html")
+    return _use_template("rows.html", data)
 
 
 def heartbeat(data):
@@ -21,14 +21,14 @@ def heartbeat(data):
 
 
 def column(data):
-    return _use_template(data, "col.html")
+    return _use_template("col.html", data)
 
 
 def row(data):
-    return _use_template([data], "rows.html")
+    return _use_template("rows.html", [data])
 
 
-def _use_template(data, template_name):
+def _use_template(template_name, data):
     try:
         template = Env.get_template(template_name)
         return HTMLResponse(template.render(data=data))
