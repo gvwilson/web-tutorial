@@ -13,24 +13,20 @@ Env = Environment(
 
 
 def all_staff(data):
-    return _use_template("rows.html", data)
+    return _use_template("staff.html", data)
+
+
+def experiments(data, staff_id):
+    return _use_template("experiments.html", data, staff_id=staff_id)
 
 
 def heartbeat(data):
     return HTMLResponse(f"<p>{data['message']}</p>")
 
 
-def column(data):
-    return _use_template("col.html", data)
-
-
-def row(data):
-    return _use_template("rows.html", [data])
-
-
-def _use_template(template_name, data):
+def _use_template(template_name, data, **kwargs):
     try:
         template = Env.get_template(template_name)
-        return HTMLResponse(template.render(data=data))
+        return HTMLResponse(template.render(data=data, **kwargs))
     except TemplateError as exc:
         raise ViewException(f"template error: {exc}")
