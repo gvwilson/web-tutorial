@@ -24,6 +24,13 @@
 -   [`pika_demo.py`](./pika_demo.py) is a proof of concept
 -   [`models_pika.py`](./models_pika.py) is shorter and more readable than the SQL version
 
+## Summary
+
+<figure id="db-concept-map">
+  <img src="./db_concept_map.svg" alt="concept map of database interaction in Python">
+  <figcaption>Concept Map</figcaption>
+</figure>
+
 [fastapi]: https://fastapi.tiangolo.com/
 [pony]: https://ponyorm.org/
 [pypika]: https://pypika.readthedocs.io/

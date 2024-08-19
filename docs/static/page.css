@@ -2,7 +2,7 @@
 :root {
     --border-thin: solid 1px gray;
     --color-background: white;
-    --color-code: whitesmoke;
+    --color-background-code: whitesmoke;
     --color-text: black;
     --expand: 120%;
     --height-half-line: 0.75ex;
@@ -27,7 +27,7 @@ body {
 
 /* Code snippets */
 code {
-    background-color: var(--color-code);
+    background-color: var(--color-background-code);
 }
 
 /* Definitions in definition lists */
@@ -69,7 +69,7 @@ ol li {
 pre {
     border: var(--border-thin);
     padding: var(--width-padding);
-    background-color: var(--color-code);
+    background-color: var(--color-background-code);
 }
 
 /* Tables */
@@ -97,12 +97,13 @@ ul li {
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
     :root {
-	--color-code: darkslategray;
         --color-background: black;
+	--color-background-code: #000040;
         --color-text: white;
+	--color-link: lightgray;
     }
 
     a {
-        filter:invert() hue-rotate(180deg);
+	color: var(--color-link);
     }
 }

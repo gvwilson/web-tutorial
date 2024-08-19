@@ -1,5 +1,6 @@
 *.egg-info
 *~
+.*.bkp
 .DS_Store
 .\#*
 .coverage

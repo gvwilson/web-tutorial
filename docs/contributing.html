@@ -13,6 +13,73 @@
 <p>Contributions are very welcome;
 please contact us <a href="mailto:gvwilson@third-bit.com">by email</a> or by filing an issue in <a href="https://github.com/gvwilson/wp4ds">our repository</a>.
 All contributors must abide by our <a href="./code_of_conduct.html">Code of Conduct</a>.</p>
+<h2>Structure</h2>
+<ul>
+<li>Use <a href="https://github.com/gvwilson/mccole">mccole</a> to turn Markdown into HTML<ul>
+<li>Markdown files are in root directory and sub-directories</li>
+<li>Generated HTML is put in <code>./docs</code></li>
+</ul>
+</li>
+<li><code>BIBLIOGRAPHY.md</code> has bibliography as definition list<ul>
+<li>Citation keys have IDs for linking</li>
+<li>Use <code>[key](b:key)</code> in files to create links (note the <code>b:</code> prefix)</li>
+</ul>
+</li>
+<li><code>GLOSSARY.md</code> has glossary as definition list<ul>
+<li>Reference keys have IDs for linking</li>
+<li>Use <code>[key](g:key)</code> in files to create links (note the <code>g:</code> prefix)</li>
+</ul>
+</li>
+<li>Lessons are in <code>nn_slug</code> directories<ul>
+<li><code>nn</code> is two-digit sequence number</li>
+<li><code>slug</code> is short mnemonic</li>
+</ul>
+</li>
+<li>Each lesson must have:<ul>
+<li><code>index.md</code>: lesson content</li>
+<li><code>slides.md</code>: same content as slides</li>
+<li><code>Makefile</code>: re-run tasks<ul>
+<li>Should <code>include ../common.mk</code> to get common tasks</li>
+</ul>
+</li>
+<li>Symbolic links <code>data</code> and <code>static</code> to the <code>./data</code> and <code>./static</code> directories in the project root</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>make task</th>
+<th>effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clean</td>
+<td>clean up</td>
+</tr>
+<tr>
+<td>commands</td>
+<td>show available commands (default)</td>
+</tr>
+<tr>
+<td>datasets</td>
+<td>re-create snailz parameters and datasets</td>
+</tr>
+<tr>
+<td>lint</td>
+<td>check code and project</td>
+</tr>
+<tr>
+<td>render</td>
+<td>convert to HTML</td>
+</tr>
+<tr>
+<td>serve</td>
+<td>serve generated HTML</td>
+</tr>
+</tbody>
+</table>
 <h2>FAQ</h2>
 <dl>
 <dt>Do you need any help?</dt>
