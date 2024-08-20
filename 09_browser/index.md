@@ -30,6 +30,6 @@
     -   But now we have to manage state
 -   [`async_fetch.html`](./async_fetch.html) introduces two new ideas
     -   Put the code in [`async_fetch.js`](./async_fetch.js)
-    -   Use [`async`](g:js-async) and [`await](g:js-await) keywords to wait for things
+    -   Use [`async`](g:js-async) and [`await`](g:js-await) keywords to wait for things
     -   [`server.py`](./server.py) returns [RGB](g:rgb) color components
     -   Use `style` property rather than `setAttribute` because style can have many sub-properties
