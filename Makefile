@@ -32,4 +32,4 @@ render:
 
 ## serve: serve generated HTML
 serve:
-	@python -m http.server -d docs
+	@python -m http.server -d docs $(PORT)
