@@ -10,7 +10,36 @@
 <body>
 <main>
 <h1>Database Migration</h1>
-<p>FIXME</p>
+<ul>
+<li>A <a href="../glossary.html#db-migration">database migration</a> is a change to the structure of a database<ul>
+<li>Versus a change to its contents</li>
+</ul>
+</li>
+<li>Use tools like <a href="https://sqitch.org/">sqitch</a> to manage these</li>
+<li>Each change has three parts<ul>
+<li>Forward: make the desired change</li>
+<li>Check: make sure it happened</li>
+<li>Backward: undo it (after checking that it was done)</li>
+</ul>
+</li>
+<li><a href="./migrate.py"><code>migrate.py</code></a> looks for files with structured names<ul>
+<li>Forward: <code><em>nn</em><em>fwd</em><em>label</em>.sql</code></li>
+<li>Check: <code><em>nn</em><em>check</em><em>label</em>.sql</code></li>
+<li>Backward: <code><em>nn</em><em>bwd</em><em>label</em>.sql</code></li>
+</ul>
+</li>
+<li>
+<p>Example</p>
+<ul>
+<li><a href="./migrations/01_fwd_add_roles_permissions.sql"><code>migrations/01_fwd_add_roles_permissions.sql</code></a></li>
+<li><a href="./migrations/01_check_add_roles_permissions.sql"><code>migrations/01_check_add_roles_permissions.sql</code></a></li>
+<li><a href="./migrations/01_bwd_add_roles_permissions.sql"><code>migrations/01_bwd_add_roles_permissions.sql</code></a></li>
+</ul>
+</li>
+<li>
+<p>Keep these files in version control</p>
+</li>
+</ul>
 </main>
 <footer>
       Copyright © 2024 <a href="../contributing.html">the authors</a>
