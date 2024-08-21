@@ -5,11 +5,11 @@ DB = ./temp.db
 ## json: test JSON
 json:
 	@cp data/lab.db ${DB}
-	@sqlite3 ${DB} < add_roles_permissions.sql
+	python migrate.py --forward --migrations migrations --db ${DB}
 	@DB=${DB} pytest test_json.py
 
 ## perm: test permissions
 perm:
 	@cp data/lab.db ${DB}
-	@sqlite3 ${DB} < add_roles_permissions.sql
+	python migrate.py --forward --migrations migrations --db ${DB}
 	@DB=${DB} pytest test_permissions.py

@@ -1,7 +1,7 @@
 include ../common.mk
 
 ORIGINAL=data/lab.db
-LOCAL=./lab.db
+LOCAL=temp.db
 MIGRATIONS=./migrations
 
 ## forward: migrate database forward
