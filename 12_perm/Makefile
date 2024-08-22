@@ -1,6 +1,6 @@
 include ../common.mk
 
-DB = ./temp.db
+DB=./temp.db
 
 ## json: test JSON
 json:
