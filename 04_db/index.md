@@ -10,7 +10,7 @@
     -   Use SQL directly instead of an object-relational mapper like [SQLAlchemy][SQLAlchemy], [SQLModel][sqlmodel], or [Pony][pony]
     -   ORMs are hard to debug and don't actually provide that much insulation from schema changes
 -   Re-create connection each time model is accessed
-    -   Creating it once and attaching to the [FastAPI][fastapi] app fails because of threading
+    -   Creating it once and attaching to the [Flask][flask] app fails because of threading
 -   Catch SQLite exceptions and raise our own so that our server only has to catch one thing
 -   Add some more error handling
 
@@ -31,7 +31,7 @@
   <figcaption>Concept Map</figcaption>
 </figure>
 
-[fastapi]: https://fastapi.tiangolo.com/
+[flask]: https://flask.palletsprojects.com/
 [pony]: https://ponyorm.org/
 [pypika]: https://pypika.readthedocs.io/
 [SQLAlchemy]: https://www.sqlalchemy.org/

@@ -26,7 +26,7 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 
 1.  [Introduction](./01_intro/index.md)
 1.  [HTTP](./02_http/index.md)
-1.  [Serving JSON](./03_json/index.md)
+1.  [A Server](./03_server/index.md)
 1.  [Using a Database](./04_db/index.md)
 1.  [Testing the Server](./05_test/index.md)
 1.  [Serving HTML](./06_html/index.md)
@@ -56,12 +56,13 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 | -------------------------------- | ----------------- |
 | [Beautiful Soup][bs4]            | HTML manipulation |
 | [deno][deno]                     | JavaScript        |
-| [FastAPI][fastapi]               | web server        |
+| [Flask][flask]                   | web server        |
 | [html5validator][html5validator] | validation        |
 | [htmx][htmx]                     | interaction       |
 | [httpx][httpx]                   | http              |
 | [Jinja2][jinja]                  | HTML templating   |
 | [Polars][polars]                 | tabular data      |
+| [PrettyTable][prettytable]       | formatting        |
 | [PyPika][pypika]                 | query builder     |
 | [pytest][pytest]                 | testing           |
 | [SQLite][sqlite]                 | database          |
@@ -69,7 +70,7 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 [bs4]: https://beautiful-soup-4.readthedocs.io/
 [dash]: https://dash.plotly.com/
 [deno]: https://deno.com/
-[fastapi]: https://fastapi.tiangolo.com/
+[flask]: https://flask.palletsprojects.com/
 [html5validator]: https://pypi.org/project/html5validator/
 [htmx]: https://htmx.org/
 [httpx]: https://www.python-httpx.org/
@@ -77,6 +78,7 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 [pandas]: https://pandas.pydata.org/
 [plotly-express]: https://plotly.com/python/plotly-express/
 [polars]: https://pola.rs/
+[prettytable]: https://pypi.org/project/prettytable/
 [pypika]: https://pypika.readthedocs.io/
 [pytest]: https://docs.pytest.org/
 [repo]: https://github.com/gvwilson/wp4ds

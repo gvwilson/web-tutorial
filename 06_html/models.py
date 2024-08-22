@@ -7,7 +7,8 @@ import sqlite3
 from util import ModelException, dict_factory
 
 
-ENV_VAR = "DB"
+ENV_VAR = "DATA"
+STAFF_COLUMNS = ["staff_id", "personal", "family"]
 
 
 def connect():
@@ -23,7 +24,7 @@ def connect():
 def all_staff():
     """Get all staff."""
     staff = Table("staff")
-    query = Query.from_(staff).select("staff_id", "personal", "family")
+    query = Query.from_(staff).select(*STAFF_COLUMNS)
     try:
         connection = connect()
         cursor = connection.execute(str(query))
@@ -34,6 +35,9 @@ def all_staff():
 
 def column(name):
     """Get a single column of staff."""
+    if name not in STAFF_COLUMNS:
+        raise ModelException(f"Column '{name}' does not exist")
+
     staff = Table("staff")
     query = Query.from_(staff).select(name)
     try:
@@ -42,15 +46,13 @@ def column(name):
         return [r[name] for r in cursor.fetchall()]
     except sqlite3.DatabaseError as exc:
         raise ModelException(str(exc))
-    except KeyError as exc:
-        raise ModelException(str(exc))
 
 
 def row(staff_id):
     """Get a single row of staff."""
     staff = Table("staff")
     query = Query.from_(staff) \
-                 .select("staff_id", "personal", "family") \
+                 .select(*STAFF_COLUMNS) \
                  .where(staff.staff_id == staff_id)
     try:
         connection = connect()
@@ -63,3 +65,4 @@ def row(staff_id):
         return result[0]
     except sqlite3.DatabaseError as exc:
         raise ModelException(str(exc))
+

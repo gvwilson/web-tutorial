@@ -1,29 +1,21 @@
 """Color server."""
 
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+from flask import Flask, jsonify
+from flask_cors import CORS
 import random
 
 
-def make_server():
+def create_app():
     """Build application and configure routes."""
-    app = FastAPI()
-    app.add_middleware(
-        CORSMiddleware,
-        allow_origins=["*"],
-        allow_credentials=True,
-        allow_methods=["*"],
-        allow_headers=["*"],
-    )
+    app = Flask("err")
+    CORS(app)
 
     @app.get("/")
     def root():
-        return {
+        return jsonify({
             "red": random.randint(0, 255),
             "green": random.randint(0, 255),
             "blue": random.randint(0, 255),
-        }
+        })
 
     return app
-
-app = make_server()

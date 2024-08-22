@@ -7,7 +7,7 @@ import sqlite3
 import util
 
 
-ENV_VAR = "DB"
+ENV_VAR = "DATA"
 STAFF_COLUMNS = ["staff_id", "personal", "family"]
 
 

@@ -12,8 +12,8 @@
 <h1>Testing the Server</h1>
 <ul>
 <li>Add a heartbeat to <a href="./server.py"><code>server.py</code></a></li>
-<li>Wrap the <a href="https://fastapi.tiangolo.com/">FastAPI</a> application with a test client that provides an interface like <a href="https://www.python-httpx.org/">httpx</a></li>
-<li>Run <code>DB=data/lab.db pytest test_heartbeat.py</code> to run tests in <a href="./test_heartbeat.py"><code>test_heartbeat.py</code></a></li>
+<li>Wrap the <a href="https://flask.palletsprojects.com/">Flask</a> application with a test client that provides an interface like <a href="https://www.python-httpx.org/">httpx</a></li>
+<li>Run <code>pytest test_heartbeat.py</code> to run tests in <a href="./test_heartbeat.py"><code>test_heartbeat.py</code></a></li>
 <li>Rewrite using <a href="https://docs.pytest.org/">pytest</a> fixtures in <a href="./test_fixtures.py"><code>test_fixtures.py</code></a><ul>
 <li>Don't duplicate the expected value, since it might change</li>
 </ul>
