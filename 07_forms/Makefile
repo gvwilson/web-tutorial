@@ -12,4 +12,4 @@ combined:
 
 ## serve: make fresh database and run server
 serve:
-	${RUN_TEMP} server.py run
+	${COPY_RUN_TEMP} server.py run
