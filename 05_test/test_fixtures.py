@@ -1,17 +1,17 @@
 """Test the JSON server."""
 
-from fastapi.testclient import TestClient
 import pytest
 
-from server import HEARTBEAT, app
+from server import HEARTBEAT, create_app
 
 
 @pytest.fixture
 def client():
-    return TestClient(app)
+    app = create_app()
+    return app.test_client()
 
 
 def test_can_get_heartbeat(client):
     response = client.get("/heartbeat")
     assert response.status_code == 200
-    assert response.json() == HEARTBEAT
+    assert response.json == HEARTBEAT

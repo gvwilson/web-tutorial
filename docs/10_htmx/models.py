@@ -7,7 +7,7 @@ import sqlite3
 from util import ModelException, dict_factory
 
 
-ENV_VAR = "DB"
+ENV_VAR = "DATA"
 
 
 def connect():

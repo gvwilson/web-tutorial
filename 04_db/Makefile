@@ -2,8 +2,8 @@ include ../common.mk
 
 ## serve_sql: run server using embedded SQL
 serve_sql:
-	DB=data/lab.db fastapi dev server_sql.py
+	${RUN_LAB} server_sql.py run
 
 ## serve_pika: run server using PikaPy
 serve_pika:
-	DB=data/lab.db fastapi dev server_pika.py
+	${RUN_LAB} server_pika.py run

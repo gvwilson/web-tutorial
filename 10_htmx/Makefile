@@ -1,5 +1,5 @@
 include ../common.mk
 
-## serve: run server
+## serve: run a server that handle HTMX
 serve:
-	DB=data/lab.db fastapi dev server.py
+	${RUN_LAB} server.py run

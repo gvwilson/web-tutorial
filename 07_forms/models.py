@@ -8,18 +8,30 @@ import sqlite3
 from util import ModelException, dict_factory
 
 
-ENV_VAR = "DB"
+ENV_VAR = "DATA"
+STAFF_COLUMNS = ["staff_id", "personal", "family"]
 
 
-def connect(path = None):
+def connect():
     """Connect to database."""
-    if path is None:
-        path = os.getenv(ENV_VAR)
+    path = os.getenv(ENV_VAR)
     if not path:
         raise ModelException(f"Environment variable {ENV_VAR} not set")
     connection = sqlite3.connect(path, detect_types=sqlite3.PARSE_DECLTYPES)
     connection.row_factory = dict_factory
     return connection
+
+
+def all_staff():
+    """Get all staff."""
+    staff = Table("staff")
+    query = Query.from_(staff).select(*STAFF_COLUMNS)
+    try:
+        connection = connect()
+        cursor = connection.execute(str(query))
+        return cursor.fetchall()
+    except sqlite3.DatabaseError as exc:
+        raise ModelException(str(exc))
 
 
 def add_staff(personal, family):
@@ -31,17 +43,5 @@ def add_staff(personal, family):
         connection = connect()
         connection.execute(str(query))
         connection.commit()
-    except sqlite3.DatabaseError as exc:
-        raise ModelException(str(exc))
-
-
-def all_staff():
-    """Get all staff."""
-    staff = Table("staff")
-    query = Query.from_(staff).select(staff.staff_id, staff.personal, staff.family)
-    try:
-        connection = connect()
-        cursor = connection.execute(str(query))
-        return cursor.fetchall()
     except sqlite3.DatabaseError as exc:
         raise ModelException(str(exc))

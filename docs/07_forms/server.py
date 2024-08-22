@@ -1,45 +1,32 @@
 """Serve data from data model layer."""
 
-from fastapi import FastAPI, Form, HTTPException
-from fastapi.responses import RedirectResponse
-import starlette.status as status
+from flask import Flask, abort, redirect, request
+from flask_cors import CORS
 
 import models
 import views
 
-from util import AppException
+from util import AppException, HTTP_400_BAD_REQUEST, HTTP_500_INTERNAL
 
 
-FMT_HTML = "html"
-FMT_JSON = "json"
-
-
-def handle_format(data, fmt, view):
-    """Handle format conversion."""
-    if fmt == FMT_JSON:
-        return data
-    elif fmt == FMT_HTML:
-        return view(data)
-    raise HTTPException(status_code=415, detail=f"Unsupported format {fmt}")
-
-
-def make_server():
+def create_app():
     """Build application and configure routes."""
-    app = FastAPI()
+    app = Flask("server")
+    CORS(app)
 
     @app.get("/")
-    def root(fmt: str = FMT_HTML):
+    def root():
         try:
-            return handle_format(models.all_staff(), fmt, views.all_staff)
+            return views.all_staff(models.all_staff())
         except AppException as exc:
-            raise HTTPException(status_code=404, detail=f"Error serving all staff: {exc}")
+            abort(HTTP_400_BAD_REQUEST, f"Error serving all staff: {exc}")
 
     @app.post("/add")
-    def add(personal: str = Form(), family: str = Form()):
-        models.add_staff(personal, family)
-        return RedirectResponse(url="/", status_code=status.HTTP_303_SEE_OTHER)
+    def add():
+        try:
+            models.add_staff(request.form["personal"], request.form["family"])
+            return redirect("/")
+        except AppException as exc:
+            abort(HTTP_500_INTERNAL, f"Error adding data: {exc}")
 
     return app
-
-
-app = make_server()
