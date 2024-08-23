@@ -97,8 +97,8 @@ ul li {
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
     :root {
-        --color-background: black;
-	--color-background-code: #000040;
+        --color-background: #202020;
+	--color-background-code: #000060;
         --color-text: white;
 	--color-link: lightgray;
     }
