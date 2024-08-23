@@ -4,7 +4,7 @@ import socketserver
 
 
 CHUNK_SIZE = 1024
-SERVER_ADDRESS = ("localhost", 8000)
+SERVER_ADDRESS = ("localhost", 5000)
 
 
 class MyHandler(socketserver.BaseRequestHandler):

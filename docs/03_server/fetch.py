@@ -1,12 +1,11 @@
-"""Fetch JSON from URL and display."""
+"""Fetch HTML from URL and display."""
 
 import argparse
 import httpx
-import json
 
 
 HOST = "127.0.0.1"
-PORT = 8000
+PORT = 5000
 RESOURCE = "/"
 
 
@@ -16,7 +15,7 @@ def main():
     url = f"http://{opt.host}:{opt.port}{opt.resource}"
     response = httpx.get(url)
     print(response.status_code)
-    print(json.dumps(json.loads(response.text), indent=2))
+    print(response.text)
 
 
 def parse_args():

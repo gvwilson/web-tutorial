@@ -1,5 +1,10 @@
 """Utilities."""
 
+HTTP_200_OK = 200
+HTTP_400_BAD_REQUEST = 400
+HTTP_500_INTERNAL = 500
+
+
 class AppException(Exception):
     """Root of exception hierarchy."""
 

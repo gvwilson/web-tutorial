@@ -1,7 +1,8 @@
 beautifulsoup4
 esprima
 faker
-fastapi[standard]
+flask
+flask-cors
 html5validator
 jinja2
 httpx

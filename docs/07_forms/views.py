@@ -1,6 +1,5 @@
 """Manage HTML views."""
 
-from fastapi.responses import HTMLResponse
 from jinja2 import Environment, FileSystemLoader
 from jinja2.exceptions import TemplateError
 
@@ -19,6 +18,6 @@ def all_staff(data):
 def _use_template(template_name, data):
     try:
         template = Env.get_template(template_name)
-        return HTMLResponse(template.render(data=data))
+        return template.render(data=data)
     except TemplateError as exc:
         raise ViewException(f"template error: {exc}")

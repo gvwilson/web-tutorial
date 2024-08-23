@@ -13,6 +13,6 @@ class RequestHandler(BaseHTTPRequestHandler):
         self.wfile.write(content)
 
 if __name__ == "__main__":
-    server_address = ("localhost", 8000)
+    server_address = ("localhost", 5000)
     server = HTTPServer(server_address, RequestHandler)
     server.serve_forever()

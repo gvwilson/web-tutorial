@@ -19,11 +19,6 @@
 <li>Common parent for all application exceptions to make catching easier</li>
 </ul>
 </li>
-<li>Introduction <code>fmt=whatever</code> query parameter<ul>
-<li>Considered a bad practice by some: API endpoint should return a single data format</li>
-<li>Doing it this way prevents us using <a href="https://fastapi.tiangolo.com/">FastAPI</a>'s built-in support for template rendering</li>
-</ul>
-</li>
 <li>Load templates from filesystem in <a href="./views.py"><code>views.py</code></a></li>
 <li>Pass in data as named argument</li>
 <li>Use the sample template for single-row and multi-row views</li>

@@ -1,4 +1,4 @@
-"""Test data insertion."""
+"""Explore data insertion."""
 
 from pypika import Query, Table
 import pypika.functions as fn
@@ -9,13 +9,12 @@ from models import connect
 
 def main():
     """Main driver."""
-    db_path = sys.argv[1]
-    personal = sys.argv[2]
-    family = sys.argv[3]
-    how = sys.argv[4]
+    personal = sys.argv[1]
+    family = sys.argv[2]
+    how = sys.argv[3]
 
     staff = Table("staff")
-    connection = connect(db_path)
+    connection = connect()
 
     if how == "split":
         split(connection, staff, personal, family)
