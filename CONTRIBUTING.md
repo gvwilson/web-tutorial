@@ -49,7 +49,7 @@ Can I add a new section?
 Why is this material free to read?
 :   Because if we all give a little, we all get a lot.
 
-## Contributors
+## <a id="contributors">Contributors</a>
 
 -   [*Juanan Pereira*][pereira-juanan] is a lecturer in Computer Science
     at the University of the Basque Country (UPV/EHU), where he researches and tries 
