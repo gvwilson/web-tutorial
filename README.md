@@ -39,6 +39,7 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 1.  [Authentication](./13_auth/index.md)
 1.  [Testing Again](./14_test/index.md)
 1.  [Accessibility](./15_access/index.md)
+1.  [Internationalization](./16_intl/index.md)
 
 ## Potential Topics
 
