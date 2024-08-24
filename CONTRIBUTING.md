@@ -9,12 +9,6 @@ All contributors must abide by our [Code of Conduct](./CODE_OF_CONDUCT.md).
 -   Use [mccole][mccole] to turn Markdown into HTML
     -   Markdown files are in root directory and sub-directories
     -   Generated HTML is put in `./docs`
--   `BIBLIOGRAPHY.md` has bibliography as definition list
-    -   Citation keys have IDs for linking
-    -   Use `[key](b:key)` in files to create links (note the `b:` prefix)
--   `GLOSSARY.md` has glossary as definition list
-    -   Reference keys have IDs for linking
-    -   Use `[key](g:key)` in files to create links (note the `g:` prefix)
 -   Lessons are in `nn_slug` directories
     -   `nn` is two-digit sequence number
     -   `slug` is short mnemonic
@@ -24,6 +18,14 @@ All contributors must abide by our [Code of Conduct](./CODE_OF_CONDUCT.md).
     -   `Makefile`: re-run tasks
         -   Should `include ../common.mk` to get common tasks
     -   Symbolic links `data` and `static` to the `./data` and `./static` directories in the project root
+-   `BIBLIOGRAPHY.md` has bibliography as definition list
+    -   Citation keys have IDs for linking
+    -   Use an inline HTML link `b:key` in files to create links
+-   `GLOSSARY.md` has glossary as definition list
+    -   Reference keys have IDs for linking
+    -   Use an inline HTML link `g:key` in files to create links
+
+## Tasks
 
 | make task | effect                                   |
 | --------- | ---------------------------------------- |

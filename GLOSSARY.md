@@ -30,6 +30,9 @@
 
 ## D
 
+<span id="db-migration">database migration</span>
+:   FIXME
+
 <span id="dom">Document Object Model (DOM)</span>
 :   FIXME
 

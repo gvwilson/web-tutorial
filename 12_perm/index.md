@@ -20,7 +20,7 @@
     -   But what if someone modifies the database between our check and the main query?
 -   Use JOIN to only select rows where permission is available
     -   But this means we can't distinguish "no data" from "no permission"
--   [`exploration.py`](./exploration.py) explores ways to do what we want with [PyPika][pypika]
+-   [`explore_permissions.py`](./explore_permissions.py) explores ways to do what we want with [PyPika][pypika]
     -   Turns out that `join` must have `on`
     -   Since we want everything, use `x == x`
 -   Having explored ideas in the small, we can implement in the large
