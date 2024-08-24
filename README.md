@@ -37,9 +37,10 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 1.  [Database Migration](./11_migrate/index.md)
 1.  [Permissions](./12_perm/index.md)
 1.  [Authentication](./13_auth/index.md)
-1.  [Testing Again](./14_test/index.md)
-1.  [Accessibility](./15_access/index.md)
-1.  [Internationalization](./16_intl/index.md)
+1.  [Encryption](./14_crypt/index.md)
+1.  [Testing Again](./15_test/index.md)
+1.  [Accessibility](./16_access/index.md)
+1.  [Internationalization](./17_intl/index.md)
 
 ## Potential Topics
 
