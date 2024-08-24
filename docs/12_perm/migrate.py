@@ -8,9 +8,9 @@ import sys
 
 
 PATTERNS = {
-    "bwd": re.compile(r"^\d+_bwd_"),
-    "check": re.compile(r"^\d+_check_"),
-    "fwd": re.compile(r"^\d+_fwd_"),
+    "bwd": re.compile(r"^(\d+)_bwd_(.+)"),
+    "check": re.compile(r"^(\d+)_check_(.+)"),
+    "fwd": re.compile(r"^(\d+)_fwd_(.+)"),
 }
 
 
@@ -19,21 +19,33 @@ def main():
     opt = parse_args()
     connection = sqlite3.connect(opt.db)
     if opt.forward:
-        for filename in get_migrations(opt.migrations, "fwd"):
+        direction = "fwd"
+    elif opt.backward:
+        direction = "bwd"
+    else:
+        assert False, f"Unknown direction"
+    migrations = get_migrations(opt.migrations, direction, opt.limit)
+    if opt.forward:
+        for filename in migrations:
             migrate(connection, filename, opt.verbose)
     elif opt.backward:
-        for filename in reversed(get_migrations(opt.migrations, "bwd")):
+        for filename in reversed(migrations):
             migrate(connection, filename, opt.verbose)
 
 
-def get_migrations(dirpath, direction):
+def get_migrations(dirpath, direction, limit):
     """Find migration files."""
     pat = PATTERNS[direction]
-    sub = f"_{direction}_"
     result = []
-    for filename in sorted(f for f in Path(dirpath).glob("*.sql") if pat.match(str(f.name))):
-        result.append(filename)
-        result.append(Path(str(filename).replace(sub, "_check_")))
+    for filepath in sorted(Path(dirpath).glob("*.sql")):
+        m = pat.match(str(filepath.name))
+        if not m:
+            continue
+        if limit and (m.group(1) > limit):
+            continue
+        result.append(filepath)
+        check = Path(filepath.parent, f"{m.group(1)}_check_{m.group(2)}")
+        result.append(check)
     return result
 
 
@@ -51,6 +63,7 @@ def parse_args():
     parser.add_argument("--db", required=True, help="database file")
     parser.add_argument("--forward", action="store_true", help="migrate forward")
     parser.add_argument("--migrations", type=str, required=True, help="migrations directory")
+    parser.add_argument("--limit", type=str, help="how far to go or where to start regression")
     parser.add_argument("--verbose", action="store_true", help="report progress")
     opt = parser.parse_args()
 
