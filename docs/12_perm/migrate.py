@@ -23,7 +23,7 @@ def main():
     elif opt.backward:
         direction = "bwd"
     else:
-        assert False, f"Unknown direction"
+        assert False, "Unknown direction"
     migrations = get_migrations(opt.migrations, direction, opt.limit)
     if opt.forward:
         for filename in migrations:

@@ -2,6 +2,7 @@
 
 from jinja2 import Environment, FileSystemLoader
 from jinja2.exceptions import TemplateError
+from flask import render_template_string
 
 from util import ViewException
 
@@ -20,7 +21,7 @@ def experiments(data, staff_id):
 
 
 def heartbeat(data):
-    return HTMLResponse(f"<p>{data['message']}</p>")
+    return render_template_string("<p>{{ message }}</p>", message=data['message'])
 
 
 def _use_template(template_name, data, **kwargs):

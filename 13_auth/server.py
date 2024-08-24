@@ -1,13 +1,11 @@
 """Serve data from data model layer."""
 
-from flask import Flask, abort, jsonify, make_response, redirect, request, url_for
+from flask import Flask, abort, make_response, redirect, request, url_for
 from flask_cors import CORS
-import random
-import string
 
 import models
 import views
-from util import AppException, HTTP_400_BAD_REQUEST, HTTP_500_INTERNAL
+from util import AppException, HTTP_400_BAD_REQUEST
 
 
 COOKIE_NAME = "wp4ds"
@@ -46,7 +44,7 @@ def create_app():
             if request.cookies.get(COOKIE_NAME) == staff_id:
                 return views.experiments(models.experiments(staff_id), staff_id)
             else:
-                return f"<p>not authorized</p>"
+                return "<p>not authorized</p>"
         except AppException as exc:
             abort(HTTP_400_BAD_REQUEST, f"Error serving experiments for {staff_id}: {exc}")
 
