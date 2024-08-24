@@ -98,7 +98,16 @@
 
 ## S
 
+<span id="salt">salt</span>
+:   FIXME
+
+<span id="secret">secret</span>
+:   FIXME
+
 <span id="server">server</span>
+:   FIXME
+
+<span id="session">session</span>
 :   FIXME
 
 <span id="socket">socket</span>

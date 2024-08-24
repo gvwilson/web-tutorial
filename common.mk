@@ -2,7 +2,7 @@
 
 RUN_CSV=DATA=data/staff.csv flask --app
 RUN_LAB=DATA=data/lab.db flask --app
-RUN_TEMP=cp data/lab.db temp.db && DATA=temp.db flask --app
+RUN_TEMP=DATA=temp.db flask --app
 
 ## commands: show available commands (*)
 commands:

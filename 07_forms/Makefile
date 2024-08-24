@@ -12,4 +12,5 @@ combined:
 
 ## serve: make fresh database and run server
 serve:
+	cp data/lab.db ./temp.db
 	${RUN_TEMP} server.py run
