@@ -1,11 +1,11 @@
 """Serve data from data model layer."""
 
-from flask import Flask, abort, jsonify
+from flask import Flask, abort
 from flask_cors import CORS
 
 import models
 import views
-from util import AppException, HTTP_400_BAD_REQUEST, HTTP_500_INTERNAL
+from util import AppException, HTTP_400_BAD_REQUEST
 
 
 HEARTBEAT = {"message": "alive"}

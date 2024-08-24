@@ -4,7 +4,6 @@ import argparse
 from jinja2 import Environment, FileSystemLoader
 from pypika import Query, Table
 import random
-import sqlite3
 import string
 
 from models import connect
