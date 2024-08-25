@@ -11,6 +11,8 @@
 `await` (keyword in JavaScript)
 :   See [JavaScript `await` keyword](g:js-await)
 
+## B
+
 ## C
 
 <span id="css">Cascading Style Sheets (CSS)</span>
@@ -53,26 +55,33 @@
 <span id="external-style-sheet">external style sheet</span>
 :   FIXME
 
+## F
+
+<span id="fixture">fixture</span>
+:   FIXME
+
+## G
+
 ## H
 
-<span id="html">HyperText Markup Language (HTML) </span>
+<span id="html">HyperText Markup Language (HTML)</span>
 :   FIXME
 
-<span id="http">HyperText Transfer Protocol (HTTP) </span>
+<span id="http">HyperText Transfer Protocol (HTTP)</span>
 :   FIXME
 
-<span id="http-request">HTTP request </span>
+<span id="http-request">HTTP request</span>
 :   FIXME
 
-<span id="http-response">HTTP response </span>
+<span id="http-response">HTTP response</span>
 :   FIXME
 
 ## I
 
-<span id="ip">Internet Protocol </span>
+<span id="ip">Internet Protocol</span>
 :   FIXME
 
-<span id="ip-address">IP address </span>
+<span id="ip-address">IP address</span>
 :   FIXME
 
 ## J
@@ -83,10 +92,22 @@
 <span id="js-await">JavaScript `await` keyword</span>
 :   FIXME
 
+## K
+
+## L
+
+## M
+
+## N
+
+## O
+
 ## P
 
 <span id="port">port</span>
 :   FIXME
+
+## Q
 
 ## R
 
@@ -120,3 +141,15 @@
 
 <span id="tcp">Transmission Control Protocol</span>
 :   FIXME
+
+## U
+
+## V
+
+## W
+
+## X
+
+## Y
+
+## Z
