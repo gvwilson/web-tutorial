@@ -67,6 +67,7 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 | [PrettyTable][prettytable]       | formatting        |
 | [PyPika][pypika]                 | query builder     |
 | [pytest][pytest]                 | testing           |
+| [Selenium][selenium]             | testing           |
 | [SQLite][sqlite]                 | database          |
 
 [bs4]: https://beautiful-soup-4.readthedocs.io/
@@ -84,4 +85,5 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 [pypika]: https://pypika.readthedocs.io/
 [pytest]: https://docs.pytest.org/
 [repo]: https://github.com/gvwilson/wp4ds
+[selenium]: https://pypi.org/project/selenium/
 [sqlite]: https://www.sqlite.org/

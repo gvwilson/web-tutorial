@@ -1,0 +1,21 @@
+<h2>Experimenter {{staff_id}}</h2>
+<table>
+  <thead>
+    <tr>
+      <th>sample_id</th>
+      <th>kind</th>
+      <th>start</th>
+      <th>end</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in data %}
+    <tr>
+      <th>{{row.sample_id}}</th>
+      <th>{{row.kind}}</th>
+      <th>{{row.start}}</th>
+      <th>{{row.end}}</th>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
