@@ -28,6 +28,12 @@ def main():
     if opt.forward:
         for filename in migrations:
             migrate(connection, filename, opt.verbose)
+            # Automatically run the corresponding check script after a forward migration
+            check_filename = filename.with_name(
+                filename.name.replace("fwd", "check")
+            )
+            if check_filename.exists():
+                check_migration(connection, check_filename, opt.verbose)
     elif opt.backward:
         for filename in reversed(migrations):
             migrate(connection, filename, opt.verbose)
@@ -56,6 +62,17 @@ def migrate(connection, filename, verbose):
     connection.executescript(filename.read_text())
 
 
+def check_migration(connection, filename, verbose):
+    """Perform check migration."""
+    if verbose:
+        print(f"checking {filename}")
+    try:
+        connection.executescript(filename.read_text())
+    except sqlite3.Error as e:
+        print(f"Check failed for {filename}: {e}")
+        sys.exit(1)
+
+
 def parse_args():
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser()
@@ -70,6 +87,7 @@ def parse_args():
     if (opt.backward + opt.forward) != 1:
         print("Must specify exactly one of --forward or --backward")
         sys.exit(1)
+
 
     return opt
 
