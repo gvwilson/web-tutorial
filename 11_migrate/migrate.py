@@ -14,6 +14,20 @@ PATTERNS = {
 }
 
 
+def handle_check_file(connection, migration_file, direction, opt):
+    """Handle the check file for a given migration."""
+    check_filename = migration_file.with_name(
+        migration_file.name.replace(f"_{direction}_", "_check_", 1)
+    )
+    if check_filename.exists():
+        check_migration(connection, check_filename, opt.verbose)
+    elif not opt.skip_missing_checks:
+        print(f"Warning: Check file {check_filename} not found. Aborting.")
+        sys.exit(1)
+    else:
+        print(f"Warning: Check file {check_filename} not found. Skipping.")
+
+
 def main():
     """Main driver."""
     opt = parse_args()
@@ -25,18 +39,15 @@ def main():
     else:
         assert False, "Unknown direction"
     migrations = get_migrations(opt.migrations, direction, opt.limit)
-    if opt.forward:
-        for filename in migrations:
-            migrate(connection, filename, opt.verbose)
-            # Automatically run the corresponding check script after a forward migration
-            check_filename = filename.with_name(
-                filename.name.replace("fwd", "check")
-            )
-            if check_filename.exists():
-                check_migration(connection, check_filename, opt.verbose)
-    elif opt.backward:
-        for filename in reversed(migrations):
-            migrate(connection, filename, opt.verbose)
+    
+    for filename in migrations if opt.forward else reversed(migrations):
+        if opt.backward:
+            handle_check_file(connection, filename, direction, opt)
+        
+        migrate(connection, filename, opt.verbose)
+        
+        if opt.forward:
+            handle_check_file(connection, filename, direction, opt)
 
 
 def get_migrations(dirpath, direction, limit):
@@ -50,8 +61,6 @@ def get_migrations(dirpath, direction, limit):
         if limit and (m.group(1) > limit):
             continue
         result.append(filepath)
-        check = Path(filepath.parent, f"{m.group(1)}_check_{m.group(2)}")
-        result.append(check)
     return result
 
 
@@ -82,6 +91,7 @@ def parse_args():
     parser.add_argument("--migrations", type=str, required=True, help="migrations directory")
     parser.add_argument("--limit", type=str, help="how far to go or where to start regression")
     parser.add_argument("--verbose", action="store_true", help="report progress")
+    parser.add_argument("--skip-missing-checks", action="store_true", help="skip missing check files instead of aborting")
     opt = parser.parse_args()
 
     if (opt.backward + opt.forward) != 1:
@@ -94,4 +104,3 @@ def parse_args():
 
 if __name__ == "__main__":
     main()
-

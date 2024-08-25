@@ -7,8 +7,8 @@ MIGRATIONS=./migrations
 ## forward: migrate database forward
 forward:
 	cp ${ORIGINAL} ${LOCAL}
-	python migrate.py --forward --migrations ${MIGRATIONS} --db ${LOCAL} --verbose --limit 01
+	python migrate.py --forward --migrations ${MIGRATIONS} --db ${LOCAL} --verbose --limit 01 --skip-missing-checks
 
 ## backward: revert database
 backward:
-	python migrate.py --backward --migrations ${MIGRATIONS} --db ${LOCAL} --verbose --limit 01
+	python migrate.py --backward --migrations ${MIGRATIONS} --db ${LOCAL} --verbose --limit 01 --skip-missing-checks
