@@ -7,6 +7,11 @@ All of the material is available under [open licenses](./LICENSE.md),
 and contributions through our [GitHub repository][repo] are welcome.
 All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT.md).
 
+> **Please note:** this tutorial is still being outlined.
+> Most sections will have additional examples (and much more explanation)
+> before learners encounter it.
+> Suggestions and help are greatly appreciated.
+
 ## Learner Persona
 
 -   Sabina, 28, has a master's degree in animal physiology
@@ -41,18 +46,16 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 | [Authentication](./13_auth/index.md)               | checking the user's identity                                |
 | [Encryption](./14_crypt/index.md)                  | keeping secrets safe                                        |
 | [Testing Again](./15_test/index.md)                | using [Selenium][selenium] to test the user interface       |
-| [Accessibility](./16_access/index.md)              | because everyone should be welcome                          |
-| [Internationalization](./17_intl/index.md)         | because we really do mean "everyone"                        |
-
-## Potential Topics
-
--   [HTML and CSS](./98_htmlcss/index.md)
--   [Certificates](./99_cert/index.md)
+| [Accessibility](./16_access/index.md)              | because everyone should be comfortable                      |
+| [Internationalization](./17_intl/index.md)         | because everyone should be welcome                          |
 
 ##  Appendices
 
+-   [HTML and CSS](./98_htmlcss/index.md)
+-   [Certificates](./99_cert/index.md)
 -   [Bibliography](./BIBLIOGRAPHY.md)
 -   [Glossary](./GLOSSARY.md)
+-   [Contributing](./CONTRIBUTING.md)
 
 ## Technologies
 
