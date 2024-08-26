@@ -48,6 +48,9 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 | [Testing Again](./15_test/index.md)                | using [Selenium][selenium] to test the user interface       |
 | [Accessibility](./16_access/index.md)              | because everyone should be comfortable                      |
 | [Internationalization](./17_intl/index.md)         | because everyone should be welcome                          |
+| [Logging and Auditing](./18_log/index.md)          | keeping of track of what's happened                         |
+| [Designing a Workflow](./19_workflow/index.md)     | thinking before coding                                      |
+| [Dynamic Graphics](./20_graphics/index.md)         | drawing pictures with [SVG.js][svgjs]                       |
 
 ##  Appendices
 
@@ -74,6 +77,7 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 | [pytest][pytest]                 | testing           |
 | [Selenium][selenium]             | testing           |
 | [SQLite][sqlite]                 | database          |
+| [SVG.js][svgjs]                  | graphics          |
 
 [bs4]: https://beautiful-soup-4.readthedocs.io/
 [dash]: https://dash.plotly.com/
@@ -92,3 +96,4 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 [repo]: https://github.com/gvwilson/wp4ds
 [selenium]: https://pypi.org/project/selenium/
 [sqlite]: https://www.sqlite.org/
+[svgjs]: https://svgjs.dev/
