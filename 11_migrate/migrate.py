@@ -40,6 +40,11 @@ def main():
         assert False, "Unknown direction"
     migrations = get_migrations(opt.migrations, direction, opt.limit)
     
+    # Validate all check files before starting migrations
+    if not validate_check_files(migrations, direction, opt):
+        print("Aborting due to missing check files.")
+        sys.exit(1)
+    
     for filename in migrations if opt.forward else reversed(migrations):
         if opt.backward:
             handle_check_file(connection, filename, direction, opt)
@@ -101,6 +106,21 @@ def parse_args():
 
     return opt
 
+
+def validate_check_files(migrations, direction, opt):
+    """Validate that all required check files exist before starting migrations."""
+    all_checks_exist = True
+    for migration_file in migrations:
+        check_filename = migration_file.with_name(
+            migration_file.name.replace(f"_{direction}_", "_check_", 1)
+        )
+        if not check_filename.exists():
+            if opt.skip_missing_checks:
+                print(f"Warning: Check file {check_filename} not found. Will be skipped during migration.")
+            else:
+                print(f"Error: Check file {check_filename} not found.")
+                all_checks_exist = False
+    return all_checks_exist or opt.skip_missing_checks
 
 if __name__ == "__main__":
     main()
