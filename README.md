@@ -46,11 +46,11 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 | [Authentication](./13_auth/index.md)               | checking the user's identity                                |
 | [Encryption](./14_crypt/index.md)                  | keeping secrets safe                                        |
 | [Testing in the Browser](./15_test/index.md)       | using [Selenium][selenium] to test the user interface       |
-| [Accessibility](./16_access/index.md)              | because everyone should be comfortable                      |
-| [Internationalization](./17_intl/index.md)         | because everyone should be welcome                          |
-| [Logging and Auditing](./18_log/index.md)          | keeping of track of what's happened                         |
+| [Dynamic Graphics](./16_graphics/index.md)         | drawing pictures with [SVG.js][svgjs]                       |
+| [Accessibility](./17_access/index.md)              | because everyone should be comfortable                      |
+| [Internationalization](./18_intl/index.md)         | because everyone should be welcome                          |
 | [Designing a Workflow](./19_workflow/index.md)     | thinking before coding                                      |
-| [Dynamic Graphics](./20_graphics/index.md)         | drawing pictures with [SVG.js][svgjs]                       |
+| [Logging and Auditing](./20_log/index.md)          | keeping of track of what's happened                         |
 
 ##  Appendices
 
