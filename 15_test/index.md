@@ -1,4 +1,4 @@
-# Testing Again
+# Testing in the Browser
 
 -   Automate the browser with [Selenium][selenium]
     -   [This tutorial][selenium-tutorial] is helpful

@@ -10,7 +10,29 @@
 <body>
 <main>
 <h1>Internationalization</h1>
-<p>FIXME</p>
+<ul>
+<li><a href="../glossary.html#i18n">Internationalization</a> (often abbreviated "i18n" because of the number of letters)
+    is the preparation of software for multilingual support</li>
+<li><a href="../glossary.html#l10n">Localization</a> (often abbreviated "l10n") is the process of making internationalized software accessible
+    to people using various languages and symbologies</li>
+<li>A lot of software is built on top of <a href="https://en.wikipedia.org/wiki/Gettext">gettext</a></li>
+<li>We will build our own to show how it works</li>
+<li><a href="./test_translation.py"><code>test_translation.py</code></a>:<ul>
+<li>Register a function with <a href="https://jinja.palletsprojects.com/">Jinja2</a> so that we can call it inside our template</li>
+<li>Define a translation table</li>
+<li>Use an object that creates a translation function that captures the language</li>
+<li>Call the translation function <code>_()</code> to save typing</li>
+</ul>
+</li>
+<li><a href="./util.py"><code>util.py</code></a> loads a translation table based on (yet another) environment variable</li>
+<li><a href="./views.py"><code>views.py</code></a> uses the request's <code>accept_languages</code> property to look up the user's desired language code</li>
+<li><a href="./server.py"><code>server.py</code></a> passes <code>request.accept_languages</code> to view functions</li>
+<li><a href="./request_lang.py"><code>request_lang.py</code></a> gets a resource with an explicit <code>Accept-Language</code> header<ul>
+<li>Can/should use unit tests from <a href="../05_test/index.html">Testing the Server</a>
+    and <a href="../15_test/index.html">Testing in the Browser</a></li>
+</ul>
+</li>
+</ul>
 </main>
 <footer>
       Copyright © 2024 <a href="../contributing.html#contributors">the authors</a>
