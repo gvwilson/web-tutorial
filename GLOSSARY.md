@@ -78,6 +78,9 @@
 
 ## I
 
+<span id="i18n">Internationalization (i18n)</span>
+:   FIXME
+
 <span id="ip">Internet Protocol</span>
 :   FIXME
 
@@ -95,6 +98,9 @@
 ## K
 
 ## L
+
+<span id="l10n">Localization (l10n)</span>
+:   FIXME
 
 ## M
 
