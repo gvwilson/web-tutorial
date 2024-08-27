@@ -12,7 +12,7 @@ generate:
 ## migrate: apply migrations
 migrate:
 	cp ${DB_BASE} ${DB_TEMP}
-	python migrate.py --forward --migrations ${MIGRATIONS} --db ${DB_TEMP} --verbose --limit 02
+	${RUN_MIGRATE} --forward --migrations ${MIGRATIONS} --db ${DB_TEMP} --verbose --limit 02
 
 ## serve: run server
 serve:

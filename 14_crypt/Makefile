@@ -9,12 +9,12 @@ MIGRATIONS=migrations
 ## migrate_short: apply migrations from previous lessons
 migrate_short:
 	cp ${DB_BASE} ${DB_TEMP}
-	python migrate.py --forward --migrations ${MIGRATIONS} --db ${DB_TEMP} --verbose --limit 02
+	${RUN_MIGRATE} --forward --migrations ${MIGRATIONS} --db ${DB_TEMP} --verbose --limit 02
 
 ## migrate_all: apply migrations up to and including this lesson
 migrate_all:
 	cp ${DB_BASE} ${DB_TEMP}
-	python migrate.py --forward --migrations ${MIGRATIONS} --db ${DB_TEMP} --verbose --limit 03
+	${RUN_MIGRATE} --forward --migrations ${MIGRATIONS} --db ${DB_TEMP} --verbose --limit 03
 
 ## encrypt: create secret and migration to encrypt passwords
 encrypt:

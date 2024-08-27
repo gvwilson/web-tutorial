@@ -7,7 +7,7 @@
     -   Forward: make the desired change
     -   Check: make sure it happened
     -   Backward: undo it (after checking that it was done)
--   [`migrate.py`](./migrate.py) looks for files with structured names
+-   [`bin/migrate.py`](./bin/migrate.py) looks for files with structured names
     -   Forward: `NN_fwd_mnemonic.sql` (`NN` is sequence number, `mnemonic` is long meaningful name)
     -   Check: `NN_check_mnemonic.sql`
     -   Backward: `NN_bwd_mnemonic.sql`
