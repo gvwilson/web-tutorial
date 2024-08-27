@@ -20,7 +20,7 @@ datasets:
 ## lint: check code and project
 lint:
 	@ruff check --exclude docs .
-	@mccole lint
+	@mccole lint --config config.json
 	@html5validator --root docs --blacklist templates \
 	--ignore \
 	'Attribute "x-'
