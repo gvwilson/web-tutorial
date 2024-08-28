@@ -1,5 +1,11 @@
 # Web Programming for Data Scientists
 
+<div class="row" markdown="1">
+  <div class="col-4 center">
+    <img src="./static/advent_05_354.png" alt="Advent 354 by Danielle Navarro" width="80%">
+  </div>
+  <div class="col-8" markdown="1">
+
 This tutorial is a short introduction to web programming using modern tools and practices
 for data scientists who are comfortable using Python
 but have never built interactive websites before.
@@ -11,6 +17,10 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 > Most sections will have additional examples (and much more explanation)
 > before learners encounter it.
 > Suggestions and help are greatly appreciated.
+
+  </div>
+
+</div>
 
 ## Learner Persona
 
