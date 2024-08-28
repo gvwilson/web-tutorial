@@ -2,7 +2,7 @@
 
 RUN_CSV=DATA=data/staff.csv flask --app
 RUN_LAB=DATA=data/lab.db flask --app
-RUN_MIGRATE=python bin/migrate.py
+RUN_MIGRATE=python migrate.py
 RUN_TEMP=DATA=temp.db flask --app
 
 ## ---: ---
