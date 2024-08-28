@@ -3,8 +3,9 @@
 <html>
 <head>
 <title>An Hour of JavaScript</title>
-<link href="../static/favicon.ico" rel="icon" type="image/x-icon"/>
 <meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../static/favicon.ico" rel="icon" type="image/x-icon"/>
 <link href="../static/page.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -136,7 +137,7 @@ const print_positive = values.forEach(v =&gt; {
 });
 </code></pre>
 <h2>Asynchronous Operations</h2>
-<pre id="promises.js"><code class="language-js">const middle = Deno.readTextFile("middle.txt");
+<pre id="promises.js"><code class="language-js">const middle = Deno.readTextFile('middle.txt');
 console.log(`middle is ${middle}`);
 middle.then(value =&gt; {
     console.log(`middle.then is ${value}`);
@@ -149,7 +150,7 @@ middle.then(value =&gt; {
 </ul>
 </li>
 </ul>
-<pre id="await.js"><code class="language-js">const value = await Deno.readTextFile("left.txt");
+<pre id="await.js"><code class="language-js">const value = await Deno.readTextFile('left.txt');
 console.log(`left value is ${value}`);
 </code></pre>
 <ul>

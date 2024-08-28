@@ -3,15 +3,38 @@
 <html>
 <head>
 <title>Dynamic Graphics</title>
-<link href="../static/favicon.ico" rel="icon" type="image/x-icon"/>
 <meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../static/favicon.ico" rel="icon" type="image/x-icon"/>
 <link href="../static/page.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <main>
 <h1>Dynamic Graphics</h1>
 <ul>
-<li><a href="./bar_chart.html"><code>bar_chart.html</code></a>: create a bar chart with fixed values</li>
+<li><a href="../glossary.html#svg">SVG</a> is a widely-used <a href="../glossary.html#vector-graphics">vector graphics</a> format<ul>
+<li>Represent lines, circles, etc. in a notation like HTML</li>
+<li>Also represent transformations (move, rescale, etc.)</li>
+</ul>
+</li>
+<li><a href="./shapes.html"><code>shapes.html</code></a> and <a href="./shapes.js"><code>shapes.js</code></a><ul>
+<li>Create an SVG object and insert into the page</li>
+<li>Ask that object to create other shapes</li>
+<li>Move them into position and change their properties</li>
+</ul>
+</li>
+<li><a href="./colors.js"><code>colors.js</code></a> changes the color of a square dynamically<ul>
+<li>Note the use of <code>window.addEventListener</code></li>
+</ul>
+</li>
+<li><a href="./bar_chart.html"><code>bar_chart.html</code></a>: create a bar chart with fixed values<ul>
+<li>A lot of calculations, many of which would have to be re-done if the X-axis labels weren't rotated</li>
+</ul>
+</li>
+<li>Use <a href="https://frappe.io/charts/docs">Frappe Charts</a><ul>
+<li>Not as popular as <a href="https://www.chartjs.org/">Chart.js</a>, but it uses SVG</li>
+</ul>
+</li>
 </ul>
 </main>
 <footer>

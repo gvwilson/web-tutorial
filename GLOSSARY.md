@@ -117,6 +117,9 @@
 
 ## R
 
+<span id="raster-graphics">raster graphics</span>
+:   FIXME
+
 <span id="rgb">red-green-blue (RGB) color</span>
 :   FIXME
 
@@ -126,6 +129,9 @@
 ## S
 
 <span id="salt">salt</span>
+:   FIXME
+
+<span id="svg">Scalable Vector Graphics (SVG)</span>
 :   FIXME
 
 <span id="secret">secret</span>
@@ -151,6 +157,9 @@
 ## U
 
 ## V
+
+<span id="vector-graphics">vector graphics</span>
+:   FIXME see also [raster graphics](g:raster-graphics)
 
 ## W
 

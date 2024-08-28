@@ -2,7 +2,7 @@
 
 <div class="row" markdown="1">
   <div class="col-4 center">
-    <img src="./static/advent_05_354.png" alt="Advent 354 by Danielle Navarro" width="80%">
+    <img src="./static/advent_05_354.png" alt="Advent 354 by Danielle Navarro" style="width: 80%">
   </div>
   <div class="col-8" markdown="1">
 
@@ -77,6 +77,7 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 | [Beautiful Soup][bs4]            | HTML manipulation |
 | [deno][deno]                     | JavaScript        |
 | [Flask][flask]                   | web server        |
+| [Frappe Charts][frappe-charts]   | charts            |
 | [html5validator][html5validator] | validation        |
 | [htmx][htmx]                     | interaction       |
 | [httpx][httpx]                   | HTTP              |
@@ -93,6 +94,7 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 [dash]: https://dash.plotly.com/
 [deno]: https://deno.com/
 [flask]: https://flask.palletsprojects.com/
+[frappe-charts]: https://frappe.io/charts/docs
 [html5validator]: https://pypi.org/project/html5validator/
 [htmx]: https://htmx.org/
 [httpx]: https://www.python-httpx.org/

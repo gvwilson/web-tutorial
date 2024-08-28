@@ -139,7 +139,7 @@ const print_positive = values.forEach(v => {
 ## Asynchronous Operations
 
 ``` { .js #promises.js }
-const middle = Deno.readTextFile("middle.txt");
+const middle = Deno.readTextFile('middle.txt');
 console.log(`middle is ${middle}`);
 middle.then(value => {
     console.log(`middle.then is ${value}`);
@@ -151,7 +151,7 @@ middle.then(value => {
     -   Use this a lot in web programming so that the browser won't freeze up
 
 ``` { .js #await.js }
-const value = await Deno.readTextFile("left.txt");
+const value = await Deno.readTextFile('left.txt');
 console.log(`left value is ${value}`);
 ```
 
