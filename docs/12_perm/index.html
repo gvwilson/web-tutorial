@@ -23,9 +23,9 @@
 </ul>
 </li>
 <li>Standard approach:<ul>
-<li>An <em>actor</em> (person or similar) has zero or more <em>roles</em></li>
-<li>Each <em>role</em> is a collection of pairs of <em>subject</em> and <em>permission</em></li>
-<li>E.g., <em>Reader</em> role has <em>read</em> permission for all tables</li>
+<li>An <a href="../glossary.html#actor">actor</a> (person or similar) has zero or more <a href="../glossary.html#role">roles</a></li>
+<li>Each role is a set of <a href="../glossary.html#permission">permissions</a></li>
+<li>E.g., <em>reader</em> role has <em>read</em> permission for all tables</li>
 </ul>
 </li>
 <li>Represent permissions with two tables in the database<ul>
@@ -42,7 +42,7 @@
 <li>But what if someone modifies the database between our check and the main query?</li>
 </ul>
 </li>
-<li>Use JOIN to only select rows where permission is available<ul>
+<li>Use <code>join</code> to only select rows where permission is available<ul>
 <li>But this means we can't distinguish "no data" from "no permission"</li>
 </ul>
 </li>
@@ -52,7 +52,7 @@
 </ul>
 </li>
 <li>Having explored ideas in the small, we can implement in the large<ul>
-<li><a href="./test_json.py"><code>test_json.py</code></a>: use a custom function for <a href="https://pypika.readthedocs.io/">PyPika</a> to call SQLite's <code>json_group_array</code></li>
+<li><a href="./test_json.py"><code>test_json.py</code></a> uses a custom <a href="https://pypika.readthedocs.io/">PyPika</a> function to call SQLite's <code>json_group_array</code></li>
 <li>Name the JSON field <code>something__json</code></li>
 <li>Modify <code>dict_factory</code> to unpack and rename</li>
 </ul>

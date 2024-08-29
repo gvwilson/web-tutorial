@@ -1,7 +1,7 @@
 # Using Forms
 
 -   Remove everything except display of a table of all staff
--   Add a form for adding new people
+-   Add a [form](g:form) for adding new people
     -   Copy the database before running
 -   [`explore_insert.py`](./explore_insert.py): experiment with insertion
     -   Select largest staff ID, add one, insert: race condition

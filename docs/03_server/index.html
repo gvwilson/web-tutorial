@@ -17,14 +17,14 @@
 <li>Or use <a href="./fetch.py"><code>fetch.py</code></a> to fetch and display data</li>
 </ul>
 </li>
-<li><a href="./server_func.py"><code>server_func.py</code></a> creates the application and configures routes in a function<ul>
-<li>Get path to staff CSV from <code>DATA</code> environment variable</li>
+<li><a href="./server_func.py"><code>server_func.py</code></a> creates the application and configures <a href="../glossary.html#route">routes</a> in a function<ul>
+<li>Get path to staff CSV from <code>DATA</code> <a href="../glossary.html#env-var">environment variable</a></li>
 <li>Read and convert to HTML with <a href="https://pypi.org/project/prettytable/">PrettyTable</a></li>
 </ul>
 </li>
 <li><a href="./server_routes.py"><code>server_routes.py</code></a> configures several routes<ul>
-<li>Use query parameters in routes to select individual row or column</li>
-<li>Use <a href="https://pola.rs/">Polars</a> to get a dataframe and <a href="https://flask.palletsprojects.com/">Flask</a> to convert to JSON</li>
+<li>Use <a href="../glossary.html#query-parameter">query parameters</a> in routes to select individual row or column</li>
+<li>Use <a href="https://pola.rs/">Polars</a> to get a <a href="../glossary.html#dataframe">dataframe</a> and <a href="https://flask.palletsprojects.com/">Flask</a> to convert to JSON</li>
 </ul>
 </li>
 <li>Some endpoints return HTML, some return JSON<ul>

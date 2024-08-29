@@ -10,7 +10,7 @@ console.log('hello, world');
 
 -   Run program as `deno run program.js`
 -   `console` is a built-in module
--   Use the same dotted notation as Python
+-   Use the same [dotted notation](g:dotted-notation) as Python
 -   Trailing semi-colon is no longer required but commonly used
 
 ``` { .js #loop_if_truthiness.js }
@@ -26,15 +26,16 @@ for (const val of values) {
 ```
 
 -   `const` defines a constant
--   The array contents aren't constant: the reference is
--   `for…in` iterates over the indices of an array (not recommended for arrays, can also include inherited properties)
+    -   The array contents aren't constant: the reference is
+-   `for…in` iterates over the indices of an array
+    -   Not recommended for arrays, and can also include inherited properties
 -   Use `for…of` to iterate directly over the values of an array.
 -   To loop over both the indices and values of an array, use `forEach` or `entries()` with `for...of`
 -   Parentheses are required
 -   `typeof` is an operator not a function, and returns a string
 -   `if` / `else if` / `else` work as expected
--   Use back-quotes and `${…}` for string interpolation
--   JavaScript considers an empty array to be truthy
+-   Use back-quotes and `${…}` for [string interpolation](g:string-interpolation)
+-   JavaScript considers an empty array to be [truthy](g:truthiness)
 -   Always use `===` (triple equals) and `!==` for equality
 -   Otherwise JavaScript does some strange type conversions
 
@@ -117,7 +118,7 @@ console.log(`largest(3, 5) is ${largest(3, 5)}`);
 ```
 
 -   A function is just another kind of object
--   Can define using arrow notation and then assign to a variable
+-   Can define using [arrow notation](g:arrow-notation) and then assign to a variable
 -   Handy in a language that uses lots of little functions
 
 ``` { .js #higher_order_func.js }
@@ -146,7 +147,7 @@ middle.then(value => {
 });
 ```
 
--   A promise represents a delayed operation
+-   A [promise](g:promise) represents a delayed operation
 -   Use `.then` method to tell JavaScript what to do when a value becomes available
     -   Use this a lot in web programming so that the browser won't freeze up
 
@@ -155,6 +156,6 @@ const value = await Deno.readTextFile('left.txt');
 console.log(`left value is ${value}`);
 ```
 
--   `await` makes asynchronous operations more readable
+-   `await` makes [asynchronous operations](g:async-operation) more readable
 
 [deno]: https://deno.com/

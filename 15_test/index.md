@@ -1,6 +1,6 @@
 # Testing in the Browser
 
--   Automate the browser with [Selenium][selenium]
+-   [Automate the browser](g:browser-automation) with [Selenium][selenium]
     -   [This tutorial][selenium-tutorial] is helpful
 -   [`test_home_page.py`](./test_home_page.py)
     -   Create a driver in a fixture that uses `yield` to ensure shutdown

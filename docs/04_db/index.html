@@ -14,16 +14,18 @@
 <h2>Direct SQL</h2>
 <ul>
 <li>Use <a href="https://www.sqlite.org/">SQLite</a> database in <code>./data/lab.db</code> instead of CSV file</li>
-<li>Install <code>_dict_factory</code> to get results as list of dictionaries instead of list of tuples</li>
+<li>Install <code>_dict_factory</code> <a href="../glossary.html#factory-function">factory function</a>
+    to get results as list of dictionaries instead of list of tuples</li>
 <li>And use a flag to convert types like dates and times (used later)</li>
 <li><a href="./models_sql.py"><code>models_sql.py</code></a> implements model part of model-view-controller (MVC)<ul>
 <li>One function for each question we might ask of our data</li>
-<li>Use SQL directly instead of an object-relational mapper like <a href="https://www.sqlalchemy.org/">SQLAlchemy</a>, <a href="https://sqlmodel.tiangolo.com/">SQLModel</a>, or <a href="https://ponyorm.org/">Pony</a></li>
-<li>ORMs are hard to debug and don't actually provide that much insulation from schema changes</li>
+<li>Use SQL directly instead of an <a href="../glossary.html#orm">object-relational mapper</a>
+    like <a href="https://www.sqlalchemy.org/">SQLAlchemy</a>, <a href="https://sqlmodel.tiangolo.com/">SQLModel</a>, or <a href="https://ponyorm.org/">Pony</a></li>
+<li>ORMs can be hard to debug and don't perfectly insulate programs from changes to <a href="../glossary.html#db-schema">schema</a></li>
 </ul>
 </li>
 <li>Re-create connection each time model is accessed<ul>
-<li>Creating it once and attaching to the <a href="https://flask.palletsprojects.com/">Flask</a> app fails because of threading</li>
+<li>Creating it once and attaching to the <a href="https://flask.palletsprojects.com/">Flask</a> app fails because of <a href="../glossary.html#multithreading">multithreading</a></li>
 </ul>
 </li>
 <li>Catch SQLite exceptions and raise our own so that our server only has to catch one thing</li>
@@ -37,7 +39,7 @@
 </ul>
 </li>
 <li>And embedded SQL isn't actually that easy to read</li>
-<li>Use the <a href="https://pypika.readthedocs.io/">PyPika</a> query builder</li>
+<li>Use the <a href="https://pypika.readthedocs.io/">PyPika</a> <a href="../glossary.html#query-builder">query builder</a></li>
 <li><a href="./pika_demo.py"><code>pika_demo.py</code></a> is a proof of concept</li>
 <li><a href="./models_pika.py"><code>models_pika.py</code></a> is shorter and more readable than the SQL version</li>
 </ul>

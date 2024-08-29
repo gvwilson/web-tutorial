@@ -7,9 +7,9 @@
 -   If we're going to add create, update, and delete, we should add *permissions*
     -   The ability to perform an operation on a thing
 -   Standard approach:
-    -   An *actor* (person or similar) has zero or more *roles*
-    -   Each *role* is a collection of pairs of *subject* and *permission*
-    -   E.g., *Reader* role has *read* permission for all tables
+    -   An [actor](g:actor) (person or similar) has zero or more [roles](g:role)
+    -   Each role is a set of [permissions](g:permission)
+    -   E.g., *reader* role has *read* permission for all tables
 -   Represent permissions with two tables in the database
     -   Worry about authentication later
 -   Add two new tables
@@ -18,13 +18,13 @@
     -   Put these in a temporary copy of the database for now
 -   Could write a `require` function to check permission before doing database query
     -   But what if someone modifies the database between our check and the main query?
--   Use JOIN to only select rows where permission is available
+-   Use `join` to only select rows where permission is available
     -   But this means we can't distinguish "no data" from "no permission"
 -   [`explore_permissions.py`](./explore_permissions.py) explores ways to do what we want with [PyPika][pypika]
     -   Turns out that `join` must have `on`
     -   Since we want everything, use `x == x`
 -   Having explored ideas in the small, we can implement in the large
-    -   [`test_json.py`](./test_json.py): use a custom function for [PyPika][pypika] to call SQLite's `json_group_array`
+    -   [`test_json.py`](./test_json.py) uses a custom [PyPika][pypika] function to call SQLite's `json_group_array`
     -   Name the JSON field `something__json`
     -   Modify `dict_factory` to unpack and rename
 -   Go back to [`test_permissions.py`](./test_permissions.py) and add tests using this

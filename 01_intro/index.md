@@ -11,7 +11,7 @@
 
 ## Setup
 
--   Install [uv][uv] for managing Python packages and virtual environments and then run:
+-   Install [uv][uv] for managing Python packages and [virtual environments](g:virtual-env) and then run:
     -   `uv venv` in the root directory of this project to create a virtual environment in `./.venv`
     -   `source .venv/bin/activate` to activate that virtual environment
     -   `uv pip install -r requirements.txt` to install requirements

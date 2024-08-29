@@ -15,7 +15,7 @@
 <li>Go back to the models, views, and server from <a href="../06_html/index.html">Serving HTML</a><ul>
 <li>Strip out row and column views</li>
 <li>Add a button for each row</li>
-<li>Styling is ugly, so add a static file handler in <a href="./server.py"><code>server.py</code></a> as well</li>
+<li>Styling is ugly, so add a handler for <a href="../glossary.html#static-file">static files</a> in <a href="./server.py"><code>server.py</code></a> as well</li>
 </ul>
 </li>
 <li>Add an empty <code>div</code> with ID <code>experiments</code></li>
@@ -37,7 +37,7 @@
 <li>Running it now produces 404 error</li>
 <li>So implement <code>/exp/id</code> in server, models, and views<ul>
 <li><code>experiments</code> function in <code>models.py</code> uses an inner join</li>
-<li>Add <code>*args</code>* to <code>handle_format</code> for convenience</li>
+<li>Add <code>*args</code> to <code>handle_format</code> to <a href="../glossary.html#spread-arguments">spread arguments</a> for convenience</li>
 </ul>
 </li>
 <li>More common for server to return JSON that a JavaScript library in the browser translates into HTML</li>

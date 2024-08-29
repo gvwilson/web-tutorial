@@ -2,8 +2,17 @@
 
 ## A
 
+<span id="actor">actor</span>
+:   FIXME
+
+<span id="arrow-notation">arrow notation</span>
+:   FIXME
+
 `async` (keyword in JavaScript)
 :   See [JavaScript `async` keyword](g:js-async)
+
+<span id="async-operation">asynchronous operation</span>
+:   FIXME
 
 <span id="attribute">attribute</span>
 :   FIXME
@@ -13,9 +22,15 @@
 
 ## B
 
+<span id="browser-automation">browser automation</span>
+:   FIXME
+
 ## C
 
 <span id="css">Cascading Style Sheets (CSS)</span>
+:   FIXME
+
+<span id="ciphertext">ciphertext</span>
 :   FIXME
 
 <span id="client">client</span>
@@ -35,15 +50,27 @@
 <span id="db-migration">database migration</span>
 :   FIXME
 
+<span id="db-schema">database schema</span>
+:   FIXME
+
+<span id="dataframe">dataframe</span>
+:   FIXME
+
 <span id="dom">Document Object Model (DOM)</span>
 :   FIXME
 
 <span id="dns">Domain Name System (DNS)</span>
 :   FIXME
 
+<span id="dotted-notation">dotted notation</span>
+:   FIXME
+
 ## E
 
 <span id="element">element (in HTML)</span>
+:   FIXME
+
+<span id="env-var">environment variable</span>
 :   FIXME
 
 <span id="escape-sequence">escape sequence</span>
@@ -57,23 +84,35 @@
 
 ## F
 
+<span id="factory-function">factory function</span>
+:   FIXME
+
 <span id="fixture">fixture</span>
+:   FIXME
+
+<span id="form">form</span>
 :   FIXME
 
 ## G
 
 ## H
 
-<span id="html">HyperText Markup Language (HTML)</span>
+<span id="hashing">hashing</span>
 :   FIXME
 
-<span id="http">HyperText Transfer Protocol (HTTP)</span>
+<span id="heartbeat">heartbeat</span>
 :   FIXME
 
 <span id="http-request">HTTP request</span>
 :   FIXME
 
 <span id="http-response">HTTP response</span>
+:   FIXME
+
+<span id="html">HyperText Markup Language (HTML)</span>
+:   FIXME
+
+<span id="http">HyperText Transfer Protocol (HTTP)</span>
 :   FIXME
 
 ## I
@@ -104,26 +143,56 @@
 
 ## M
 
+<span id="multithreading">multithreading</span>
+:   FIXME
+
 ## N
 
 ## O
 
+<span id="orm">object-relational mapper (ORM)</span>
+:   FIXME
+
 ## P
+
+<span id="permission">permission</span>
+:   FIXME
+
+<span id="plaintext">plaintext</span>
+:   FIXME
 
 <span id="port">port</span>
 :   FIXME
 
+<span id="promise">promise</span>
+:   FIXME
+
 ## Q
+
+<span id="query-builder">query builder</span>
+:   FIXME
+
+<span id="query-parameter">query parameter</span>
+:   FIXME
 
 ## R
 
 <span id="raster-graphics">raster graphics</span>
-:   FIXME
+:   FIXME see also [vector graphics](g:vector-graphics)
 
 <span id="rgb">red-green-blue (RGB) color</span>
 :   FIXME
 
+<span id="reversible-encryption">reversible encryption</span>
+:   FIXME
+
+<span id="role">role</span>
+:   FIXME
+
 <span id="root-element">root element</span>
+:   FIXME
+
+<span id="route">route (in server)</span>
 :   FIXME
 
 ## S
@@ -146,6 +215,15 @@
 <span id="socket">socket</span>
 :   FIXME
 
+<span id="spread-arguments">spread arguments</span>
+:   FIXME
+
+<span id="static-file">static file</span>
+:   FIXME
+
+<span id="string-interpolation">string interpolation</span>
+:   FIXME
+
 ## T
 
 <span id="tag">tag</span>
@@ -154,12 +232,21 @@
 <span id="tcp">Transmission Control Protocol</span>
 :   FIXME
 
+<span id="test-client">test client</span>
+:   FIXME
+
+<span id="truthiness">truthiness</span>
+:   FIXME
+
 ## U
 
 ## V
 
 <span id="vector-graphics">vector graphics</span>
 :   FIXME see also [raster graphics](g:raster-graphics)
+
+<span id="virtual-env">virtual environment</span>
+:   FIXME
 
 ## W
 
