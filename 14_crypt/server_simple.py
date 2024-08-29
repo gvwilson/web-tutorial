@@ -41,7 +41,7 @@ def create_app():
             response.set_cookie(COOKIE_NAME, "", expires=0)
             return response
 
-        response.set_cookie(COOKIE_NAME, staff_id, max_age=None)
+        response.set_cookie(COOKIE_NAME, str(staff_id), max_age=None)
         return response
 
     @app.get("/exp/<staff_id>")
