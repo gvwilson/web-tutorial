@@ -33,3 +33,7 @@ render:
 ## serve: serve generated HTML
 serve:
 	@python -m http.server -d docs $(PORT)
+
+## stats: basic site statistics
+stats:
+	@mccole stats
