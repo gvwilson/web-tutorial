@@ -61,6 +61,7 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 | [Internationalization](./18_intl/index.md)         | because everyone should be welcome                          |
 | [Designing a Workflow](./19_workflow/index.md)     | thinking before coding                                      |
 | [Logging and Auditing](./20_log/index.md)          | keeping of track of what's happened                         |
+| [Session](./21_sessions/index.md)                  | persistent sessions and [JWT][jwt]                          |
 
 ##  Appendices
 
@@ -99,6 +100,7 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 [htmx]: https://htmx.org/
 [httpx]: https://www.python-httpx.org/
 [jinja]: https://jinja.palletsprojects.com/
+[jwt]: https://en.wikipedia.org/wiki/JSON_Web_Token
 [pandas]: https://pandas.pydata.org/
 [plotly-express]: https://plotly.com/python/plotly-express/
 [polars]: https://pola.rs/
