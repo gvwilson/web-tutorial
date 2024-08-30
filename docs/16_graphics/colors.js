@@ -1,6 +1,6 @@
 const SIZE = 100;
 
-async function changeColor() {
+function changeColor() {
     const color = Math.floor(Math.random() * Math.pow(2, 24)).toString(16);
     document.getElementById('box').setAttribute('fill', `#${color}`);
     document.getElementById('control').textContent = color;
