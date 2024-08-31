@@ -1,3 +1,27 @@
+[project]
+name = "wp4ds"
+version = "0.1.28"
+dependencies = [
+    "beautifulsoup4",
+    "esprima",
+    "faker",
+    "flask",
+    "flask-cors",
+    "html5validator",
+    "jinja2",
+    "httpx",
+    "markdown",
+    "mccole",
+    "polars",
+    "prettytable",
+    "pypika",
+    "pytest",
+    "python-multipart",
+    "ruff",
+    "selenium",
+    "snailz"
+]
+
 [tool.ruff.lint.extend-per-file-ignores]
 "**/test_*.py" = ["F401", "F811"] # ignore complaints about unused imports for fixtures
 

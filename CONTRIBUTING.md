@@ -4,28 +4,14 @@ Contributions are very welcome;
 please contact us [by email][email] or by filing an issue in [our repository][repo].
 All contributors must abide by our [Code of Conduct](./CODE_OF_CONDUCT.md).
 
-## Structure
+## Setup and Operation
 
--   Use [mccole][mccole] to turn Markdown into HTML
-    -   Markdown files are in root directory and sub-directories
-    -   Generated HTML is put in `./docs`
--   Lessons are in `nn_slug` directories
-    -   `nn` is two-digit sequence number
-    -   `slug` is short mnemonic
--   Each lesson must have:
-    -   `index.md`: lesson content
-    -   `slides.md`: same content as slides
-    -   `Makefile`: re-run tasks
-        -   Should `include ../common.mk` to get common tasks
-    -   Symbolic links `data` and `static` to the `./data` and `./static` directories in the project root
--   `BIBLIOGRAPHY.md` has bibliography as definition list
-    -   Citation keys have IDs for linking
-    -   Use an inline HTML link `b:key` in files to create links
--   `GLOSSARY.md` has glossary as definition list
-    -   Reference keys have IDs for linking
-    -   Use an inline HTML link `g:key` in files to create links
-
-## Tasks
+-   Install [uv][uv]
+-   Create a virtual environment by running `uv venv` in the root directory
+-   Activate it by running `source .venv/bin/activate` in your shell
+-   Install dependencies by running `uv pip install --requirement pyproject.toml`
+-   This project uses [mccole][mccole] to generate HTML and check the project's structure
+-   Run `make` on its own to see a list of common commands
 
 | make task | effect                                   |
 | --------- | ---------------------------------------- |
@@ -35,6 +21,34 @@ All contributors must abide by our [Code of Conduct](./CODE_OF_CONDUCT.md).
 | lint      | check code and project                   |
 | render    | convert to HTML                          |
 | serve     | serve generated HTML                     |
+| stats     | basic site statistics                    |
+
+## Structure
+
+-   Lessons are in `nn_slug` directories
+    -   `nn` is two-digit sequence number
+    -   `slug` is short mnemonic
+-   Each lesson must have:
+    -   `index.md`: lesson content
+    -   `Makefile`: re-run tasks
+        -   Should `include ../common.mk` to get common tasks
+    -   Symbolic links `data`, `migrations`, and `static`
+        to the `./data`, `./migrations`, and `./static` directories in the project root
+    -   Lessons may have a `slides.md` file containing slides
+    -   Diagrams should be SVG files created with [draw.io][draw-io]
+-   `BIBLIOGRAPHY.md` has the bibliography as a definition list
+    -   Citation keys have IDs for linking
+    -   Use an inline HTML link `b:key` in files to create links
+-   `GLOSSARY.md` has the glossary as definition list
+    -   Reference keys have IDs for linking
+    -   Use an inline HTML link `g:key` in files to create links
+-   The `static` directory contains static files
+    -   `page.css`: CSS for website pages
+    -   `slides.css` and `slides.js`: simple HTML slides
+    -   Other CSS and JavaScript files used in lessons
+-   The `templates` directory contains [Jinja][jinja] templates used to generate HTML
+    -   `page.html`: template for website pages
+    -   `slides.html`: template for simple HTML slides
 
 ## FAQ
 
@@ -61,8 +75,11 @@ Why is this material free to read?
     He was the co-founder and first Executive Director of Software Carpentry
     and received ACM SIGSOFT's Influential Educator Award in 2020.
 
+[draw-io]: https://www.drawio.com/
 [email]: mailto:gvwilson@third-bit.com
+[jinja]: https://jinja.palletsprojects.com/
 [mccole]: https://github.com/gvwilson/mccole
 [repo]: https://github.com/gvwilson/wp4ds
 [pereira-juanan]: https://ikasten.io/
+[uv]: https://github.com/astral-sh/uv
 [wilson-greg]: https://third-bit.com/

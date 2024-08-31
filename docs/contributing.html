@@ -14,40 +14,15 @@
 <p>Contributions are very welcome;
 please contact us <a href="mailto:gvwilson@third-bit.com">by email</a> or by filing an issue in <a href="https://github.com/gvwilson/wp4ds">our repository</a>.
 All contributors must abide by our <a href="./code_of_conduct.html">Code of Conduct</a>.</p>
-<h2>Structure</h2>
+<h2>Setup and Operation</h2>
 <ul>
-<li>Use <a href="https://github.com/gvwilson/mccole">mccole</a> to turn Markdown into HTML<ul>
-<li>Markdown files are in root directory and sub-directories</li>
-<li>Generated HTML is put in <code>./docs</code></li>
+<li>Install <a href="https://github.com/astral-sh/uv">uv</a></li>
+<li>Create a virtual environment by running <code>uv venv</code> in the root directory</li>
+<li>Activate it by running <code>source .venv/bin/activate</code> in your shell</li>
+<li>Install dependencies by running <code>uv pip install --requirement pyproject.toml</code></li>
+<li>This project uses <a href="https://github.com/gvwilson/mccole">mccole</a> to generate HTML and check the project's structure</li>
+<li>Run <code>make</code> on its own to see a list of common commands</li>
 </ul>
-</li>
-<li>Lessons are in <code>nn_slug</code> directories<ul>
-<li><code>nn</code> is two-digit sequence number</li>
-<li><code>slug</code> is short mnemonic</li>
-</ul>
-</li>
-<li>Each lesson must have:<ul>
-<li><code>index.md</code>: lesson content</li>
-<li><code>slides.md</code>: same content as slides</li>
-<li><code>Makefile</code>: re-run tasks<ul>
-<li>Should <code>include ../common.mk</code> to get common tasks</li>
-</ul>
-</li>
-<li>Symbolic links <code>data</code> and <code>static</code> to the <code>./data</code> and <code>./static</code> directories in the project root</li>
-</ul>
-</li>
-<li><code>BIBLIOGRAPHY.md</code> has bibliography as definition list<ul>
-<li>Citation keys have IDs for linking</li>
-<li>Use an inline HTML link <code>b:key</code> in files to create links</li>
-</ul>
-</li>
-<li><code>GLOSSARY.md</code> has glossary as definition list<ul>
-<li>Reference keys have IDs for linking</li>
-<li>Use an inline HTML link <code>g:key</code> in files to create links</li>
-</ul>
-</li>
-</ul>
-<h2>Tasks</h2>
 <table>
 <thead>
 <tr>
@@ -80,8 +55,53 @@ All contributors must abide by our <a href="./code_of_conduct.html">Code of Cond
 <td>serve</td>
 <td>serve generated HTML</td>
 </tr>
+<tr>
+<td>stats</td>
+<td>basic site statistics</td>
+</tr>
 </tbody>
 </table>
+<h2>Structure</h2>
+<ul>
+<li>Lessons are in <code>nn_slug</code> directories<ul>
+<li><code>nn</code> is two-digit sequence number</li>
+<li><code>slug</code> is short mnemonic</li>
+</ul>
+</li>
+<li>Each lesson must have:<ul>
+<li><code>index.md</code>: lesson content</li>
+<li><code>Makefile</code>: re-run tasks<ul>
+<li>Should <code>include ../common.mk</code> to get common tasks</li>
+</ul>
+</li>
+<li>Symbolic links <code>data</code>, <code>migrations</code>, and <code>static</code>
+    to the <code>./data</code>, <code>./migrations</code>, and <code>./static</code> directories in the project root</li>
+<li>Lessons may have a <code>slides.md</code> file containing slides</li>
+<li>Diagrams should be SVG files created with <a href="https://www.drawio.com/">draw.io</a></li>
+</ul>
+</li>
+<li><code>BIBLIOGRAPHY.md</code> has the bibliography as a definition list<ul>
+<li>Citation keys have IDs for linking</li>
+<li>Use an inline HTML link <code>b:key</code> in files to create links</li>
+</ul>
+</li>
+<li><code>GLOSSARY.md</code> has the glossary as definition list<ul>
+<li>Reference keys have IDs for linking</li>
+<li>Use an inline HTML link <code>g:key</code> in files to create links</li>
+</ul>
+</li>
+<li>The <code>static</code> directory contains static files<ul>
+<li><code>page.css</code>: CSS for website pages</li>
+<li><code>slides.css</code> and <code>slides.js</code>: simple HTML slides</li>
+<li>Other CSS and JavaScript files used in lessons</li>
+</ul>
+</li>
+<li>The <code>templates</code> directory contains <a href="https://jinja.palletsprojects.com/">Jinja</a> templates used to generate HTML<ul>
+<li><code>page.html</code>: template for website pages</li>
+<li><code>slides.html</code>: template for simple HTML slides</li>
+</ul>
+</li>
+</ul>
 <h2>FAQ</h2>
 <dl>
 <dt>Do you need any help?</dt>
