@@ -11,7 +11,42 @@
 <body>
 <main>
 <h1>Designing a Workflow</h1>
-<p>FIXME</p>
+<ul>
+<li>A <a href="../glossary.html#workflow">workflow</a> is a series of steps something has to go through</li>
+<li>First is designing plates for an experiment<ul>
+<li>Sample must not already be claimed by an existing experiment</li>
+<li>Plates must parse correctly</li>
+<li>Plates cannot be duplicates</li>
+<li>One or more people must be associated with experiment</li>
+<li>Does the uploader have to be one of those people?</li>
+</ul>
+</li>
+<li>Second is invalidating a plate<ul>
+<li>Person must have privileges</li>
+<li>A second person with privileges must OK the invalidation</li>
+<li>An example of work in progress</li>
+</ul>
+</li>
+<li>To implement experiment creation<ul>
+<li>Add a <code>create_experiment</code> page with a form</li>
+<li>Must handle multiple file upload</li>
+<li>And check multiple people (no duplicates)</li>
+<li>Use <a href="https://alpinejs.dev/">Alpine</a> to make page interactive</li>
+<li>No schema changes required</li>
+</ul>
+</li>
+<li>To implement plate invalidation<ul>
+<li>Add a <code>confirmed_by</code> column to <code>invalidated</code>?</li>
+<li>But what if we decide two confirmations are needed? Or three?</li>
+<li>Would need a join table like <code>performed</code></li>
+<li>Save that complexity until the day…</li>
+<li>For now just used <code>confirmed_by</code><ul>
+<li>Display confirmations with NULL as "awaiting"</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </main>
 <footer>
       Copyright © 2024 <a href="../contributing.html#contributors">the authors</a>
