@@ -90,6 +90,9 @@
 <span id="fixture">fixture</span>
 :   FIXME
 
+<span id="flexbox">flexbox layout</span>
+:   FIXME [reference][flexbox]
+
 <span id="form">form</span>
 :   FIXME
 
@@ -177,6 +180,9 @@
 
 ## R
 
+<span id="radio-button">radio button</span>
+:   FIXME
+
 <span id="raster-graphics">raster graphics</span>
 :   FIXME see also [vector graphics](g:vector-graphics)
 
@@ -255,3 +261,5 @@
 ## Y
 
 ## Z
+
+[flexbox]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout

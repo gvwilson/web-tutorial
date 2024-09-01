@@ -21,7 +21,8 @@ datasets:
 lint:
 	@ruff check --exclude docs .
 	@mccole lint
-	@html5validator --root docs --blacklist templates --ignore 'Attribute "x-' && echo "HTML checks passed."
+	@html5validator --root docs --blacklist templates --ignore 'Attribute "x-' 'Attribute "@click' \
+	&& echo "HTML checks passed."
 
 ## render: convert to HTML
 render:

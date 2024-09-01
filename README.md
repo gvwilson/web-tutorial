@@ -62,6 +62,7 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 | [Designing a Workflow](./19_workflow/index.md)     | thinking before coding                                      |
 | [Logging and Auditing](./20_log/index.md)          | keeping of track of what's happened                         |
 | [Session](./21_sessions/index.md)                  | persistent sessions and [JWT][jwt]                          |
+| [A Graphical User Interface](./22_gui/index.md)    | handling interactivity in the browser                       |
 
 ##  Appendices
 
