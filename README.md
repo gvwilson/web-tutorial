@@ -1,4 +1,6 @@
-# Web Programming for Data Scientists
+# The Webonomicon
+
+<p class="subtitle">An Introduction to Web Programming for Weary Data Scientists</p>
 
 <div class="row" markdown="1">
   <div class="col-4 center">

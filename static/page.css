@@ -112,6 +112,13 @@ ol li {
     margin-left: var(--width-li-adjust);
 }
 
+/* Subtitle */
+p.subtitle {
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+}
+
 /* Code blocks */
 pre {
     border: var(--border-thin);

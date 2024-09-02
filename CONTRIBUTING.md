@@ -9,7 +9,7 @@ All contributors must abide by our [Code of Conduct](./CODE_OF_CONDUCT.md).
 -   Install [uv][uv]
 -   Create a virtual environment by running `uv venv` in the root directory
 -   Activate it by running `source .venv/bin/activate` in your shell
--   Install dependencies by running `uv pip install --requirement pyproject.toml`
+-   Install dependencies by running `uv pip install --r pyproject.toml`
 -   This project uses [mccole][mccole] to generate HTML and check the project's structure
 -   Run `make` on its own to see a list of common commands
 
