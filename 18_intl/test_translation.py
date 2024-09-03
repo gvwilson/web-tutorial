@@ -11,7 +11,7 @@ def lookup_table():
             "eu": "gora",
         },
         "down": {
-            "eu": "behean",
+            "eu": "behera",
         },
     }
 
@@ -47,4 +47,4 @@ def test_using_lookup_file():
     template = Template("left {{ _('down') }} right")
     template.globals.update({"_": translator})
     actual = template.render()
-    assert actual == "left behean right"
+    assert actual == "left behera right"
