@@ -19,7 +19,7 @@ def all_staff(data, accept_languages):
 
 
 def experiments(data, accept_languages, staff_id):
-    return _use_template("experiments.html", data, staff_id=staff_id)
+    return _use_template("experiments.html", data, accept_languages, staff_id=staff_id)
 
 
 def heartbeat(data, accept_languages):
