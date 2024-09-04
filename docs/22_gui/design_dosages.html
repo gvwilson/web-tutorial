@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <title>Templated Plate Editor with Dosages</title>
     <script src="../static/alpine.js" defer></script>
     <link rel="stylesheet" href="../static/page.css">
@@ -23,7 +24,7 @@
       })"
       x-data="{
         treatments: ['CQZ-1718', 'CQA-986', 'CQA-940', '', ],
-        dosages: ['5&mu;L', '10&mu;L', '20&mu;L', '50&mu;L', ],
+        dosages: ['5μL', '10μL', '20μL', '50μL', ],
         current_treatment: '',
         current_dosage: '',
         current_fill: '',
@@ -42,13 +43,13 @@
           <br/>
           <label><input type="radio" name="current_treatment" value="" x-model="current_treatment"> </label>
           <h3>Dosages</h3>
-          <label><input type="radio" name="current_dosage" value="5&mu;L" x-model="current_dosage"> 5&mu;L</label>
+          <label><input type="radio" name="current_dosage" value="5μL" x-model="current_dosage"> 5μL</label>
           <br/>
-          <label><input type="radio" name="current_dosage" value="10&mu;L" x-model="current_dosage"> 10&mu;L</label>
+          <label><input type="radio" name="current_dosage" value="10μL" x-model="current_dosage"> 10μL</label>
           <br/>
-          <label><input type="radio" name="current_dosage" value="20&mu;L" x-model="current_dosage"> 20&mu;L</label>
+          <label><input type="radio" name="current_dosage" value="20μL" x-model="current_dosage"> 20μL</label>
           <br/>
-          <label><input type="radio" name="current_dosage" value="50&mu;L" x-model="current_dosage"> 50&mu;L</label>
+          <label><input type="radio" name="current_dosage" value="50μL" x-model="current_dosage"> 50μL</label>
           </div>
       <div class="col-10">
         <h2 class="center">Plate</h2>
