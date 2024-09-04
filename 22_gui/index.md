@@ -22,7 +22,7 @@
 -   Templating
     -   Template in [`templates/design_simple.html`](./templates/design_simple.html)
     -   For now, use [`render.py`](./render.py) to test it out
-    -   Templated verison is 51 lines instead of 72, but will automatically expand as we go to larger plates
+    -   Templated version is 51 lines instead of 72, but will automatically expand as we go to larger plates
 -   Now add dosages in [`templates/design_dosages.html`](./templates/design_dosages.html)
     -   Invariant: (no treatment and no dosage) or (some treatment and some dosage)
     -   I.e., cannot have a treatment with no dosage, and cannot have a dosage if no treatment selected
