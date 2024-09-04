@@ -4,7 +4,7 @@ import argparse
 from jinja2 import Environment, FileSystemLoader
 
 
-DOSAGES = ["5μL", "10μL", "20μL", "50μL"]
+DOSAGES = ["5&mu;L", "10&mu;L", "20&mu;L", "50&mu;L"]
 TREATMENTS = ["CQZ-1718", "CQA-986", "CQA-940", ""]
 
 
