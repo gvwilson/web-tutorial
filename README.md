@@ -70,8 +70,8 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 
 -   [HTML and CSS](./98_htmlcss/index.md)
 -   [Certificates](./99_cert/index.md)
--   [Bibliography](./BIBLIOGRAPHY.md)
--   [Glossary](./GLOSSARY.md)
+-   [Bibliography](./bibliography.md)
+-   [Glossary](./glossary.md)
 -   [Contributing](./CONTRIBUTING.md)
 
 ## Technologies

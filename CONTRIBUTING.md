@@ -36,10 +36,10 @@ All contributors must abide by our [Code of Conduct](./CODE_OF_CONDUCT.md).
         to the `./data`, `./migrations`, and `./static` directories in the project root
     -   Lessons may have a `slides.md` file containing slides
     -   Diagrams should be SVG files created with [draw.io][draw-io]
--   `BIBLIOGRAPHY.md` has the bibliography as a definition list
+-   `bibliography.md` has the bibliography as a definition list
     -   Citation keys have IDs for linking
     -   Use an inline HTML link `b:key` in files to create links
--   `GLOSSARY.md` has the glossary as definition list
+-   `glossary.md` has the glossary as definition list
     -   Reference keys have IDs for linking
     -   Use an inline HTML link `g:key` in files to create links
 -   The `static` directory contains static files
