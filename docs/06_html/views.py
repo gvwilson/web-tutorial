@@ -11,8 +11,8 @@ Env = Environment(
 )
 
 
-def all_staff(data):
-    return _use_template("rows.html", data)
+def all_staff(data, template="rows.html"):
+    return _use_template(template, data)
 
 
 def heartbeat(data):
