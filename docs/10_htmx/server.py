@@ -2,6 +2,7 @@
 
 from flask import Flask, abort
 from flask_cors import CORS
+from pathlib import Path
 
 import models
 import views
@@ -13,7 +14,7 @@ HEARTBEAT = {"message": "alive"}
 
 def create_app():
     """Build application and configure routes."""
-    app = Flask("err")
+    app = Flask("server", static_folder=Path("../static").absolute(), static_url_path="/static")
     CORS(app)
 
     @app.get("/")

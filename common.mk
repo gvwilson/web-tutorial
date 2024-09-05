@@ -1,9 +1,13 @@
 # Common Make variables and targets
 
-RUN_CSV=DATA=data/staff.csv flask --app
-RUN_LAB=DATA=data/lab.db flask --app
-RUN_MIGRATE=python migrate.py
-RUN_TEMP=DATA=temp.db flask --app
+DB_BASE=../data/lab.db
+DB_TEMP=./temp.db
+MIGRATIONS=../migrations
+
+RUN_CSV=DATA=../data/staff.csv flask --app
+RUN_LAB=DATA=${DB_BASE} flask --app
+RUN_MIGRATE=python migrate.py --migrations ${MIGRATIONS}
+RUN_TEMP=DATA=${DB_TEMP} flask --app
 
 ## ---: ---
 

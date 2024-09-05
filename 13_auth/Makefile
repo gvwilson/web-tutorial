@@ -1,9 +1,6 @@
 include ../common.mk
 
-DB_BASE=data/lab.db
-DB_TEMP=./temp.db
-PLAIN_FWD=migrations/02_fwd_add_plaintext_passwords.sql
-MIGRATIONS=migrations
+PLAIN_FWD=${MIGRATIONS}/02_fwd_add_plaintext_passwords.sql
 
 ## generate: create passwords and add to database
 generate:
@@ -12,7 +9,7 @@ generate:
 ## migrate: apply migrations
 migrate:
 	cp ${DB_BASE} ${DB_TEMP}
-	${RUN_MIGRATE} --forward --migrations ${MIGRATIONS} --db ${DB_TEMP} --verbose --limit 02
+	${RUN_MIGRATE} --forward --db ${DB_TEMP} --verbose --limit 02
 
 ## serve: run server
 serve:

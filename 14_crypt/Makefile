@@ -1,20 +1,17 @@
 include ../common.mk
 
-DB_BASE=data/lab.db
-DB_TEMP=./temp.db
-ENCRYPT_FWD=migrations/03_fwd_encrypt_passwords.sql
-ENCRYPT_BWD=migrations/03_bwd_encrypt_passwords.sql
-MIGRATIONS=migrations
+ENCRYPT_FWD=${MIGRATIONS}/03_fwd_encrypt_passwords.sql
+ENCRYPT_BWD=${MIGRATIONS}/03_bwd_encrypt_passwords.sql
 
 ## migrate_short: apply migrations from previous lessons
 migrate_short:
 	cp ${DB_BASE} ${DB_TEMP}
-	${RUN_MIGRATE} --forward --migrations ${MIGRATIONS} --db ${DB_TEMP} --verbose --limit 02
+	${RUN_MIGRATE} --forward --db ${DB_TEMP} --limit 02
 
 ## migrate_all: apply migrations up to and including this lesson
 migrate_all:
 	cp ${DB_BASE} ${DB_TEMP}
-	${RUN_MIGRATE} --forward --migrations ${MIGRATIONS} --db ${DB_TEMP} --verbose --limit 03
+	${RUN_MIGRATE} --forward --db ${DB_TEMP} --limit 03
 
 ## encrypt: create secret and migration to encrypt passwords
 encrypt:
@@ -23,7 +20,7 @@ encrypt:
 	--secret secret.txt \
 	--fwd 03_fwd_encrypt_passwords.sql \
 	--bwd 03_bwd_encrypt_passwords.sql \
-	--migrations migrations \
+	--migrations ${MIGRATIONS} \
 	--secret-value 102938474
 
 ## simple: run simple server
