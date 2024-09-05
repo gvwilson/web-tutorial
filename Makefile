@@ -26,7 +26,7 @@ lint:
 
 ## render: convert to HTML
 render:
-	mccole render ${CSS}
+	mccole render ${CSS} # use --symlinks to regenerate all symlinks if needed.
 	@touch docs/.nojekyll
 
 ## serve: serve generated HTML
