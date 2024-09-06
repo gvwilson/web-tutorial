@@ -40,6 +40,6 @@ and received ACM SIGSOFT's Influential Educator Award in 2020.
 
 [cc_by_nc]: https://creativecommons.org/licenses/by-nc/4.0/
 [mit]: https://opensource.org/license/MIT
-[repo]: https://github.com/gvwilson/wp4ds
-[site]: https://gvwilson.github.io/wp4ds
+[repo]: https://github.com/gvwilson/web-tutorial
+[site]: https://gvwilson.github.io/web-tutorial
 [wilson-greg]: https://third-bit.com/

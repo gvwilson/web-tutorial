@@ -79,7 +79,7 @@ Why is this material free to read?
 [email]: mailto:gvwilson@third-bit.com
 [jinja]: https://jinja.palletsprojects.com/
 [mccole]: https://github.com/gvwilson/mccole
-[repo]: https://github.com/gvwilson/wp4ds
+[repo]: https://github.com/gvwilson/web-tutorial
 [pereira-juanan]: https://ikasten.io/
 [uv]: https://github.com/astral-sh/uv
 [wilson-greg]: https://third-bit.com/
