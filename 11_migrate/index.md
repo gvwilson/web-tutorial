@@ -12,9 +12,9 @@
     -   Check: `NN_check_mnemonic.sql`
     -   Backward: `NN_bwd_mnemonic.sql`
 -   Example
-    -   [`migrations/01_fwd_add_roles_permissions.sql`](./migrations/01_fwd_add_roles_permissions.sql)
-    -   [`migrations/01_check_add_roles_permissions.sql`](./migrations/01_check_add_roles_permissions.sql)
-    -   [`migrations/01_bwd_add_roles_permissions.sql`](./migrations/01_bwd_add_roles_permissions.sql)
+    -   [`../migrations/01_fwd_add_roles_permissions.sql`](../migrations/01_fwd_add_roles_permissions.sql)
+    -   [`../migrations/01_check_add_roles_permissions.sql`](../migrations/01_check_add_roles_permissions.sql)
+    -   [`../migrations/01_bwd_add_roles_permissions.sql`](../migrations/01_bwd_add_roles_permissions.sql)
 -   Keep these files in version control
 
 [sqitch]: https://sqitch.org/

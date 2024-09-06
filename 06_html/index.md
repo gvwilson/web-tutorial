@@ -18,5 +18,6 @@
     -   [`server_static_paths.py`](./server_static_paths.py)
     -   `Flask("server", static_folder=Path("../img").absolute(), static_url_path="/static")`
 
+[flask]: https://flask.palletsprojects.com/
 [htpy]: https://htpy.dev/
 [jinja]: https://jinja.palletsprojects.com/

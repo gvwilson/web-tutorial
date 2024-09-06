@@ -2,6 +2,7 @@
 
 from flask import Flask, abort, redirect, request
 from flask_cors import CORS
+from pathlib import Path
 
 import models
 import views
@@ -11,7 +12,7 @@ from util import AppException, HTTP_400_BAD_REQUEST, HTTP_500_INTERNAL
 
 def create_app():
     """Build application and configure routes."""
-    app = Flask("server")
+    app = Flask("server", static_folder=Path("../static").absolute(), static_url_path="/static")
     CORS(app)
 
     @app.get("/")

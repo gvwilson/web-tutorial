@@ -31,7 +31,7 @@
 <li>Most servers will not load things whose paths start with <code>../</code> for security reasons</li>
 <li>Run <a href="./server_paths.py"><code>server_paths.py</code></a> and go to <code>/dotdot</code> to see the effect</li>
 <li>So assets need to be in directories below the server's root directory</li>
-<li>But <code>../static/image.png</code> works because [Flask][flask] removes the leading <code>../</code></li>
+<li>But <code>../static/image.png</code> works because <a href="https://flask.palletsprojects.com/">Flask</a> removes the leading <code>../</code></li>
 </ul>
 </li>
 <li>The right way to do this is to configure a directory for static files<ul>
