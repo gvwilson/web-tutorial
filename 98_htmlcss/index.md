@@ -64,6 +64,31 @@
     -   A page relative to the current one such as `./examples/page.html`
     -   Another element in this page by ID such as `#main-title`
 
+### UTF-8 Encoding
+
+* UTF-8 Encoding (Simplified):
+   - Think of UTF-8 as a universal language for computers to understand and display text.
+   - It can handle almost any character from any language in the world, including emojis
+   - When you use UTF-8, you don't have to worry about your text looking weird on different devices or websites.
+
+* Specifying UTF-8 in HTML:
+   - To ensure proper rendering of special characters, you should specify UTF-8 encoding in your HTML:
+     ```html
+     <meta charset="utf-8">
+     ```
+   - This tag should be placed in the `<head>` section of your HTML document.
+
+* HTML Entities vs. Direct Unicode Characters:
+   - HTML entities like `&copy;` are useful for ensuring compatibility across different encodings and older systems.
+   - With UTF-8 encoding (and the proper meta tag), you can directly use Unicode characters like © in your HTML.
+   - Example:
+     ```html
+     <p>&copy; 2024</p>
+     <!-- is equivalent to -->
+     <p>© 2024</p>
+     ```
+   - Both will render the same in a browser, but the direct Unicode character is more readable in the source code.
+
 ## CSS
 
 -   `<h1 align="center" color="red">…</h1>` is frowned on these days
