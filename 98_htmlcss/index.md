@@ -19,6 +19,7 @@
     -   Written `&name;`
 
 | Name         | Escape Sequence | Character |
+|------------|-----------------|-----------|
 | Less than    | `&lt;`          | < |
 | Greater than | `&gt;`          | > |
 | Ampersand    | `&amp;`         | & |
