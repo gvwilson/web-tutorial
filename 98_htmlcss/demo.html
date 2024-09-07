@@ -2,23 +2,23 @@
 <html>
   <head>
     <title>CSS Styling</title>
-    <link id="css" href="./static/page.css" rel="stylesheet" type="text/css"/>
-    <script src="./static/alpine.js" defer></script>
+    <link id="css" href="../static/page.css" rel="stylesheet" type="text/css"/>
+    <script src="../static/alpine.js" defer></script>
   </head>
   <body>
     <h1>CSS Styling</h1>
 
     <p
-      x-data="{css: './static/page.css'}"
+      x-data="{css: '../static/page.css'}"
       x-init="$watch('css', value=>document.getElementById('css').setAttribute('href', value))">
       CSS:
-      <input type="radio" id="page" value="./static/page.css" x-model="css"> <label for="page">page</label>
-      <input type="radio" id="chota" value="./static/chota.css" x-model="css"> <label for="chota">Chota</label>
-      <input type="radio" id="neat" value="./static/neat.css" x-model="css"> <label for="neat">Neat</label>
-      <input type="radio" id="picnic" value="./static/picnic.css" x-model="css"> <label for="picnic">Picnic</label>
-      <input type="radio" id="pico" value="./static/pico.css" x-model="css"> <label for="pico">Pico</label>
-      <input type="radio" id="simple" value="./static/simple.css" x-model="css"> <label for="simple">Simple</label>
-      <input type="radio" id="tacit" value="./static/tacit.css" x-model="css"> <label for="tacit">Tacit</label>
+      <input type="radio" id="page" value="../static/page.css" x-model="css"> <label for="page">page</label>
+      <input type="radio" id="chota" value="../static/chota.css" x-model="css"> <label for="chota">Chota</label>
+      <input type="radio" id="neat" value="../static/neat.css" x-model="css"> <label for="neat">Neat</label>
+      <input type="radio" id="picnic" value="../static/picnic.css" x-model="css"> <label for="picnic">Picnic</label>
+      <input type="radio" id="pico" value="../static/pico.css" x-model="css"> <label for="pico">Pico</label>
+      <input type="radio" id="simple" value="../static/simple.css" x-model="css"> <label for="simple">Simple</label>
+      <input type="radio" id="tacit" value="../static/tacit.css" x-model="css"> <label for="tacit">Tacit</label>
     </p>
 
     <p>
@@ -92,7 +92,7 @@ for (const val of values) {
       </tbody>
     </table>
     <footer>
-      Copyright © 2024 the authors
+      Copyright &copy; 2024 the authors
     </footer>
   </body>
 </html>
