@@ -111,6 +111,11 @@ ol {
 ol li {
     margin-left: var(--width-li-adjust);
 }
+ol.appendices {
+    list-style-type: upper-alpha;
+}
+ol.chapters {
+}
 
 /* Subtitle */
 p.subtitle {

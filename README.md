@@ -41,38 +41,44 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 
 ## Syllabus
 
-| Title                                              | Content                                                     |
-| -------------------------------------------------- | ----------------------------------------------------------- |
-| [Introduction](./01_intro/index.md)                | what we will learn, how to set up, and the data we will use |
-| [HTTP](./02_http/index.md)                         | how browsers and server talk to each other                  |
-| [A Server](./03_server/index.md)                   | building a server with [Flask][flask]                       |
-| [Using a Database](./04_db/index.md)               | getting data from [SQLite][sqlite] using [PyPika][pypika]   |
-| [Testing the Server](./05_test/index.md)           | testing the server with [pytest][pytest]                    |
-| [Serving HTML](./06_html/index.md)                 | generating HTML with [Jinja][jinja] templates               |
-| [Using Forms](./07_forms/index.md)                 | sending data to a server                                    |
-| [An Hour of JavaScript](./08_js/index.md)          | variables, loops, functions, and callbacks                  |
-| [JavaScript in the Browser](./09_browser/index.md) | using the language in its native habitat                    |
-| [Using HTMX](./10_htmx/index.md)                   | letting the [htmx][htmx] library do the hard work           |
-| [Database Migration](./11_migrate/index.md)        | managing database schema changes                            |
-| [Permissions](./12_perm/index.md)                  | representing and checking who can do what                   |
-| [Authentication](./13_auth/index.md)               | checking the user's identity                                |
-| [Encryption](./14_crypt/index.md)                  | keeping secrets safe                                        |
-| [Testing in the Browser](./15_test/index.md)       | using [Selenium][selenium] to test the user interface       |
-| [Dynamic Graphics](./16_graphics/index.md)         | drawing pictures with [SVG.js][svgjs]                       |
-| [A Graphical User Interface](./17_gui/index.md)    | handling interactivity in the browser                       |
-| [Accessibility](./18_access/index.md)              | because everyone should be comfortable                      |
-| [Internationalization](./19_intl/index.md)         | because everyone should be welcome                          |
-| [Logging and Auditing](./20_log/index.md)          | keeping of track of what's happened                         |
-| [Session](./21_sessions/index.md)                  | persistent sessions and [JWT][jwt]                          |
-| [Designing a Workflow](./22_workflow/index.md)     | thinking before coding                                      |
+<ol class="chapters" markdown="1">
+
+1.  [Introduction](./01_intro/index.md): what we will learn, how to set up, and the data we will use
+1.  [HTTP](./02_http/index.md): how browsers and server talk to each other
+1.  [A Server](./03_server/index.md): building a server with [Flask][flask]
+1.  [Using a Database](./04_db/index.md): getting data from [SQLite][sqlite] using [PyPika][pypika]
+1.  [Testing the Server](./05_test/index.md): testing the server with [pytest][pytest]
+1.  [Serving HTML](./06_html/index.md): generating HTML with [Jinja][jinja] templates
+1.  [Using Forms](./07_forms/index.md): sending data to a server
+1.  [An Hour of JavaScript](./08_js/index.md): variables, loops, functions, and callbacks
+1.  [JavaScript in the Browser](./09_browser/index.md): using the language in its native habitat
+1.  [Using HTMX](./10_htmx/index.md): letting the [htmx][htmx] library do the hard work
+1.  [Database Migration](./11_migrate/index.md): managing database schema changes
+1.  [Permissions](./12_perm/index.md): representing and checking who can do what
+1.  [Authentication](./13_auth/index.md): checking the user's identity
+1.  [Encryption](./14_crypt/index.md): keeping secrets safe
+1.  [Testing in the Browser](./15_test/index.md): using [Selenium][selenium] to test the user interface
+1.  [Dynamic Graphics](./16_graphics/index.md): drawing pictures with [SVG.js][svgjs]
+1.  [A Graphical User Interface](./17_gui/index.md): handling interactivity in the browser
+1.  [Accessibility](./18_access/index.md): because everyone should be comfortable
+1.  [Internationalization](./19_intl/index.md): because everyone should be welcome
+1.  [Logging and Auditing](./20_log/index.md): keeping of track of what's happened
+1.  [Session](./21_sessions/index.md): persistent sessions and [JWT][jwt]
+1.  [Designing a Workflow](./22_workflow/index.md): thinking before coding
+
+</ol>
 
 ##  Appendices
 
--   [HTML and CSS](./98_htmlcss/index.md)
--   [Certificates](./99_cert/index.md)
--   [Bibliography](./bibliography.md)
--   [Glossary](./glossary.md)
--   [Contributing](./CONTRIBUTING.md)
+<ol class="appendices" markdown="1">
+
+1.  [HTML and CSS](./98_htmlcss/index.md)
+1.  [Certificates](./99_cert/index.md)
+1.  [Bibliography](./bibliography.md)
+1.  [Glossary](./glossary.md)
+1.  [Contributing](./CONTRIBUTING.md)
+
+</ol>
 
 ## Technologies
 
