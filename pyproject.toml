@@ -48,14 +48,14 @@ duplicates = [
         "13_auth/migrate.py",
         "14_crypt/migrate.py",
         "15_test/migrate.py",
-        "18_intl/migrate.py",
+        "19_intl/migrate.py",
         "21_sessions/migrate.py"
     ],
     [
         "13_auth/models.py",
         "14_crypt/models.py",
         "15_test/models.py",
-        "18_intl/models.py"
+        "19_intl/models.py"
     ],
     [
         "13_auth/test_authenticate.py",
@@ -69,7 +69,7 @@ duplicates = [
     [
         "14_crypt/secret.txt",
         "15_test/secret.txt",
-        "18_intl/secret.txt",
+        "19_intl/secret.txt",
         "21_sessions/secret.txt"
     ],
     [

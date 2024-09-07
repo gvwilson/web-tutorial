@@ -59,12 +59,12 @@ All contributors are required to respect our [Code of Conduct](./CODE_OF_CONDUCT
 | [Encryption](./14_crypt/index.md)                  | keeping secrets safe                                        |
 | [Testing in the Browser](./15_test/index.md)       | using [Selenium][selenium] to test the user interface       |
 | [Dynamic Graphics](./16_graphics/index.md)         | drawing pictures with [SVG.js][svgjs]                       |
-| [Accessibility](./17_access/index.md)              | because everyone should be comfortable                      |
-| [Internationalization](./18_intl/index.md)         | because everyone should be welcome                          |
-| [Designing a Workflow](./19_workflow/index.md)     | thinking before coding                                      |
+| [A Graphical User Interface](./17_gui/index.md)    | handling interactivity in the browser                       |
+| [Accessibility](./18_access/index.md)              | because everyone should be comfortable                      |
+| [Internationalization](./19_intl/index.md)         | because everyone should be welcome                          |
 | [Logging and Auditing](./20_log/index.md)          | keeping of track of what's happened                         |
 | [Session](./21_sessions/index.md)                  | persistent sessions and [JWT][jwt]                          |
-| [A Graphical User Interface](./22_gui/index.md)    | handling interactivity in the browser                       |
+| [Designing a Workflow](./22_workflow/index.md)     | thinking before coding                                      |
 
 ##  Appendices
 
