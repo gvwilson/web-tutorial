@@ -1,5 +1,5 @@
 [project]
-name = "wp4ds"
+name = "webonomicon"
 version = "0.1.28"
 dependencies = [
     "beautifulsoup4",
